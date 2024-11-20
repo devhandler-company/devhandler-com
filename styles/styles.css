@@ -38,6 +38,12 @@
 
   /* nav height */
   --nav-height: 64px;
+
+  --primary-text-color: #fff;
+  --button-bg-color: #0063F8;
+
+  --header-bg-color: #222222;
+  --primary-font-family: AmpleAlt, 'sans-serif';
 }
 
 /* fallback fonts */

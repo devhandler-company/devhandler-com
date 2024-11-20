@@ -1,0 +1,36 @@
+header .nav-wrapper {
+    background-color: var(--header-bg-color);
+}
+
+header nav a:any-link {
+    color: var(--primary-text-color);
+    font-family: var(--primary-font-family);
+    line-height: 24px;
+    font-size: 24px;
+}
+
+header nav a:hover {
+    text-decoration: none;
+}
+
+@media (width >= 900px) {
+    header .nav-brand {
+        display: none;
+    }
+}
+
+header nav .nav-sections ul {
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+}
+
+header nav .nav-sections ul > li > a:has(span.icon-header-logo) {
+    display: flex;
+    justify-content: center;
+}
+
+header nav .nav-sections ul > li > a > span.icon-header-logo {
+    width: auto;
+    height: 34px;
+}

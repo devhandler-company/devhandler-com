@@ -1,0 +1,14 @@
+header nav a.header-button {
+    background-color: var(--button-bg-color);
+    width: max-content;
+    padding-left: 8vw;
+    padding-right: 9vw;
+    border-radius: 10px;
+    height: 100%;
+    display: block;
+    align-content: center;
+}
+
+header nav li:has(a.header-button) {
+    height: 100%;
+}
