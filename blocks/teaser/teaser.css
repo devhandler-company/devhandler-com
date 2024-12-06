@@ -1,0 +1,6 @@
+@import './teaset-hero.css';
+
+.teaser .teaser__content {
+    display: flex;
+    flex-direction: column;
+}

@@ -41,9 +41,11 @@
 
   --primary-text-color: #fff;
   --button-bg-color: #0063F8;
+  --page-background: #222222;
 
   --header-bg-color: #222222;
-  --primary-font-family: AmpleAlt, 'sans-serif';
+  --secondary-font-family: AmpleAlt, 'sans-serif';
+  --primary-font-family: Hind, 'sans-serif';
 }
 
 /* fallback fonts */
@@ -79,9 +81,9 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--body-font-family);
+  background-color: var(--page-background);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
 }

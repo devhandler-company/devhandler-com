@@ -4,7 +4,7 @@ header .nav-wrapper {
 
 header nav a:any-link {
     color: var(--primary-text-color);
-    font-family: var(--primary-font-family);
+    font-family: var(--secondary-font-family);
     line-height: 24px;
     font-size: 24px;
 }
