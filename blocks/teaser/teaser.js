@@ -1,6 +1,7 @@
 import { createTag } from "../../scripts/utils.js";
 
 export default function decorate(block) {
+
   const blockContent = block.firstElementChild.firstElementChild;
 
   const imageBlock = blockContent.firstElementChild.querySelector("picture");

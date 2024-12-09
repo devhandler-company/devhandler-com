@@ -1,0 +1,33 @@
+.section.desktop-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+}
+
+.section.desktop-grid.desktop-grid-50-50 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section.desktop-grid.desktop-grid-2-1 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.section.desktop-grid.desktop-grid-1-2 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+.section.row-gap-24 {
+    column-gap: 24px;
+}
+main > div.section {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 24px;
+}

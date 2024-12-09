@@ -9,6 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+@import url(./common/section.css);
+@import url(./common/headings.css);
 
 :root {
   /* colors */
@@ -40,12 +42,15 @@
   --nav-height: 64px;
 
   --primary-text-color: #fff;
+  --secondary-text-color: #222222;
   --button-bg-color: #0063F8;
   --page-background: #222222;
 
   --header-bg-color: #222222;
   --secondary-font-family: AmpleAlt, 'sans-serif';
   --primary-font-family: Hind, 'sans-serif';
+
+  --section-gap: 24px;
 }
 
 /* fallback fonts */
@@ -105,27 +110,6 @@ header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
-}
-
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
 
 p,
 dl,
@@ -240,20 +224,8 @@ main > .section {
   margin: 40px 0;
 }
 
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-}
-
 main > .section:first-of-type {
   margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
 }
 
 /* section metadata */

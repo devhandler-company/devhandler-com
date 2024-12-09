@@ -1,0 +1,6 @@
+.block-group {
+    margin: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

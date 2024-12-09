@@ -1,0 +1,46 @@
+
+.text-tile.bg-blue {
+    background-color: blue;
+}
+
+.text-tile.bg-cyan {
+    background-color: cyan;
+}
+
+.text-tile {
+    --text-tile-padding: 32px;
+    background-color: white;
+    color: var(--secondary-text-color);
+    padding: var(--text-tile-padding);
+    
+}
+ 
+.desktop-grid-2-1 .text-tile.margin-left-0 {
+    margin-left: calc(100% - (100vw / 3 * 2));
+    padding-left: calc((100vw / 3 * 2) - 100% + var(--text-tile-padding));
+}
+
+.desktop-grid-1-2 .text-tile.margin-left-0 {
+    margin-left: calc((100vw - (100% * 3.0 + 24px)) / ( -2));
+    padding-left: calc((100vw / 3.0) - 100% + var(--text-tile-padding) + var(--section-gap) + 4px);
+}
+
+.desktop-grid-50-50 .text-tile.margin-left-0 {
+    margin-left: calc(100% - (100vw / 2) - var(--section-gap) / 2 + 32px);
+    padding-left: calc((100vw / 2) - 100% + var(--text-tile-padding) + var(--section-gap)/2);
+}
+
+.desktop-grid-1-2 .text-tile.margin-right-0 {
+    margin-right: calc((100vw - (100% / 2 * 3.0 + 24px)) / ( -2) );
+    padding-right: calc((100vw / 3 * 2) - 100% + var(--text-tile-padding));
+}
+
+.desktop-grid-2-1 .text-tile.margin-right-0 {
+    margin-right: calc(100% - (100vw / 3.0) - var(--section-gap) - 4px);
+    padding-right: calc((100vw / 3.0) - 100% + var(--text-tile-padding) + var(--section-gap) + 4px);
+}
+
+.desktop-grid-50-50 .text-tile.margin-right-0 {
+    margin-right: calc(100% - (100vw / 2) - var(--section-gap) / 2 + 32px);
+    padding-right: calc((100vw / 2) - 100% + var(--text-tile-padding) + var(--section-gap)/2);
+}
