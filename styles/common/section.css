@@ -20,6 +20,16 @@
     grid-template-columns: 1fr 2fr;
 }
 
+.section.desktop-grid.desktop-grid-60-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .6fr .4fr;
+}
+
+.section.desktop-grid.desktop-grid-40-60 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .4fr .6fr;
+}
+
 .section.row-gap-24 {
     column-gap: 24px;
 }

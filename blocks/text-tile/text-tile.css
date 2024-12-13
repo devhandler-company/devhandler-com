@@ -1,10 +1,10 @@
 
 .text-tile.bg-blue {
-    background-color: blue;
+    background-color: var(--color-blue);
 }
 
 .text-tile.bg-cyan {
-    background-color: cyan;
+    background-color: var(--color-aqamarine);
 }
 
 .text-tile {
@@ -12,35 +12,61 @@
     background-color: white;
     color: var(--secondary-text-color);
     padding: var(--text-tile-padding);
-    
+    border-radius: 20px;
+}
+
+.text-tile p {
+    margin-top: 18px;
+    font-family: var(--primary-font-family);
+    line-height: 26px;
+    font-size: 18px;
+}
+
+.text-tile.margin-left-0 {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.text-tile.margin-right-0 {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.text-tile.empty-tile {
+    height: calc(100% - (var(--text-tile-padding) * 2));
+}
+
+.text-tile-wrapper:has(.text-tile.empty-tile) {
+    position: relative;
+    flex-grow: 1;
 }
  
 .desktop-grid-2-1 .text-tile.margin-left-0 {
-    margin-left: calc(100% - (100vw / 3 * 2));
-    padding-left: calc((100vw / 3 * 2) - 100% + var(--text-tile-padding));
-}
-
-.desktop-grid-1-2 .text-tile.margin-left-0 {
-    margin-left: calc((100vw - (100% * 3.0 + 24px)) / ( -2));
-    padding-left: calc((100vw / 3.0) - 100% + var(--text-tile-padding) + var(--section-gap) + 4px);
-}
-
-.desktop-grid-50-50 .text-tile.margin-left-0 {
-    margin-left: calc(100% - (100vw / 2) - var(--section-gap) / 2 + 32px);
-    padding-left: calc((100vw / 2) - 100% + var(--text-tile-padding) + var(--section-gap)/2);
-}
-
-.desktop-grid-1-2 .text-tile.margin-right-0 {
-    margin-right: calc((100vw - (100% / 2 * 3.0 + 24px)) / ( -2) );
-    padding-right: calc((100vw / 3 * 2) - 100% + var(--text-tile-padding));
+    margin-left: calc((100% / 2 * 3 + 24px - 100vw) / 2 + 8px);
+    padding-left: calc((100vw - 100% / 2 * 3 + 24px) / 2)
 }
 
 .desktop-grid-2-1 .text-tile.margin-right-0 {
-    margin-right: calc(100% - (100vw / 3.0) - var(--section-gap) - 4px);
-    padding-right: calc((100vw / 3.0) - 100% + var(--text-tile-padding) + var(--section-gap) + 4px);
+    margin-right: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
+    padding-right: calc((100vw - 100% * 3 + 24px) / 2)
+}
+
+.desktop-grid-1-2 .text-tile.margin-left-0 {
+    margin-left: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
+    padding-left: calc((100vw - 100% * 3 + 24px) / 2)
+}
+
+.desktop-grid-1-2 .text-tile.margin-right-0 {
+    margin-right: calc(((100% / 2 * 3 + 24px) - 100vw) / 2 + 8px);
+    padding-right: calc((100vw - 100% / 2 * 3 + 24px) / 2)
+}
+
+.desktop-grid-50-50 .text-tile.margin-left-0 {
+    margin-left: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
+    padding-left: calc((100vw - 100% * 2 + 24px) / 2)
 }
 
 .desktop-grid-50-50 .text-tile.margin-right-0 {
-    margin-right: calc(100% - (100vw / 2) - var(--section-gap) / 2 + 32px);
-    padding-right: calc((100vw / 2) - 100% + var(--text-tile-padding) + var(--section-gap)/2);
+    margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
+    padding-right: calc((100vw - 100% * 2 + 24px) / 2)
 }

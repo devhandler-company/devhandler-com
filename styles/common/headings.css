@@ -24,3 +24,7 @@ h1 {
     line-height: normal;
     font-family: var(--secondary-font-family);
 }
+
+h2 {
+  font-family: var(--secondary-font-family);
+}

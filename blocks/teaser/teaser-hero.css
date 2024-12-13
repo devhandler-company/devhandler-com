@@ -93,4 +93,9 @@
     border-bottom-right-radius: 20px;
     top: 0;
     left: 0;
+    transition: left 0.5s ease-in-out;
+}
+
+.teaser.hero .teaser__cta:hover::after {
+    left: 90%;
 }
