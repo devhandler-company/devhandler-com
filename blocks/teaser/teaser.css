@@ -1,6 +1,10 @@
-@import './teaset-hero.css';
+@import './teaser-hero.css';
 
 .teaser .teaser__content {
     display: flex;
     flex-direction: column;
+}
+
+.teaser.pretitle-hidden .teaser__pretitle {
+    display: none;
 }

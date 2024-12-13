@@ -1,7 +1,20 @@
 import { createTag } from "../../scripts/utils.js";
 
-export default function decorate(block) {
+function modifyText(block) {
+  block.querySelectorAll("strong").forEach((element) => {
+    element.replaceWith(
+      createTag("span", { class: "text-color-blue" }, element.innerText)
+    );
+  });
+  block.querySelectorAll("em").forEach((element) => {
+    element.replaceWith(
+      createTag("span", { class: "text-color-linear" }, element.innerText)
+    );
+  });
+  return block;
+}
 
+export default function decorate(block) {
   const blockContent = block.firstElementChild.firstElementChild;
 
   const imageBlock = blockContent.firstElementChild.querySelector("picture");
@@ -25,7 +38,11 @@ export default function decorate(block) {
 
   titleBlock &&
     teaserContent.appendChild(
-      createTag("div", { class: "teaser__title" }, titleBlock.innerHTML)
+      createTag(
+        "div",
+        { class: "teaser__title" },
+        modifyText(titleBlock).innerHTML
+      )
     );
 
   descriptionBlock &&

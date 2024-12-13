@@ -1,0 +1,9 @@
+.text-color-blue {
+    color: var(--color-blue);
+}
+
+.text-color-linear {
+    background-image: linear-gradient(var(--color-blue), var(--color-aqamarine));
+    color: transparent;
+    background-clip: text;
+}

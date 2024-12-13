@@ -31,3 +31,17 @@ main > div.section {
     margin: auto;
     margin-top: 24px;
 }
+
+main > div.section.no-margin.full-width {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+main > div.section.full-width {
+    max-width: unset;
+}
+
+main > div.section.full-width.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}

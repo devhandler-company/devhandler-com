@@ -11,6 +11,7 @@
  */
 @import url(./common/section.css);
 @import url(./common/headings.css);
+@import url(./common/special-colors.css);
 
 :root {
   /* colors */
@@ -51,6 +52,10 @@
   --primary-font-family: Hind, 'sans-serif';
 
   --section-gap: 24px;
+
+
+  --color-aqamarine: #4ce1ba;
+  --color-blue: #0063F8;
 }
 
 /* fallback fonts */
