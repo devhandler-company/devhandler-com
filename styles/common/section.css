@@ -5,6 +5,10 @@
     column-gap: 24px;
 }
 
+.section {
+    position: relative;
+}
+
 .section.desktop-grid.desktop-grid-50-50 {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
@@ -34,7 +38,7 @@
     column-gap: 24px;
 }
 main > div.section {
-    max-width: 1440px;
+    max-width: 1200px;
     padding-left: 24px;
     padding-right: 24px;
     justify-content: center;
@@ -42,16 +46,25 @@ main > div.section {
     margin-top: 24px;
 }
 
-main > div.section.no-margin.full-width {
-    margin-left: 0;
-    margin-right: 0;
-}
-
 main > div.section.full-width {
     max-width: unset;
-}
-
-main > div.section.full-width.no-padding {
+    margin-left: 0;
+    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
+}
+
+main > div.section.background-container img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+main > div.section.zindex-1{
+    z-index: 1;
+}
+
+/* Negative margins */
+main > div.section.negative-margin-top-64 {
+    margin-top: -64px;
 }
