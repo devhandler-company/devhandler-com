@@ -1,4 +1,4 @@
-
+@import url('./text-tile-title-only.css');
 .text-tile.bg-blue {
     background-color: var(--color-blue);
 }

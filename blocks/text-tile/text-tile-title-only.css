@@ -1,0 +1,51 @@
+.text-tile.title-only {
+    text-align: center;
+    position: relative;
+    background: unset;
+}
+
+.text-tile.title-only h3 {
+    font-size: 32px;
+    font-family: var(--primary-font-family);
+    font-weight: 500;
+}
+
+.text-tile.title-only:hover {
+    cursor: default;
+}
+.text-tile.title-only::after {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    background: var(--color-aqamarine);
+    width: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    top: 0;
+    right: 0;
+    transition: width 0.5s ease-in-out, border-top-left-radius 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.text-tile.title-only:hover::after {
+    border-top-left-radius: 20px;
+    width: 100%;
+}
+
+.text-tile.title-only.blue::after {
+    background: var(--color-blue);
+}
+
+.text-tile.title-only::before {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
