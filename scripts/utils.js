@@ -11,3 +11,22 @@ export function createTag(tag, attributes = {}, content) {
   }
   return element;
 }
+
+
+export function modifyHeaders(block) {
+  block
+    .querySelectorAll(".section .default-content-wrapper > h2 > strong")
+    .forEach((element) => {
+      element.replaceWith(
+        createTag("span", { class: "text-color-blue" }, element.innerText)
+      );
+    });
+  block
+    .querySelectorAll(".section .default-content-wrapper > h2 > em")
+    .forEach((element) => {
+      element.replaceWith(
+        createTag("span", { class: "text-color-linear" }, element.innerText)
+      );
+    });
+  return block;
+}

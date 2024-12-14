@@ -1,3 +1,1 @@
-export default function decorate(block) {
-  console.log(block);
-}
+export default function decorate(block) {}
