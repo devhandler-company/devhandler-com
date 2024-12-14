@@ -97,5 +97,5 @@
 }
 
 .teaser.hero .teaser__cta:hover::after {
-    left: 90%;
+    left: calc(100% - 64px);
 }

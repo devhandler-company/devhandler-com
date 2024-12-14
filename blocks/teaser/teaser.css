@@ -3,6 +3,7 @@
 .teaser .teaser__content {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .teaser.pretitle-hidden .teaser__pretitle {
