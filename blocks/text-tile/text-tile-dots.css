@@ -1,0 +1,16 @@
+.text-tile.gradient-dot-left {
+    padding-left: 100px;
+}
+
+.text-tile.gradient-dot-left::before {
+    content: " ";
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: linear-gradient(var(--color-blue), var(--color-aqamarine));
+}

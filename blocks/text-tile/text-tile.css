@@ -1,4 +1,7 @@
 @import url('./text-tile-title-only.css');
+@import url('./text-tile-spacings.css');
+@import url('./text-tile-dots.css');
+
 .text-tile.bg-blue {
     background-color: var(--color-blue);
 }
@@ -13,6 +16,7 @@
     color: var(--secondary-text-color);
     padding: var(--text-tile-padding);
     border-radius: 20px;
+    position: relative;
 }
 
 .text-tile p {
@@ -69,4 +73,13 @@
 .desktop-grid-50-50 .text-tile.margin-right-0 {
     margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
     padding-right: calc((100vw - 100% * 2 + 24px) / 2)
+}
+
+.text-tile.no-background {
+    background-color: unset;
+    color: white;
+}
+
+.text-tile.small-space p {
+    margin-top: 4px;
 }

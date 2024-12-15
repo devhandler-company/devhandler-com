@@ -1,0 +1,29 @@
+@import url('./button-background-multiple-rectangles.css');
+
+.button a.button {
+    font-size: 42px;
+    font-family: var(--secondary-font-family);
+    border-radius: 20px;
+    padding-left: 180px;
+    padding-right: 180px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border: 3px solid var(--color-aqamarine);
+    border-radius: 20px;
+    position: relative;
+    
+    box-sizing: content-box;
+    background: linear-gradient(to right, var(--color-aqamarine) 50%, rgba(0,0,0,0) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+
+    transition: background-position 0.5s ease-in-out;
+}
+
+.button a.button:hover {
+    background-position: left bottom;
+}
+
+.button.center {
+    margin: auto;
+}

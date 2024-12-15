@@ -28,3 +28,7 @@ h1 {
 h2 {
   font-family: var(--secondary-font-family);
 }
+
+h3 {
+  font-family: var(--secondary-font-family);
+}
