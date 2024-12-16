@@ -95,7 +95,3 @@
     left: 0;
     transition: left 0.5s ease-in-out;
 }
-
-.teaser.hero .teaser__cta:hover::after {
-    left: calc(100% - 64px);
-}

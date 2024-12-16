@@ -20,6 +20,20 @@
     transition: background-position 0.5s ease-in-out;
 }
 
+.button a.button::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background: var(--color-aqamarine);
+    width: 40px;
+    border-bottom-right-radius: 20px;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out, border-top-right-radius 0.5s ease-in-out,
+        border-bottom-right-radius 0.5s ease-in-out;
+    z-index: -1;
+}
+
 .button a.button:hover {
     background-position: left bottom;
 }
