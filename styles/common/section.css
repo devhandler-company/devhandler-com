@@ -7,6 +7,9 @@
 
 .section {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .section.desktop-grid.desktop-grid-50-50 {
@@ -26,12 +29,12 @@
 
 .section.desktop-grid.desktop-grid-60-40 {
     grid-template-rows: 1fr;
-    grid-template-columns: .6fr .4fr;
+    grid-template-columns: 0.6fr 0.4fr;
 }
 
 .section.desktop-grid.desktop-grid-40-60 {
     grid-template-rows: 1fr;
-    grid-template-columns: .4fr .6fr;
+    grid-template-columns: 0.4fr 0.6fr;
 }
 
 .section.row-gap-24 {
@@ -60,11 +63,15 @@ main > div.section.background-container img {
     object-position: center;
 }
 
-main > div.section.zindex-1{
+main > div.section.zindex-1 {
     z-index: 1;
 }
 
 /* Negative margins */
 main > div.section.negative-margin-top-64 {
     margin-top: -64px;
+}
+
+main > div.section.negative-margin-top-128 {
+    margin-top: -128px;
 }

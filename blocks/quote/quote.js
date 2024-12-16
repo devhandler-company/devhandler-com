@@ -1,5 +1,18 @@
 import { createTag } from "../../scripts/utils.js";
 
+const getReviews = () => {
+  const reviews = createTag("span", { class: "quote__reviews" }, "");
+  for (let index = 0; index < 5; index++) {
+    const reviewImage = createTag("img", {
+      class: "quote__review",
+      alt: "Quote review icon",
+    });
+    reviewImage.setAttribute("src", "/icons/review-star.svg");
+    reviews.appendChild(reviewImage);
+  }
+  return reviews;
+};
+
 export default function decorate(block) {
   const blockContent = block.firstElementChild.firstElementChild;
 
@@ -32,9 +45,12 @@ export default function decorate(block) {
       )
     );
 
+  topRowRight.appendChild(getReviews());
+
   quoteContent.appendChild(topRow);
 
   if (descriptionBlock) {
+    const divider = createTag("div", { class: "quote__divider" }, "");
     const bottomRow = createTag("div", { class: "quote__content-bottom" }, "");
     bottomRow.appendChild(
       createTag(
@@ -43,6 +59,7 @@ export default function decorate(block) {
         descriptionBlock.innerHTML
       )
     );
+    quoteContent.appendChild(divider);
     quoteContent.appendChild(bottomRow);
   }
 

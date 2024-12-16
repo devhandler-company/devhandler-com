@@ -1,4 +1,9 @@
-
+.quote {
+    padding: 24px;
+    background: white;
+    border-radius: 20px;
+    color: #000;
+}
 
 .quote__content-top-left {
     overflow: hidden;
@@ -6,13 +11,47 @@
     text-overflow: ellipsis;
 }
 
+.quote__content-top-right {
+    display: inline-flex;
+    gap: 24px
+}
+
+.quote__reviews {
+    display: inline-flex;
+    gap: 4px;
+    width: max-content;
+}
+
+.quote__review {
+    width: 20px;
+    height: 20px;
+}
+
 .quote .quote__content-top {
     display: flex;
     justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 40px;
 }
 
+.quote .quote__divider {
+    height: 1px;
+    background: var(--color-gray);
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.quote .quote__content-bottom {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
 .quote .quote__title {
-    font-size: 40px;
+    font-size: 28px;
+    line-height: 26px;
+    font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
 }
