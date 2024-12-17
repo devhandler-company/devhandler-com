@@ -4,3 +4,10 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.block-group.max-width-1200 {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}

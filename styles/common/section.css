@@ -57,6 +57,18 @@ main > div.section.full-width {
     padding-right: 0;
 }
 
+main > div.section.full-width.full-width-with-side-paddings {
+    padding-left: calc((100vw - 1200px - 24px) / 2);
+    padding-right: calc((100vw - 1200px - 24px) / 2);
+}
+
+@media (width >= 1025px) and (width <= 1248px) {
+    main > div.section.full-width.full-width-with-side-paddings {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
 main > div.section.background-container img {
     width: 100%;
     object-fit: cover;
@@ -74,4 +86,9 @@ main > div.section.negative-margin-top-64 {
 
 main > div.section.negative-margin-top-128 {
     margin-top: -128px;
+}
+
+/* Colors */
+main > div.section.background-white {
+    background-color: white;
 }

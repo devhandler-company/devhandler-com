@@ -27,16 +27,19 @@ const moveBloksIntoBlockGroup = (blockStart, blockEnd) => {
 };
 
 export default function decorate(block) {
-  let blockId = getBlockIdDefinedByClassName(block);
+    let blockId = getBlockIdDefinedByClassName(block);
 
-  const blockStart = document.querySelector(
-    `.block-group-start.${BLOCK_GROUP_ID_PREFIX}${blockId}`
-  ).parentNode;
-  const blockEnd = block.parentNode;
+    const classList = block.classList;
+    const blockStart = document.querySelector(`.block-group-start.${BLOCK_GROUP_ID_PREFIX}${blockId}`).parentNode;
+    const blockEnd = block.parentNode;
 
-  const newBlock = moveBloksIntoBlockGroup(blockStart, blockEnd);
+    const newBlock = moveBloksIntoBlockGroup(blockStart, blockEnd);
 
-  blockEnd.after(newBlock);
-  blockStart.remove();
-  blockEnd.remove();
+    classList.forEach((className) => {
+        className.indexOf(BLOCK_GROUP_ID_PREFIX) === -1 && newBlock.classList.add(className);
+    });
+
+    blockEnd.after(newBlock);
+    blockStart.remove();
+    blockEnd.remove();
 }
