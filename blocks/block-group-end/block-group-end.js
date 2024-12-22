@@ -13,17 +13,17 @@ const getBlockIdDefinedByClassName = (block) => {
 };
 
 const moveBloksIntoBlockGroup = (blockStart, blockEnd) => {
-  const newBlock = createTag("div", { class: "block-group" });
+    const newBlock = createTag("div", { class: "block-group" });
 
-  let blockIterator = blockStart.nextElementSibling;
-  while (blockIterator !== blockEnd) {
-    newBlock.innerHTML = newBlock.innerHTML + blockIterator.outerHTML;
-    const newBlockIterator = blockIterator.nextElementSibling;
-    blockIterator.remove();
-    blockIterator = newBlockIterator;
-  }
+    let blockIterator = blockStart.nextElementSibling;
+    let nextBlock = blockIterator.nextElementSibling;
+    while (blockIterator !== blockEnd && blockIterator) {
+        newBlock.appendChild(blockIterator);
+        blockIterator = nextBlock;
+        nextBlock = nextBlock.nextElementSibling;
+    }
 
-  return newBlock;
+    return newBlock;
 };
 
 export default function decorate(block) {
@@ -32,7 +32,6 @@ export default function decorate(block) {
     const classList = block.classList;
     const blockStart = document.querySelector(`.block-group-start.${BLOCK_GROUP_ID_PREFIX}${blockId}`).parentNode;
     const blockEnd = block.parentNode;
-
     const newBlock = moveBloksIntoBlockGroup(blockStart, blockEnd);
 
     classList.forEach((className) => {

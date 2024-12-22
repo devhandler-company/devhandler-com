@@ -7,3 +7,9 @@
     color: transparent;
     background-clip: text;
 }
+
+.text-color-linear-to-bottom {
+    background-image: linear-gradient(to bottom, var(--color-blue), var(--color-aqamarine));
+    color: transparent;
+    background-clip: text;
+}

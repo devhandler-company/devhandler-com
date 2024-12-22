@@ -1,0 +1,30 @@
+.list ul,
+.list ol {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: unset;
+}
+
+.list ul > li,
+.list ol > li {
+    font-size: 28px;
+    line-height: 26px;
+    font-weight: 500;
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.list ul > li::before {
+    content: " ";
+    background-color: var(--color-aqamarine);
+    height: 32px;
+    width: 16px;
+    display: inline-block;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 40px;
+    margin-right: 24px;
+}

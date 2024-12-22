@@ -30,3 +30,11 @@ export function modifyHeaders(block) {
     });
   return block;
 }
+
+export const getBlockProperties = (block) => {
+    const propertiesMap = {};
+    [...block.children].forEach((row) => {
+        propertiesMap[row.firstElementChild.textContent] = row.lastElementChild.textContent;
+    });
+    return propertiesMap;
+};

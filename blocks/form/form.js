@@ -17,7 +17,6 @@ async function createForm(formHref, submitHref) {
 
     // group fields into fieldsets
     const fieldsets = form.querySelectorAll("fieldset");
-    console.log(fieldsets);
     fieldsets.forEach((fieldset) => {
         form.querySelectorAll(`[data-fieldset="${fieldset.name}"`).forEach((field) => {
             fieldset.append(field);
@@ -49,6 +48,7 @@ async function handleSubmit(form) {
     if (form.getAttribute("data-submitting") === "true") return;
 
     const submit = form.querySelector('button[type="submit"]');
+
     try {
         form.setAttribute("data-submitting", "true");
         submit.disabled = true;
@@ -58,9 +58,11 @@ async function handleSubmit(form) {
         const response = await fetch(form.dataset.action, {
             method: "POST",
             body: JSON.stringify({ data: payload }),
-            headers: {
-                "Content-Type": "application/json",
-            },
+            // headers: {
+            //     contentType: "application/json",
+            // },
+            mode: "cors",
+            redirect: "follow",
         });
         if (response.ok) {
             if (form.dataset.confirmation) {
@@ -86,8 +88,8 @@ export default async function decorate(block) {
     if (!formLink || !submitLink) return;
 
     const form = await createForm(formLink, submitLink);
-    block.replaceChildren(form);
 
+    block.replaceChildren(form);
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const valid = form.checkValidity();

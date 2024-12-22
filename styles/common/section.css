@@ -91,4 +91,10 @@ main > div.section.negative-margin-top-128 {
 /* Colors */
 main > div.section.background-white {
     background-color: white;
+    color: black;
+}
+
+/* Paddings */
+main > div.section.padding-top-92 {
+    padding-top: 92px;
 }
