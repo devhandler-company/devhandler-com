@@ -1,5 +1,6 @@
 .form {
     color: #000;
+    --checkbox-side-size: 28px;
 }
 
 .form input::placeholder {
@@ -192,4 +193,40 @@
 }
 .form .blue-button button:hover {
     background-position: left top;
+}
+
+.form .small-field label {
+    font-size: 18px;
+}
+
+.form input[type="checkbox"] {
+    opacity: 0;
+    width: 1px;
+    margin-left: calc(var(--checkbox-side-size) / 2);
+    position: absolute;
+}
+
+.form input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: var(--checkbox-side-size);
+    height: var(--checkbox-side-size);
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-right: 24px;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.form input[type="checkbox"] + label:hover {
+    cursor: pointer;
+}
+
+.form input[type="checkbox"]:checked + label:before {
+    background-image: url("/icons/checked.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
 }
