@@ -15,7 +15,7 @@
     background-color: white;
     color: var(--secondary-text-color);
     padding: var(--text-tile-padding);
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     position: relative;
 }
 

@@ -147,7 +147,7 @@
     cursor: pointer;
     inset: 0;
     border-radius: 28px;
-    background-color: var(--dark-color);
+    background-color: var(--color-dark);
     transition: background-color 0.2s;
 }
 
@@ -164,11 +164,11 @@
 }
 
 .form .toggle-wrapper input:checked + .slider {
-    background-color: var(--link-color);
+    background-color: var(--color-blue);
 }
 
 .form .toggle-wrapper input:focus + .slider {
-    outline: 2px solid var(--link-color);
+    outline: 2px solid var(--color-blue);
     outline-offset: 2px;
 }
 

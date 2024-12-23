@@ -19,6 +19,14 @@ button.button {
     background-origin: border-box;
     background-repeat: no-repeat;
     z-index: 1;
+    display: inline-block;
+    margin: 12px 0;
+    font-style: normal;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .button a.button:any-link::after,
@@ -41,6 +49,9 @@ button.button::after {
 
 .button a.button:any-link:hover,
 .button a.button:hover,
+a.button:hover,
+a.button:focus,
 button.button:hover {
     background-position: left top;
+    cursor: pointer;
 }

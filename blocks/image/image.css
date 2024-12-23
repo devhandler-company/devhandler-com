@@ -16,5 +16,5 @@
 }
 
 .image img {
-    border-radius: 20px;
+    border-radius: var(--border-radius);
 }

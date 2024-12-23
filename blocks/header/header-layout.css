@@ -1,5 +1,5 @@
 header .nav-wrapper {
-    background-color: var(--header-bg-color);
+    background-color: var(--color-black-lighter);
 }
 
 header nav a:any-link {

@@ -1,5 +1,5 @@
 header nav a.header-button {
-    background-color: var(--button-bg-color);
+    background-color: var(--color-blue);
     width: max-content;
     padding-left: 8vw;
     padding-right: 9vw;

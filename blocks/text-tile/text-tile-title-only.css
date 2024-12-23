@@ -19,9 +19,9 @@
     height: 100%;
     background: var(--color-aqamarine);
     width: 40px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
     top: 0;
     right: 0;
     transition: width 0.5s ease-in-out, border-top-left-radius 0.5s ease-in-out;
@@ -29,7 +29,7 @@
 }
 
 .text-tile.title-only:hover::after {
-    border-top-left-radius: 20px;
+    border-top-left-radius: var(--border-radius);
     width: 100%;
 }
 
@@ -43,7 +43,7 @@
     height: 100%;
     width: 100%;
     background: white;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     top: 0;
     right: 0;
     z-index: -1;
