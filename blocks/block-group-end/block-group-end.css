@@ -5,9 +5,30 @@
     gap: 24px;
 }
 
+.block-group.align-items-end:not(.row) {
+    align-items: end;
+}
+
+
+.block-group.row {
+    flex-direction: row;
+}
+
+.block-group.row.align-items-end  {
+    justify-content: end;
+}
+
 .block-group.max-width-1200 {
     max-width: 1200px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.block-group.gap-4 {
+    gap: 4px;
+}
+
+.block-group.gap-16 {
+    gap: 16px;
 }

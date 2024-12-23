@@ -138,6 +138,18 @@ const createJs = (fd) => {
     return { field: button, fieldWrapper };
 };
 
+const createA = (fd) => {
+    const button = document.createElement("a");
+    button.textContent = fd.Label || fd.Name;
+    button.classList.add("button");
+    button.href = fd.Href;
+    button.target = "_blank";
+
+    const fieldWrapper = createFieldWrapper(fd);
+    fieldWrapper.append(button);
+    return { field: button, fieldWrapper };
+};
+
 const createTextArea = (fd) => {
     const field = document.createElement("textarea");
     setCommonAttributes(field, fd);
@@ -231,6 +243,7 @@ const FIELD_CREATOR_FUNCTIONS = {
     toggle: createToggle,
     submit: createSubmit,
     js: createJs,
+    a: createA,
     confirmation: createConfirmation,
     fieldset: createFieldset,
     checkbox: createCheckbox,

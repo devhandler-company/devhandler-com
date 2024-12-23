@@ -31,10 +31,7 @@ export default function decorate(block) {
   topRow.appendChild(topRowLeft);
   topRow.appendChild(topRowRight);
 
-  titleBlock &&
-    topRowLeft.appendChild(
-      createTag("h4", { class: "quote__title" }, titleBlock.innerHTML)
-    );
+  titleBlock && topRowLeft.appendChild(createTag("div", { class: "quote__title h4" }, titleBlock.innerHTML));
 
   afterTitleBlock &&
     topRowRight.appendChild(

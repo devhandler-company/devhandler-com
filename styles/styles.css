@@ -2,6 +2,7 @@
 @import url(./common/headings.css);
 @import url(./common/special-colors.css);
 @import url(./common/buttons.css);
+@import url(./common/common.css);
 
 :root {
   /* colors */

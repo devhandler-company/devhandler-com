@@ -176,7 +176,7 @@
     transform: translateX(24px);
 }
 
-.form .blue-button button {
+.form .blue-button .button {
     border: 3px solid var(--color-blue);
     background: linear-gradient(to right, var(--color-blue) 50%, rgba(0, 0, 0, 0) 50%);
     background-size: 200% 100%;
@@ -185,13 +185,13 @@
     background-repeat: no-repeat;
 }
 
-.form .blue-button button:after {
+.form .blue-button .button:after {
     background-color: var(--color-blue);
     background: var(--color-blue);
     background-origin: border-box;
     background-repeat: no-repeat;
 }
-.form .blue-button button:hover {
+.form .blue-button .button:hover {
     background-position: left top;
 }
 

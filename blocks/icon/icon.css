@@ -1,0 +1,18 @@
+div.icon.block > .icon {
+    width: 24px;
+    height: 24px;
+    background-image: var(--icon-path);
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+div.icon.block.size-32 > .icon {
+    width: 32px;
+    height: 32px;
+}
+
+div.icon.block > .icon:hover {
+    background-image: var(--icon-hover-path);
+}

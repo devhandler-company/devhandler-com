@@ -37,6 +37,11 @@
     grid-template-columns: 0.4fr 0.6fr;
 }
 
+.section.desktop-grid.desktop-grid-25-25-25-25 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .section.row-gap-24 {
     column-gap: 24px;
 }

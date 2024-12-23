@@ -30,7 +30,9 @@ export default function decorate(block) {
     let blockId = getBlockIdDefinedByClassName(block);
 
     const classList = block.classList;
-    const blockStart = document.querySelector(`.block-group-start.${BLOCK_GROUP_ID_PREFIX}${blockId}`).parentNode;
+    const blockStart = block.parentNode.parentNode.querySelector(
+        `.block-group-start.${BLOCK_GROUP_ID_PREFIX}${blockId}`
+    ).parentNode;
     const blockEnd = block.parentNode;
     const newBlock = moveBloksIntoBlockGroup(blockStart, blockEnd);
 

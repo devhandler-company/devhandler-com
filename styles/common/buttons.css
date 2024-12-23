@@ -1,5 +1,6 @@
 .button a.button:any-link,
 .button a.button,
+a.button,
 button.button {
     font-size: 42px;
     font-family: var(--secondary-font-family);
@@ -31,6 +32,7 @@ button.button {
 
 .button a.button:any-link::after,
 .button a.button::after,
+a.button::after,
 button.button::after {
     content: "";
     position: absolute;
@@ -53,5 +55,6 @@ a.button:hover,
 a.button:focus,
 button.button:hover {
     background-position: left top;
+    text-decoration: none;
     cursor: pointer;
 }
