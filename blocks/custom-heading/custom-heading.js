@@ -2,6 +2,7 @@ import { createTag, getBlockProperties } from "../../scripts/utils.js";
 
 export default function decorate(block) {
     const properties = getBlockProperties(block);
+    console.log(properties);
     const newBlock = createTag(
         properties.tagName,
         {
@@ -9,6 +10,7 @@ export default function decorate(block) {
         },
         properties.content
     );
+
     block.after(newBlock);
     block.remove();
 }

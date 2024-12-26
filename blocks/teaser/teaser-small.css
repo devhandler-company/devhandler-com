@@ -4,8 +4,12 @@
     align-content: center;
 }
 
+.teaser.small .teaser__content{
+    margin-top: 4px;
+}
+
+
 .teaser.small .teaser__image img {
-    width: 88px;
     height: 88px;
 }
 

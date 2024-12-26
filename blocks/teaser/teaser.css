@@ -1,5 +1,5 @@
-@import './teaser-hero.css';
-@import './teaser-small.css';
+@import "./teaser-hero.css";
+@import "./teaser-small.css";
 
 .teaser .teaser__content {
     display: flex;
@@ -9,4 +9,28 @@
 
 .teaser.pretitle-hidden .teaser__pretitle {
     display: none;
+}
+
+.teaser .teaser__image {
+    font-size: 0;
+}
+
+.teaser.image-center .teaser__image {
+    text-align: center;
+}
+
+.teaser.image-right .teaser__image {
+    text-align: right;
+}
+
+.teaser.slim {
+    --button-border-color: transperent;
+    --button-background-color: var(--color-white);
+    --button-background-hover-color: var(--color-blue);
+    --button-text-color: var(--color-black-lighter);
+    --button-padding-left: 48px;
+    --button-padding-right: 48px;
+    --button-padding-top: 16px;
+    --button-padding-bottom: 16px;
+    --button-font-size: 32px;
 }

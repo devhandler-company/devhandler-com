@@ -51,12 +51,14 @@ const processManySteps = (form, navigation, stepCount) => {
     const nextButton = document.createElement("a");
     nextButton.classList.add("button");
     nextButton.innerText = "Next";
+    nextButton.tabIndex = 0;
 
     const backButton = document.createElement("a");
     backButton.classList.add("button");
     backButton.classList.add("color-gray");
     backButton.classList.add("hidden");
     backButton.innerText = "Back";
+    backButton.tabIndex = 0;
 
     navigation.append(nextButton);
     navigation.append(backButton);

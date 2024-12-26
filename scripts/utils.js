@@ -14,27 +14,27 @@ export function createTag(tag, attributes = {}, content) {
 
 
 export function modifyHeaders(block) {
-  block
-    .querySelectorAll(".section .default-content-wrapper > h2 > strong")
-    .forEach((element) => {
-      element.replaceWith(
-        createTag("span", { class: "text-color-blue" }, element.innerText)
-      );
-    });
-  block
-    .querySelectorAll(".section .default-content-wrapper > h2 > em")
-    .forEach((element) => {
-      element.replaceWith(
-        createTag("span", { class: "text-color-linear" }, element.innerText)
-      );
-    });
+  block.querySelectorAll("h2 > strong").forEach((element) => {
+      element.replaceWith(createTag("span", { class: "text-color-blue" }, element.innerText));
+  });
+  block.querySelectorAll("h2 > em").forEach((element) => {
+      element.replaceWith(createTag("span", { class: "text-color-linear" }, element.innerText));
+  });
   return block;
 }
 
 export const getBlockProperties = (block) => {
-    const propertiesMap = {};
+    let propertiesMap = {};
+    let contentHtml;
     [...block.children].forEach((row) => {
+        if (row.firstElementChild.textContent === "content") {
+            contentHtml = row.lastElementChild.innerHTML;
+        }
         propertiesMap[row.firstElementChild.textContent] = row.lastElementChild.textContent;
     });
+    if (propertiesMap.insertHtml === "true" && contentHtml) {
+        console.log(123);
+        propertiesMap.content = contentHtml;
+    }
     return propertiesMap;
 };

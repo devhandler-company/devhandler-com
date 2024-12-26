@@ -1,0 +1,12 @@
+.border {
+    border: var(--border-size) solid var(--color-aqamarine);
+    border-radius: var(--border-radius);
+}
+
+.padding-48 {
+    padding: 48px;
+}
+
+.fit-content {
+    width: fit-content;
+}
