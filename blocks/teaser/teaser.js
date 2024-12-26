@@ -15,54 +15,49 @@ function modifyText(block) {
 }
 
 export default function decorate(block) {
-  const blockContent = block.firstElementChild.firstElementChild;
+    const blockContent = block.firstElementChild.firstElementChild;
 
-  const imageBlock = blockContent.firstElementChild.querySelector("picture");
-  const pretitleBlock = blockContent.querySelector("h3");
-  const titleBlock = blockContent.querySelector("h2");
-  const descriptionBlock = blockContent.querySelector("h4");
-  const linkBlock = blockContent.querySelector("p a");
+    const imageBlock = blockContent.firstElementChild.querySelector("picture");
+    const pretitleBlock = blockContent.querySelector("h3");
+    const titleBlock = blockContent.querySelector("h2");
+    const descriptionBlock = blockContent.querySelector("h4");
+    const video = blockContent.querySelector("h6");
+    const linkBlock = blockContent.querySelector("p a");
 
-  let teaserImage;
+    let teaserImage;
+    let teaserVideo;
 
-  if (imageBlock) {
-    teaserImage = createTag("div", { class: "teaser__image" }, imageBlock);
-  }
+    if (block.classList.contains("video") && video) {
+        const videoTag = document.createElement("video");
+        videoTag.src = video.querySelector("a").href;
+        videoTag.playsinline = true;
+        videoTag.loop = true;
+        videoTag.autoplay = true;
+        videoTag.muted = true;
+        teaserVideo = createTag("div", { class: "teaser__video" }, videoTag);
+    } else if (imageBlock) {
+        teaserImage = createTag("div", { class: "teaser__image" }, imageBlock);
+    }
 
-  const teaserContent = createTag("div", { class: "teaser__content" });
+    const teaserContent = createTag("div", { class: "teaser__content" });
 
-  pretitleBlock &&
-    teaserContent.appendChild(
-      createTag("div", { class: "teaser__pretitle" }, pretitleBlock.innerHTML)
-    );
+    pretitleBlock &&
+        teaserContent.appendChild(createTag("div", { class: "teaser__pretitle" }, pretitleBlock.innerHTML));
 
-  titleBlock &&
-    teaserContent.appendChild(
-      createTag(
-        "div",
-        { class: "teaser__title" },
-        modifyText(titleBlock).innerHTML
-      )
-    );
+    titleBlock &&
+        teaserContent.appendChild(createTag("div", { class: "teaser__title" }, modifyText(titleBlock).innerHTML));
 
-  descriptionBlock &&
-    teaserContent.appendChild(
-      createTag(
-        "div",
-        { class: "teaser__description" },
-        descriptionBlock.innerHTML
-      )
-    );
+    descriptionBlock &&
+        teaserContent.appendChild(createTag("div", { class: "teaser__description" }, descriptionBlock.innerHTML));
 
-  if (linkBlock) {
-    const link = createTag("a", { class: "teaser__cta" }, linkBlock.innerText);
-    link.setAttribute("href", linkBlock.getAttribute("href"));
-    teaserContent.appendChild(
-      createTag("div", { class: "teaser__cta-container" }, link)
-    );
-  }
+    if (linkBlock) {
+        const link = createTag("a", { class: "teaser__cta button" }, linkBlock.innerText);
+        link.setAttribute("href", linkBlock.getAttribute("href"));
+        teaserContent.appendChild(createTag("div", { class: "teaser__cta-container" }, link));
+    }
 
-  block.innerHTML = "";
-  teaserImage && block.appendChild(teaserImage);
-  block.appendChild(teaserContent);
+    block.innerHTML = "";
+    teaserImage && block.appendChild(teaserImage);
+    teaserVideo && block.appendChild(teaserVideo);
+    block.appendChild(teaserContent);
 }

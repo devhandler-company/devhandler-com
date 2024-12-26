@@ -1,16 +1,21 @@
 import createField from "./form-fields.js";
+import { adjustFormToMultistep } from "./multistep.js";
 
-async function createForm(formHref, submitHref) {
+async function createForm(formHref, submitHref, block) {
     const { pathname } = new URL(formHref);
     const resp = await fetch(pathname);
     const json = await resp.json();
+    const isMultiStepForm = block.classList.contains("multistep");
 
     const form = document.createElement("form");
     form.dataset.action = submitHref;
 
     const fields = await Promise.all(json.data.map((fd) => createField(fd, form)));
     fields.forEach((field) => {
-        if (field) {
+        if (field.classList.contains("heading-wrapper") && field && isMultiStepForm) {
+            field.classList.add("multistep-heading");
+            block.parentElement.prepend(field);
+        } else if (field) {
             form.append(field);
         }
     });
@@ -23,9 +28,12 @@ async function createForm(formHref, submitHref) {
         });
     });
 
+    if (isMultiStepForm) {
+        adjustFormToMultistep(form);
+    }
+
     return form;
 }
-
 function generatePayload(form) {
     const payload = {};
 
@@ -48,7 +56,7 @@ async function handleSubmit(form) {
     if (form.getAttribute("data-submitting") === "true") return;
 
     const submit = form.querySelector('button[type="submit"]');
-
+    submit.classList.add("color-gray");
     try {
         form.setAttribute("data-submitting", "true");
         submit.disabled = true;
@@ -65,9 +73,24 @@ async function handleSubmit(form) {
             redirect: "follow",
         });
         if (response.ok) {
-            if (form.dataset.confirmation) {
-                window.location.href = form.dataset.confirmation;
-            }
+            const formContainer = form.parentElement.parentElement;
+            const thankYouMessageContainer = document.createElement("div");
+            thankYouMessageContainer.classList.add("thankyou-message-container");
+
+            const thankyouImage = document.createElement("img");
+            thankyouImage.src = "/icons/header-logo.svg";
+            thankyouImage.classList.add("thankyou-image");
+            thankyouImage.alt = "Devhandler logo";
+            thankYouMessageContainer.append(thankyouImage);
+
+            const thankYouMessage = document.createElement("span");
+            thankYouMessage.classList.add("thankyou-message");
+            thankYouMessage.classList.add("h2");
+            thankYouMessage.textContent =
+                "Thank you for filling out the form! Our team is processing your request and will get in touch with you shortly";
+            thankYouMessageContainer.append(thankYouMessage);
+
+            formContainer.replaceChildren(thankYouMessageContainer);
         } else {
             const error = await response.text();
             throw new Error(error);
@@ -87,7 +110,7 @@ export default async function decorate(block) {
     const submitLink = links.find((link) => link !== formLink);
     if (!formLink || !submitLink) return;
 
-    const form = await createForm(formLink, submitLink);
+    const form = await createForm(formLink, submitLink, block);
 
     block.replaceChildren(form);
     form.addEventListener("submit", (e) => {

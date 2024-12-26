@@ -1,4 +1,5 @@
 @import './teaser-hero.css';
+@import './teaser-small.css';
 
 .teaser .teaser__content {
     display: flex;

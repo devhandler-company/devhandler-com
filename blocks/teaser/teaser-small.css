@@ -1,0 +1,16 @@
+.teaser.small {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.teaser.small .teaser__image img {
+    width: 88px;
+    height: 88px;
+}
+
+.teaser.small .teaser__title {
+    font-size: 28px;
+    line-height: 26px;
+    font-weight: 500;
+}

@@ -5,11 +5,13 @@
     column-gap: 24px;
 }
 
-.section {
-    position: relative;
+.section.row-grid {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+}
+
+.section.row-grid > * {
+    flex: 1;
 }
 
 .section.desktop-grid.desktop-grid-50-50 {
@@ -52,6 +54,10 @@ main > div.section {
     justify-content: center;
     margin: auto;
     margin-top: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 main > div.section.full-width {
@@ -93,6 +99,10 @@ main > div.section.negative-margin-top-128 {
     margin-top: -128px;
 }
 
+main > div.section.margin-top-0 {
+    margin-top: 0;
+}
+
 /* Colors */
 main > div.section.background-white {
     background-color: white;
@@ -100,6 +110,58 @@ main > div.section.background-white {
 }
 
 /* Paddings */
-main > div.section.padding-top-92 {
+main > div.section.padding-top-16, .padding-top-16 {
+    padding-top: 16px;
+}
+
+main > div.section.padding-top-24, .padding-top-24 {
+    padding-top: 24px;
+}
+
+main > div.section.padding-top-32, .padding-top-32 {
+    padding-top: 32px;
+}
+
+main > div.section.padding-top-40, .padding-top-40 {
+    padding-top: 40px;
+}
+
+main > div.section.padding-top-48, .padding-top-48 {
+    padding-top: 48px;
+}
+
+main > div.section.padding-top-56, .padding-top-56 {
+    padding-top: 56px;
+}
+
+main > div.section.padding-top-64, .padding-top-64 {
+    padding-top: 64px;
+}
+
+main > div.section.padding-top-72, .padding-top-72 {
+    padding-top: 72px;
+}
+
+main > div.section.padding-top-80, .padding-top-80 {
+    padding-top: 80px;
+}
+
+main > div.section.padding-top-88, .padding-top-88 {
+    padding-top: 88px;
+}
+
+main > div.section.padding-top-92, .padding-top-92 {
     padding-top: 92px;
+}
+
+main > div.section.padding-top-96, .padding-top-96 {
+    padding-top: 96px;
+}
+
+main > div.section.padding-bottom-24, .padding-bottom-24 {
+    padding-bottom: 24px;
+}
+
+main > div.section.padding-bottom-32, .padding-bottom-32 {
+    padding-bottom: 32px;
 }

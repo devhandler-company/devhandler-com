@@ -7,6 +7,10 @@ function createFieldWrapper(fd) {
 
     fieldWrapper.dataset.fieldset = fd.Fieldset;
 
+    if (fd.Step) {
+        fieldWrapper.dataset.step = fd.Step;
+    }
+
     return fieldWrapper;
 }
 
@@ -197,6 +201,18 @@ const createFieldset = (fd) => {
     return { field, fieldWrapper };
 };
 
+const createStep = (fd) => {
+    const field = document.createElement("div");
+    setCommonAttributes(field, fd);
+
+    if (fd.Name) {
+        field.classList.add("step");
+        field.setAttribute("data-step-number", fd.Name);
+    }
+
+    return { field, fieldWrapper: field };
+};
+
 const createToggle = (fd) => {
     const { field, fieldWrapper } = createInput(fd);
     field.type = "checkbox";
@@ -246,6 +262,7 @@ const FIELD_CREATOR_FUNCTIONS = {
     a: createA,
     confirmation: createConfirmation,
     fieldset: createFieldset,
+    step: createStep,
     checkbox: createCheckbox,
     radio: createRadio,
 };

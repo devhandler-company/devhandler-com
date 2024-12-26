@@ -30,6 +30,12 @@
     margin-top: 24px;
 }
 
+.form .steps .step {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .form form > .selection-wrapper + .selection-wrapper,
 .form form fieldset .selection-wrapper + .selection-wrapper {
     margin-top: 0.25em;
@@ -229,4 +235,46 @@
     color: #fff;
     text-align: center;
     line-height: 18px;
+}
+
+.form.multistep form {
+    display: grid;
+    grid-template-columns: 0.11fr 0.6fr 0.29fr;
+    column-gap: 48px;
+}
+
+.form.multistep .steps-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form.multistep .button {
+    margin: unset;
+    line-height: 32px;
+}
+
+.thankyou-message-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.thankyou-message {
+    text-align: center;
+}
+
+.thankyou-image {
+    height: 88px;
+    margin-bottom: 48px;
+}
+
+.multistep-heading {
+    margin-bottom: 24px;
+}
+
+.step-counter {
+    font-size: 32px;
+    line-height: 26px;
+    display: block;
 }
