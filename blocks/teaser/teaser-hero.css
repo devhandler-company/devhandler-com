@@ -18,6 +18,10 @@
     object-fit: cover;
 }
 
+.teaser.hero .teaser__video {
+    font-size: 0;
+}
+
 .teaser.hero .teaser__content {
     position: absolute;
     top: 0;
