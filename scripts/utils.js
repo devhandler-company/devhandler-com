@@ -33,7 +33,6 @@ export const getBlockProperties = (block) => {
         propertiesMap[row.firstElementChild.textContent] = row.lastElementChild.textContent;
     });
     if (propertiesMap.insertHtml === "true" && contentHtml) {
-        console.log(123);
         propertiesMap.content = contentHtml;
     }
     return propertiesMap;

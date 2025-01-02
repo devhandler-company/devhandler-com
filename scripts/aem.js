@@ -577,6 +577,11 @@ async function loadBlock(block) {
             );
             if (mod.default) {
               await mod.default(block);
+              block.classList.forEach((className) => {
+                  if (className.startsWith("id-")) {
+                      block.id = className.replace("id-", "");
+                  }
+              });
             }
           } catch (error) {
             // eslint-disable-next-line no-console

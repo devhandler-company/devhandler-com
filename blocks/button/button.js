@@ -7,12 +7,22 @@ export default function decorate(block) {
   }
 
   const href = link.getAttribute("href");
-
-  if (!href || !href.startsWith("#")) {
-    return;
+  if (href && href.startsWith("#")) {
+      link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const scrollToElementId = href.replace("#", "");
+          const scrollToElement = document.getElementById(scrollToElementId);
+          if (!scrollToElement) {
+              return;
+          }
+          scrollToElement.scrollIntoView({
+              behavior: "smooth",
+          });
+      });
+      return;
   }
 
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-  });
+  if (!href || !href.startsWith("#")) {
+      return;
+  }
 }
