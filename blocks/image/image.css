@@ -2,13 +2,16 @@
     height: 100%;
 }
 
+.image-wrapper > .image {
+    font-size: 0;
+}
+
 .image.full-height {
     height: 100%;
 }
 
 .image.full-height img {
     height: 100%;
-    object-fit: cover;
 }
 
 .image.position-left img {
@@ -17,4 +20,10 @@
 
 .image img {
     border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.image.height-s img, .image.height-268 img {
+    height: 268px;
+    width: 100%;
 }

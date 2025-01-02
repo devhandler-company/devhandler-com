@@ -5,6 +5,29 @@
     column-gap: 24px;
 }
 
+.section.border-box {
+    box-sizing: border-box;
+}
+
+@media (width >= 1025px) and (width <= 1248px) {
+    .section.border-box {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
+
+.section.border {
+    border: var(--border-size) solid var(--color-aqamarine);
+    border-radius: var(--border-radius);
+}
+
+.section.default-border-padding {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
 .section.row-grid {
     display: flex;
     flex-direction: row;
@@ -206,4 +229,12 @@ main > div.section.padding-bottom-32, .padding-bottom-32 {
 
 main > div.section.padding-bottom-48, .padding-bottom-48 {
     padding-bottom: 48px;
+}
+
+.default-padding {
+    padding: 24px;
+}
+
+.padding-left-64 {
+    padding-left: 64px;
 }

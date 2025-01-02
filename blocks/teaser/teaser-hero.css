@@ -31,13 +31,13 @@
 }
 
 .teaser.hero .teaser__title {
-    font-size: 48px;
+    font-size: var(--font-size-h1);
     font-family: var(--secondary-font-family);
 }
 
 .teaser.hero .teaser__content .teaser__description {
-    font-size: 32px;
-    line-height: 26px;
+    font-size: var(--font-size-h3);
+    line-height: normal;
     font-family: var(--primary-font-family);
     letter-spacing: 0;
 }
@@ -69,7 +69,7 @@
 }
 
 .teaser.hero .teaser__cta {
-    font-size: 42px;
+    font-size: var(--font-size-h2);
     padding: 24px 64px;
     backdrop-filter: blur(20px);
 }

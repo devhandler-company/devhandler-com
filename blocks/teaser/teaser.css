@@ -1,10 +1,45 @@
 @import "./teaser-hero.css";
 @import "./teaser-small.css";
 
+.teaser {
+    --teaser-pretitle-font-size: var(--body-font-size-m);
+    --teaser-pretitle-font-family: var(--primary-font-family);
+    --teaser-pretitle-line-height: var(--line-height-normal);
+
+    --teaser-title-font-size: var(--font-size-h2);
+    --teaser-title-font-family: var(--secondary-font-family);
+    --teaser-title-line-height: var(--line-height-normal);
+
+    --teaser-description-font-size: var(--font-size-h4);
+    --teaser-description-font-family: var(--primary-font-family);
+    --teaser-description-line-height: var(--line-height-normal);
+
+    --teaser-content-gap: 0px;
+}
+
+.teaser .teaser__pretitle {
+    font-size: var(--teaser-pretitle-font-size);
+    font-family: var(--teaser-pretitle-font-family);
+    line-height: var(--teaser-pretitle-line-height);;
+}
+
+.teaser .teaser__title {
+    font-size: var(--teaser-title-font-size);
+    font-family: var(--teaser-title-font-family);
+    line-height: var(--teaser-title-line-height);;
+}
+
+.teaser .teaser__description {
+    font-size: var(--teaser-description-font-size);
+    font-family: var(--teaser-description-font-family);
+    line-height: var(--teaser-description-line-height);;
+}
+
 .teaser .teaser__content {
     display: flex;
     flex-direction: column;
     position: relative;
+    gap: var(--teaser-content-gap);
 }
 
 .teaser.pretitle-hidden .teaser__pretitle {
@@ -22,6 +57,18 @@
 .teaser.image-right .teaser__image {
     text-align: right;
 }
+
+.teaser.center-content {
+    text-align: center;
+}
+
+.teaser.small-text {
+    --teaser-description-font-size: var(--font-size-h2);
+    --teaser-description-font-family: var(--secondary-font-family);
+    --teaser-content-gap: 16px;
+}
+
+
 
 .teaser.slim {
     --button-border-color: transperent;

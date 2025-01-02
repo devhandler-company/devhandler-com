@@ -1,3 +1,5 @@
+@import "./block-group-colors.css";
+
 .block-group {
     margin: unset;
     display: flex;
@@ -31,4 +33,17 @@
 
 .block-group.gap-16 {
     gap: 16px;
+}
+
+.block-group.full-height {
+    height: 100%;
+}
+
+.block-group.center-content {
+    align-items: center;
+    justify-content: center;
+}
+
+.block-group.border-radius {
+    border-radius: var(--border-radius);
 }
