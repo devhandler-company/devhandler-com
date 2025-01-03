@@ -1,1 +1,6 @@
 /* stylelint-disable no-empty-source */
+main div.section.fragment-container {
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+}

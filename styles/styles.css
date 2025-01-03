@@ -51,6 +51,9 @@
   --color-black-lighter: #222222;
   --color-white: #fff;
   --color-dark: #505050;
+  
+
+  --color-bg-gray-linear: linear-gradient(to right, var(--color-gray) -50%, var(--color-black-lighter));
 
   /* Text Colors */
   --primary-text-color: var(--color-white);

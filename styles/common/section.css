@@ -1,3 +1,7 @@
+.section {
+    --section-background-image: url('');
+    --section-background-height: url('');
+}
 .section.desktop-grid {
     display: grid;
     grid-template-rows: 1fr;
@@ -15,6 +19,7 @@
         margin-right: 24px;
     }
 }
+
 
 .section.border {
     border: var(--border-size) solid var(--color-aqamarine);
@@ -40,6 +45,41 @@
 .section.desktop-grid.desktop-grid-50-50 {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+}
+
+.section.desktop-grid.desktop-grid-10-90 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .1fr .9fr;
+}
+
+.section.desktop-grid.desktop-grid-90-10 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .9fr .1fr;
+}
+
+.section.desktop-grid.desktop-grid-8-92 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .08fr .92fr;
+}
+
+.section.desktop-grid.desktop-grid-92-8 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .92fr .08fr;
+}
+
+.section.desktop-grid.desktop-grid-15-85 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .15fr .85fr;
+}
+
+.section.desktop-grid.desktop-grid-85-15 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .85fr .15fr;
+}
+
+.section.desktop-grid.desktop-grid-8-52-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .08fr .52fr .4fr;
 }
 
 .section.desktop-grid.desktop-grid-2-1 {
@@ -70,11 +110,10 @@
 .section.row-gap-24 {
     column-gap: 24px;
 }
-main > div.section {
+main div.section {
     max-width: 1200px;
     padding-left: 24px;
     padding-right: 24px;
-    justify-content: center;
     margin: auto;
     margin-top: 24px;
     position: relative;
@@ -83,7 +122,7 @@ main > div.section {
     gap: 24px;
 }
 
-main > div.section.full-width {
+main div.section.full-width {
     max-width: unset;
     margin-left: 0;
     margin-right: 0;
@@ -91,143 +130,147 @@ main > div.section.full-width {
     padding-right: 0;
 }
 
-main > div.section.full-width.full-width-with-side-paddings {
+main div.section.full-width.full-width-with-side-paddings {
     padding-left: calc((100vw - 1200px - 24px) / 2);
     padding-right: calc((100vw - 1200px - 24px) / 2);
 }
 
 @media (width >= 1025px) and (width <= 1248px) {
-    main > div.section.full-width.full-width-with-side-paddings {
+    main div.section.full-width.full-width-with-side-paddings {
         padding-left: 24px;
         padding-right: 24px;
     }
 }
 
-main > div.section.background-container img {
+main div.section.background-container img {
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-main > div.section.zindex-1 {
+main div.section.zindex-1 {
     z-index: 1;
 }
 
+main div.section.zindex-negative-1 {
+    z-index: -1;
+}
+
 /* Negative margins */
-main > div.section.negative-margin-top-64 {
+main div.section.negative-margin-top-64 {
     margin-top: -64px;
 }
 
-main > div.section.negative-margin-top-102, .negative-margin-top-102 {
+main div.section.negative-margin-top-102, .negative-margin-top-102 {
     margin-top: -102px;
 }
 
-main > div.section.negative-margin-top-128, .negative-margin-top-128 {
+main div.section.negative-margin-top-128, .negative-margin-top-128 {
     margin-top: -128px;
 }
 
-main > div.section.negative-margin-bottom-60, .negative-margin-bottom-60 {
+main div.section.negative-margin-bottom-60, .negative-margin-bottom-60 {
     margin-bottom: -60px;
 }
 
-main > div.section.negative-margin-top-48, .negative-margin-top-48 {
+main div.section.negative-margin-top-48, .negative-margin-top-48 {
     margin-top: -48px;
 }
 
-main > div.section.negative-margin-top-24, .negative-margin-top-24 {
+main div.section.negative-margin-top-24, .negative-margin-top-24 {
     margin-top: -24px;
 }
 
-main > div.section.negative-margin-left-48, .negative-margin-left-48 {
+main div.section.negative-margin-left-48, .negative-margin-left-48 {
     margin-left: -48px;
 }
 
 
-main > div.section.margin-top-0 {
+main div.section.margin-top-0 {
     margin-top: 0;
 }
 
 /* Colors */
-main > div.section.background-white {
+main div.section.background-white {
     background-color: white;
     color: black;
 }
 
-main > div.section.background-gradient {
+main div.section.background-gradient {
     background: linear-gradient(to right, var(--color-aqamarine) 70%, var(--color-blue));
     color: black;
 }
 
 /* Paddings */
-main > div.section.padding-top-16, .padding-top-16 {
+main div.section.padding-top-16, .padding-top-16 {
     padding-top: 16px;
 }
 
-main > div.section.padding-top-24, .padding-top-24 {
+main div.section.padding-top-24, .padding-top-24 {
     padding-top: 24px;
 }
 
-main > div.section.padding-top-32, .padding-top-32 {
+main div.section.padding-top-32, .padding-top-32 {
     padding-top: 32px;
 }
 
-main > div.section.padding-top-40, .padding-top-40 {
+main div.section.padding-top-40, .padding-top-40 {
     padding-top: 40px;
 }
 
-main > div.section.padding-top-48, .padding-top-48 {
+main div.section.padding-top-48, .padding-top-48 {
     padding-top: 48px;
 }
 
-main > div.section.padding-top-56, .padding-top-56 {
+main div.section.padding-top-56, .padding-top-56 {
     padding-top: 56px;
 }
 
-main > div.section.padding-top-64, .padding-top-64 {
+main div.section.padding-top-64, .padding-top-64 {
     padding-top: 64px;
 }
 
-main > div.section.padding-top-72, .padding-top-72 {
+main div.section.padding-top-72, .padding-top-72 {
     padding-top: 72px;
 }
 
-main > div.section.padding-top-80, .padding-top-80 {
+main div.section.padding-top-80, .padding-top-80 {
     padding-top: 80px;
 }
 
-main > div.section.padding-top-88, .padding-top-88 {
+main div.section.padding-top-88, .padding-top-88 {
     padding-top: 88px;
 }
 
-main > div.section.padding-top-92, .padding-top-92 {
+main div.section.padding-top-92, .padding-top-92 {
     padding-top: 92px;
 }
 
-main > div.section.padding-top-96, .padding-top-96 {
+main div.section.padding-top-96, .padding-top-96 {
     padding-top: 96px;
 }
 
-main > div.section.padding-bottom-8, .padding-bottom-8 {
+main div.section.padding-bottom-8, .padding-bottom-8 {
     padding-bottom: 8px;
 }
 
-main > div.section.padding-bottom-12, .padding-bottom-12 {
+main div.section.padding-bottom-12, .padding-bottom-12 {
     padding-bottom: 12px;
 }
 
-main > div.section.padding-bottom-16, .padding-bottom-16 {
+main div.section.padding-bottom-16, .padding-bottom-16 {
     padding-bottom: 16px;
 }
 
-main > div.section.padding-bottom-24, .padding-bottom-24 {
+main div.section.padding-bottom-24, .padding-bottom-24 {
     padding-bottom: 24px;
 }
 
-main > div.section.padding-bottom-32, .padding-bottom-32 {
+main div.section.padding-bottom-32, .padding-bottom-32 {
     padding-bottom: 32px;
 }
 
-main > div.section.padding-bottom-48, .padding-bottom-48 {
+main div.section.padding-bottom-48, .padding-bottom-48 {
     padding-bottom: 48px;
 }
 
@@ -237,4 +280,17 @@ main > div.section.padding-bottom-48, .padding-bottom-48 {
 
 .padding-left-64 {
     padding-left: 64px;
+}
+
+.bg:after {
+    content: " ";
+    position: absolute;
+    background: var(--section-background-image);
+    height: var(--section-background-height);
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
 }

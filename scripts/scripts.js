@@ -74,6 +74,9 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   modifyHeaders(main);
+  document.querySelectorAll(".section.bg").forEach((section) => {
+      section.style = `--section-background-image: url(${section.dataset.background}); --section-background-height: ${section.dataset.backgroundHeight};`;
+  });
 }
 
 /**

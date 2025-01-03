@@ -1,3 +1,6 @@
+@import url(./margins/index.css);
+@import url(./paddings/index.css);
+
 .color-white {
     color: var(--color-white);
 }
@@ -8,4 +11,17 @@
 
 .hidden {
     display: none !important;
+}
+
+.bg-gray-linear {
+    background: var(--color-bg-gray-linear);
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.height-auto {
+    height: auto;
 }

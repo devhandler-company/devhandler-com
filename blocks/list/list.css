@@ -14,6 +14,21 @@
     margin-bottom: 0;
 }
 
+.list ol {
+    counter-reset: item;
+}
+.list ol li::before {
+    display: inline-block;
+  content: counter(item);
+  counter-increment: item;
+  color: var(--list-dot-color);
+  font-size: var(--font-size-h2);
+  font-family: var(--secondary-font-family);
+  margin-right: 24px;
+  line-height: var(--line-height-normal);
+  width: 32px;
+}
+
 .list ul > li,
 .list ol > li {
     display: inline-grid;

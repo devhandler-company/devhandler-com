@@ -7,6 +7,10 @@
     gap: 24px;
 }
 
+.display-grid {
+    display: grid;
+}
+
 .block-group.align-items-end:not(.row) {
     align-items: end;
 }
@@ -39,11 +43,29 @@
     height: 100%;
 }
 
-.block-group.center-content {
+.center-content {
     align-items: center;
     justify-content: center;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .block-group.border-radius {
     border-radius: var(--border-radius);
+}
+
+.border {
+    border: var(--border-size) solid var(--color-aqamarine);
+    border-radius: var(--border-radius);
+}
+
+.border-blue {
+    border-color: var(--color-blue);
+}
+
+.no-left-radius {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

@@ -3,9 +3,9 @@
     position: relative;   
 }
 
-.stick-right::after, .stick-left::after {
+.stick-right::after, .stick-left::before {
     content: " ";
-    background-color: gray;
+    background-color: var(--color-aqamarine);
     height: 100%;
     position: absolute;
     z-index: -1;
@@ -17,15 +17,15 @@
     border-radius: 20px;
 }
 
-.stick-bg-cyan::after {
-    background-color: var(--color-aqamarine);
+.stick-bg-gray::after, .stick-bg-gray::before {
+    background-color: var(--color-gray);
 }
 
-.stick-bg-blue::after {
+.stick-bg-blue::after, .stick-bg-blue::before {
     background-color: var(--color-blue);
 }
 
-.stick-bg-white::after {
+.stick-bg-white::after, .stick-bg-white::before {
     background-color: var(--color-white);
 }
 
@@ -34,7 +34,7 @@
     border-bottom-right-radius: 0;
 }
 
-.stick-left::after {
+.stick-left::before {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -47,15 +47,35 @@
     margin-right: calc((100% / 2 * 5 + 24px / 5 * 2 - 100vw) / 2 + 15px);
 }
  
-.desktop-grid-2-1 .stick-left::after {
+.desktop-grid-2-1 .stick-left::before {
     margin-left: calc((100% / 2 * 3 + 24px - 100vw) / 2 + 8px);
+}
+
+.desktop-grid-8-52-40 .stick-left::before {
+    margin-left: calc((100% / 8 * 100 + 24px * 2 - 100vw) / 2 + 8px);
+}
+
+.desktop-grid-8-92 .stick-left::before {
+    margin-left: calc((100% / 8 * 100 + 24px - 100vw) / 2 + 7px);
+}
+
+.desktop-grid-8-92 .stick-right::after {
+    margin-right: calc((100% / 92 * 100 + 24px - 100vw) / 2 + 7px);
+}
+
+.desktop-grid-92-8 .stick-left::before {
+    margin-left: calc((100% / 92 * 100 + 24px - 100vw) / 2 + 7px);
+}
+
+.desktop-grid-92-8 .stick-right::after {
+    margin-right: calc((100% / 8 * 100 + 24px - 100vw) / 2 + 7px);
 }
 
 .desktop-grid-2-1 .stick-right::after {
     margin-right: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
 }
 
-.desktop-grid-1-2 .stick-left::after {
+.desktop-grid-1-2 .stick-left::before {
     margin-left: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
 }
 
@@ -63,10 +83,32 @@
     margin-right: calc(((100% / 2 * 3 + 24px) - 100vw) / 2 + 8px);
 }
 
-.desktop-grid-50-50 .stick-left::after {
+.desktop-grid-50-50 .stick-left::before {
     margin-left: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
 }
 
 .desktop-grid-50-50 .stick-right::after {
-    margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
+    right: calc(100% - 24px);
+}
+
+.section.stick-right::after {
+    left: 100%;
+    margin-right: calc((100% - 100vw) / 2 + 8px);
+}
+
+.section.stick-right.stick-right-no-space::after {
+    left: calc(100% - 24px);
+}
+
+.section.stick-left::before {
+    right: 100%;
+    margin-left: calc((100% - 100vw) / 2 + 7px);
+}
+
+.section.stick-left.stick-left-no-space::before {
+    right: calc(100% - 24px);
+}
+
+.stick-left-no-borders::before, .stick-right-no-borders::after {
+    border-radius: 0;
 }
