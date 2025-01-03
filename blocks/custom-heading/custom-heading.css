@@ -3,6 +3,20 @@
     border-radius: var(--border-radius);
 }
 
+.border-blue {
+    border-color: var(--color-blue);
+}
+
+.no-left-radius {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.no-right-radius {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .padding-48 {
     padding: 48px;
 }
