@@ -6,7 +6,7 @@
 }
 
 .color-black {
-    color: var(--color-black);
+    color: var(--color-black-lighter);
 }
 
 .hidden {
@@ -24,4 +24,12 @@
 
 .height-auto {
     height: auto;
+}
+
+.text-bottom {
+    justify-content: end;
+}
+
+.text-center {
+    text-align: center;
 }

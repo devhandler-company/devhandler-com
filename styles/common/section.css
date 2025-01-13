@@ -21,9 +21,21 @@
 }
 
 
-.section.border {
+.border {
     border: var(--border-size) solid var(--color-aqamarine);
     border-radius: var(--border-radius);
+}
+
+.border-blue {
+    border-color: var(--color-blue);
+}
+
+.border-white {
+    border-color: var(--color-white);
+}
+
+.border-cyan {
+    border-color: var(--color-aqamarine);
 }
 
 .section.default-border-padding {
@@ -80,6 +92,16 @@
 .section.desktop-grid.desktop-grid-8-52-40 {
     grid-template-rows: 1fr;
     grid-template-columns: .08fr .52fr .4fr;
+}
+
+.section.desktop-grid.desktop-grid-20-40-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 4fr 4fr;
+}
+
+.section.desktop-grid.desktop-grid-40-40-20 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 4fr 4fr;
 }
 
 .section.desktop-grid.desktop-grid-2-1 {
@@ -276,6 +298,21 @@ main div.section.padding-bottom-48, .padding-bottom-48 {
 
 .default-padding {
     padding: 24px;
+}
+
+.padding-sides-24 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.padding-sides-32 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.padding-sides-48 {
+    padding-left: 48px;
+    padding-right: 48px;
 }
 
 .padding-left-64 {

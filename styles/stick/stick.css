@@ -46,6 +46,10 @@
 .desktop-grid-60-40 .stick-right::after {
     margin-right: calc((100% / 2 * 5 + 24px / 5 * 2 - 100vw) / 2 + 15px);
 }
+
+.desktop-grid-20-40-40 .stick-left::before {
+    margin-left: calc((100% / 2 * 10 + 24px / 5 * 10 - 100vw) / 2 + 15px);
+}
  
 .desktop-grid-2-1 .stick-left::before {
     margin-left: calc((100% / 2 * 3 + 24px - 100vw) / 2 + 8px);

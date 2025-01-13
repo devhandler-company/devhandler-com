@@ -3,7 +3,7 @@
 @import url(./common/special-colors.css);
 @import url(./common/buttons.css);
 @import url(./common/common.css);
-@import url(./stick/stick.css);
+@import "./stick/stick.css";
 
 :root {
   /* colors */
@@ -97,8 +97,8 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin: 0;
+  padding: 0;
 }
 
 code,

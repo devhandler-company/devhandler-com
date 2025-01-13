@@ -1,3 +1,7 @@
+.image-wrapper .image {
+    position: relative;
+} 
+
 .image-wrapper:has(.image.full-height) {
     height: 100%;
 }
@@ -26,4 +30,35 @@
 .image.height-s img, .image.height-268 img {
     height: 268px;
     width: 100%;
+}
+
+.image.ratio-1-1 img {
+    aspect-ratio: 1 / 1;
+}
+
+.image.ratio-2-3 img {
+    aspect-ratio: 2 / 3;
+}
+
+.image.ratio-3-2 img {
+    aspect-ratio: 3 / 2;
+}
+
+.image-icons {
+    position: absolute;
+    display: inline-flex;
+    right: 24px;
+    bottom: 24px;
+    gap: 12px;
+    z-index: 2;
+}
+
+.image-icon {
+    height: 24px;
+    width: 24px;
+    background-image: var(--image-icon-path);
+}
+
+.image-icon:hover {
+    background-image: var(--image-icon-hover-path);
 }
