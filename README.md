@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--devhandler-com--devhandler-company.aem.page/
-- Live: https://main--devhandler-com--devhandler-company.aem.live/
+- Preview: https://temp--devhandler-com--devhandler-company.aem.page/
+- Live: https://temp--devhandler-com--devhandler-company.aem.live/
 
 ## Documentation
 
