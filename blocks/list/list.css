@@ -3,6 +3,11 @@
     --list-dot-color: var(--color-aqamarine);
 }
 
+.list.fit-content-center {
+    width: fit-content;
+    margin: auto;
+}
+
 .list ul,
 .list ol {
     list-style-type: none;
