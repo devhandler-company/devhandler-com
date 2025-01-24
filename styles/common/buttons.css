@@ -11,6 +11,41 @@
     --button-padding-bottom: 24px;
 }
 
+.button p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 0;
+}
+
+.button.tile {
+    --button-text-color: var(--color-black-lighter);
+    --button-text-color-hover: var(--button-text-color);
+    --button-background-color: var(--color-white);
+    --button-border-color: transperent;
+    --button-font-size: var(--font-size-h4);
+    --button-padding-left: 40px;
+    --button-padding-right: 40px;
+    --button-padding-top: 16px;
+    --button-padding-bottom: 16px;
+}
+
+.button.button-bg-blue {
+    --button-background-hover-color: var(--color-blue);
+}
+
+.button.to-left .button {
+    background: linear-gradient(to right, var(--button-background-color) 50%, var(--button-background-hover-color) 50%);
+    background-size: 200% 200%;
+    background-position: left bottom;
+}
+
+.button.to-left .button:after {
+    right: 0;
+    left: unset;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .color-gray {
     --button-background-hover-color: var(--color-gray);
     --button-border-color: var(--color-gray);
@@ -73,4 +108,13 @@ button.button:focus {
     text-decoration: none;
     cursor: pointer;
 }
+
+.to-left a.button:hover,
+.to-left a.button:focus,
+.to-left button.button:hover,
+.to-left button.button:focus {
+    color: var(--button-text-hover);
+    background-position: right top;
+}
+
 
