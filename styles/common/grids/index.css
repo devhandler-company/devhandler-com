@@ -88,3 +88,12 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+@media (max-width: 1024px) {
+    .section.desktop-grid.mobile-grid, .section.mobile-grid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        column-gap: 24px;
+    }
+}
