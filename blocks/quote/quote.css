@@ -60,3 +60,18 @@
     white-space: nowrap;
 }
 
+@media (max-width: 1024px) {
+    .quote .quote__content-top {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .quote__content-top-left {
+        flex-direction: column;
+    }
+
+    .quote__content-top-right {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
