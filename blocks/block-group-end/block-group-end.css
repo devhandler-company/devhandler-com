@@ -1,7 +1,6 @@
 @import "./block-group-colors.css";
 
 .block-group {
-    margin: unset;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -46,4 +45,8 @@
 .center-content {
     align-items: center;
     justify-content: center;
+}
+
+.block-group.column-reverse {
+    flex-direction: column-reverse;
 }

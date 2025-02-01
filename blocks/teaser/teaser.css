@@ -1,5 +1,4 @@
 @import "./teaser-hero.css";
-@import "./teaser-small.css";
 
 .teaser {
     --teaser-pretitle-font-size: var(--body-font-size-m);

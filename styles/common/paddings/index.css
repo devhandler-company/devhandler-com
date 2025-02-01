@@ -1,0 +1,125 @@
+/* Paddings */
+main div.section.padding-top-16, .padding-top-16 {
+    padding-top: 16px;
+}
+
+main div.section.padding-top-24, .padding-top-24 {
+    padding-top: 24px;
+}
+
+main div.section.padding-top-32, .padding-top-32 {
+    padding-top: 32px;
+}
+
+main div.section.padding-top-40, .padding-top-40 {
+    padding-top: 40px;
+}
+
+main div.section.padding-top-48, .padding-top-48 {
+    padding-top: 48px;
+}
+
+main div.section.padding-top-56, .padding-top-56 {
+    padding-top: 56px;
+}
+
+main div.section.padding-top-64, .padding-top-64 {
+    padding-top: 64px;
+}
+
+main div.section.padding-top-72, .padding-top-72 {
+    padding-top: 72px;
+}
+
+main div.section.padding-top-80, .padding-top-80 {
+    padding-top: 80px;
+}
+
+main div.section.padding-top-88, .padding-top-88 {
+    padding-top: 88px;
+}
+
+main div.section.padding-top-92, .padding-top-92 {
+    padding-top: 92px;
+}
+
+main div.section.padding-top-96, .padding-top-96 {
+    padding-top: 96px;
+}
+
+main div.section.padding-bottom-8, .padding-bottom-8 {
+    padding-bottom: 8px;
+}
+
+main div.section.padding-bottom-12, .padding-bottom-12 {
+    padding-bottom: 12px;
+}
+
+main div.section.padding-bottom-16, .padding-bottom-16 {
+    padding-bottom: 16px;
+}
+
+main div.section.padding-bottom-24, .padding-bottom-24 {
+    padding-bottom: 24px;
+}
+
+main div.section.padding-bottom-32, .padding-bottom-32 {
+    padding-bottom: 32px;
+}
+
+main div.section.padding-bottom-48, .padding-bottom-48 {
+    padding-bottom: 48px;
+}
+
+.default-padding {
+    padding: 24px;
+}
+
+.padding-sides-24 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.padding-sides-32 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.padding-sides-48 {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.padding-left-64 {
+    padding-left: 64px;
+}
+
+.padding-24 {
+    padding: 24px;
+}
+
+.padding-32 {
+    padding: 32px;
+}
+
+.padding-48 {
+    padding: 48px;
+}
+
+.padding-64 {
+    padding: 64px;
+}
+
+@media (max-width: 1024px) {
+    main div.section.mobile-padding-24, .mobile-padding-24 {
+        padding: 24px;
+    }
+
+    main div.section.mobile-padding-32, .mobile-padding-32 {
+        padding: 32px;
+    }
+
+    main div.section.mobile-padding-right-0, .mobile-padding-right-0 {
+        padding-right: 0;
+    }
+}

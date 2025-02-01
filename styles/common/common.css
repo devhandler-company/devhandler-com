@@ -1,5 +1,6 @@
 @import url(./margins/index.css);
 @import url(./paddings/index.css);
+@import url(./grids/index.css);
 
 .color-white {
     color: var(--color-white);

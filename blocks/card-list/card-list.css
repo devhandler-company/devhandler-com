@@ -1,0 +1,74 @@
+.card-list {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    overflow: hidden;
+    column-gap: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.card-list div p img {
+    width: 88px;
+}
+
+.card-list div div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-list div p {
+    color: var(--color-black-lighter);
+    text-align: center;
+
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.card-list > div {
+    text-align: center;
+}
+
+.card-list-wrapper {
+    overflow: hidden;
+}
+
+@keyframes cardListScroll {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(calc(0px - 50%));
+    }
+}
+
+@media (max-width: 1024px) {
+    .card-list {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        animation-name: cardListScroll;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        width: max-content;
+    }
+
+    .card-list div p {
+        color: var(--color-black-lighter);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 12px; /* 100% */
+    }
+    .card-list > div {
+        width: 100px;
+    }
+
+    .card-list div p img {
+        width: 60px;
+    }
+}

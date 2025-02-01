@@ -10,6 +10,7 @@
     padding: 0;
     font-family: var(--primary-font-family);
 }
+
 .form .field-wrapper {
     display: grid;
     grid-auto-flow: row;
@@ -101,27 +102,11 @@
     width: max-content;
 }
 
-@media (width >= 600px) {
-    .form input,
-    .form select,
-    .form textarea {
-        /* here was max width */
-    }
-
-    .form .button {
-        color: black;
-        padding-left: unset;
-        padding-right: unset;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-}
-
-@media (width >= 900px) {
-    .form input,
-    .form select,
-    .form textarea {
-        /* here was max width */
-    }
+.form .button {
+    color: black;
+    padding-left: unset;
+    padding-right: unset;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .form .field-wrapper.selection-wrapper {
@@ -197,6 +182,7 @@
     background-origin: border-box;
     background-repeat: no-repeat;
 }
+
 .form .blue-button .button:hover {
     background-position: left top;
 }
@@ -271,10 +257,71 @@
 
 .multistep-heading {
     margin-bottom: 24px;
+    font-size: var(--font-size-h1);
+    font-family: var(--secondary-font-family);
 }
 
 .step-counter {
     font-size: 32px;
     line-height: 26px;
     display: block;
+}
+
+.Submit-wrapper {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .form.multistep form {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+
+    .form.multistep .step-counter-container {
+        display: none;
+    }
+
+    .form.multistep .button {
+        --button-padding-left: 0;
+        --button-padding-right: 0;
+        --button-padding-top: 20px;
+        --button-padding-bottom: 20px;
+        --button-font-size: 18px;
+    }
+
+    .form label, .form fieldset > legend {
+        font-size: var(--font-size-h1);
+        font-weight: 500;
+    }
+
+    .form input::placeholder {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .form input,
+    .form select,
+    .form textarea {
+        font-size: 14px;
+    }
+
+    .form .small-field label {
+        font-size: 12px;
+    }
+
+    .form.multistep .button {
+        line-height: normal;
+    }
+
+    .form .field-wrapper {
+        gap: 8px;
+    }
+
+    .multistep-heading {
+        font-size: var(--font-size-h1);
+    }
+
+    .form.multistep .steps-navigation {
+        gap: 20px;
+    }
 }

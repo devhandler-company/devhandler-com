@@ -45,8 +45,7 @@ function setCommonAttributes(field, fd) {
 const createHeading = (fd) => {
     const fieldWrapper = createFieldWrapper(fd);
 
-    const level = fd.Style && fd.Style.includes("sub-heading") ? 3 : 2;
-    const heading = document.createElement(`h${level}`);
+    const heading = document.createElement(`span`);
     heading.textContent = fd.Value || fd.Label;
     heading.id = fd.Id;
 

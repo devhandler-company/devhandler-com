@@ -3,3 +3,25 @@
 .button.center {
     margin: auto;
 }
+
+.button.slim {
+    --button-border-color: transperent;
+    --button-background-color: var(--color-white);
+    --button-background-hover-color: var(--color-blue);
+    --button-text-color: var(--color-black-lighter);
+    --button-padding-left: 48px;
+    --button-padding-right: 48px;
+    --button-padding-top: 16px;
+    --button-padding-bottom: 16px;
+    --button-font-size: 32px;
+}
+
+.button.right-align {
+    text-align: right;
+}
+
+@media (max-width: 1024px) {
+    .button.mobile-center-align {
+        text-align: center;
+    }
+}
