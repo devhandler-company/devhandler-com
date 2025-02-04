@@ -1,7 +1,10 @@
 export default function decorate(block) {
-    Array.from(block.children).forEach((element) => {
-        const dupplicate = element.cloneNode(true);
-        dupplicate.classList.add('desktop-hidden');
-        block.appendChild(dupplicate);
-    });
+  const isDesktopHidden = block.classList.contains('no-desktop-scroll');
+  const isMobileHidden = block.classList.contains('no-mobile-scroll');
+  Array.from(block.children).forEach((element) => {
+    const dupplicate = element.cloneNode(true);
+    isDesktopHidden && dupplicate.classList.add('desktop-hidden');
+    isMobileHidden && dupplicate.classList.add('mobile-hidden');
+    block.appendChild(dupplicate);
+  });
 }

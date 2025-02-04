@@ -124,4 +124,13 @@ button.button:focus {
     background-position: right top;
 }
 
+@media (max-width: 1024px) {
+    :root {
+        --button-font-size: 32px;
+        --button-padding-left: 48px;
+        --button-padding-right: 48px;
+        --button-padding-top: 8px;
+        --button-padding-bottom: 8px;
+    }
+}
 

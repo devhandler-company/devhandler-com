@@ -1,3 +1,7 @@
+:root {
+    --section-background-size: cover;
+}
+
 .section.border-box {
     box-sizing: border-box;
 }
@@ -35,6 +39,10 @@
 
 .section.row-gap-24 {
     column-gap: 24px;
+}
+
+.section.section-gap-0 {
+    gap: 0;
 }
 
 main div.section {
@@ -97,14 +105,15 @@ main div.section.background-gradient {
 .bg:after {
     content: " ";
     position: absolute;
-    background: var(--section-background-image);
+    background-image: var(--section-background-image);
     height: var(--section-background-height);
     width: 100%;
     z-index: -1;
     left: 0;
     top: 0;
     background-position: center;
-    background-size: cover;
+    background-size: var(--section-background-size);
+    background-repeat: no-repeat;
 }
 
 @media (max-width: 1024px) {
@@ -114,5 +123,11 @@ main div.section.background-gradient {
 
     main div.section.mobile-gap-0 {
         gap: 0;
+    }
+
+    .bg:after {
+        background-image: var(--section-mobile-background-image);
+        height: var(--section-mobile-background-height);
+        background-position: center;
     }
 }

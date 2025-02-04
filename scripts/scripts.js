@@ -63,8 +63,16 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   modifyHeaders(main);
-  document.querySelectorAll(".section.bg").forEach((section) => {
-      section.style = `--section-background-image: url(${section.dataset.background}); --section-background-height: ${section.dataset.backgroundHeight};`;
+  document.querySelectorAll('.section.bg').forEach((section) => {
+    const backgroundHeight = section.dataset.backgroundHeight || '100%';
+    const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || '100%';
+    const backgroundSize = section.dataset.backgroundSize || 'cover';
+    section.style = `--section-background-image: url(${section.dataset.background});
+       --section-background-height: ${backgroundHeight};
+       --section-mobile-background-image: url(${section.dataset.mobileBackground});
+       --section-mobile-background-height: ${mobilBackgroundHeight};
+       --section-background-size: ${backgroundSize};
+      `;
   });
 }
 
