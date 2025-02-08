@@ -1,8 +1,5 @@
 :root {
     --section-background-size: cover;
-
-    --section-height: ;
-    --section-mobile-height: var(--section-height);
 }
 
 .section.border-box {
@@ -99,6 +96,11 @@ main div.section.zindex-negative-1 {
 main div.section.background-white {
     background-color: white;
     color: black;
+}
+
+main div.section.background-dark {
+    background-color: var(--color-black-lighter);
+    color: var(--color-white);
 }
 
 main div.section.background-gradient {

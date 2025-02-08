@@ -1,12 +1,15 @@
 header nav a.header-button {
     background-color: var(--color-blue);
     width: max-content;
-    padding-left: 8vw;
-    padding-right: 9vw;
     border-radius: 10px;
-    height: 100%;
-    display: block;
     align-content: center;
+    display: flex;
+    height: 44px;
+    padding: 4px 108px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
 }
 
 header nav li:has(a.header-button) {

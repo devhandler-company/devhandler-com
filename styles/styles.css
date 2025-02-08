@@ -50,7 +50,7 @@
     --color-blue: #0063F8;
     --color-gray: #929292;
     --color-gray-blue: #89B7D0;
-    --color-black: #000;
+    --color-black: #222222;
     --color-black-lighter: #222222;
     --color-white: #fff;
     --color-dark: #505050;
@@ -92,6 +92,13 @@ footer .footer {
 header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {
     visibility: visible;
+}
+
+@media (min-width: 1025px) {
+    header .header[data-block-status="loaded"] {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 p,

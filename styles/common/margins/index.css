@@ -53,6 +53,10 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
 
 @media (max-width: 1024px) {
 
+    main div.section.mobile-margin-top-0, .mobile-margin-top-0 {
+        margin-top: 0;
+    }
+
     main div.section.mobile-margin-top-48, .mobile-margin-top-48 {
         margin-top: 48px;
     }

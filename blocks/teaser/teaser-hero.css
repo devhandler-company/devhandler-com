@@ -57,7 +57,7 @@
     width: fit-content;
 }
 
-.teaser.hero .teaser__content > div {
+.teaser.hero .teaser__content > * {
     max-width: 720px;
     line-height: normal;
     padding-left: 8%;
