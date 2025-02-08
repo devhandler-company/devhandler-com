@@ -168,12 +168,11 @@ main > .section:first-of-type {
 @media (max-width: 1024px) {
     :root {
         --heading-font-size-xxl: 22px; /* h1 */
-        --heading-font-size-xl: 14px; /* h2 */
-
-        --heading-font-size-l: 32px; /* h3 */
-        --heading-font-size-m: 28px; /* h4 */
-        --heading-font-size-s: 22px; /* h5 */
-        --heading-font-size-xs: 18px; /* h6 */
+        --heading-font-size-xl: 20px; /* h2 */
+        --heading-font-size-l: 18px; /* h3 */
+        --heading-font-size-m: 16px; /* h4 */
+        --heading-font-size-s: 14px; /* h5 */
+        --heading-font-size-xs: 12px; /* h6 */
 
         --body-font-size-m: 12px;
         --body-font-size-s: 19px;

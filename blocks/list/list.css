@@ -62,3 +62,9 @@
     --list-dot-color: var(--color-blue)
 }
 
+@media (max-width: 1024px) {
+    .list.mobile-text-white {
+        --list-text-color: var(--color-white)
+    }
+}
+

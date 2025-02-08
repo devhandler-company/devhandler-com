@@ -1,5 +1,8 @@
 :root {
     --section-background-size: cover;
+
+    --section-height: ;
+    --section-mobile-height: var(--section-height);
 }
 
 .section.border-box {
@@ -55,6 +58,7 @@ main div.section {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    height: var(--section-height);
 }
 
 main div.section.full-width {
@@ -111,12 +115,16 @@ main div.section.background-gradient {
     z-index: -1;
     left: 0;
     top: 0;
-    background-position: center;
+    background-position: var(--section-background-position);
     background-size: var(--section-background-size);
     background-repeat: no-repeat;
 }
 
 @media (max-width: 1024px) {
+    main div.section {
+        height: var(--section-mobile-height);
+    }
+
     main div.section.mobile-border-radius, .mobile-border-radius {
         border-radius: var(--border-radius);
     }
@@ -128,6 +136,16 @@ main div.section.background-gradient {
     .bg:after {
         background-image: var(--section-mobile-background-image);
         height: var(--section-mobile-background-height);
-        background-position: center;
+        background-position: var(--section-background-position);
+    }
+
+    main div.section.mobile-background-white, .mobile-background-white {
+        background-color: white;
+        color: black;
+    }
+
+    main div.section.mobile-background-dark, .mobile-background-dark {
+        background-color: var(--color-black-lighter);
+        color: var(--color-white);
     }
 }

@@ -49,6 +49,12 @@ function buildAutoBlocks(main) {
   }
 }
 
+const assignCssVariable = (htmlElement, variableName, variableValue) => {
+  if (!variableValue) {
+    return;
+  }
+  htmlElement.style.setProperty(variableName, variableValue);
+};
 
 /**
  * Decorates the main element.
@@ -63,16 +69,23 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   modifyHeaders(main);
+  document.querySelectorAll('.section').forEach((section) => {
+    const { height, mobileHeight } = section.dataset;
+    assignCssVariable(section, '--section-height', height);
+    assignCssVariable(section, '--section-mobile-height', mobileHeight || height);
+  });
+
   document.querySelectorAll('.section.bg').forEach((section) => {
     const backgroundHeight = section.dataset.backgroundHeight || '100%';
     const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || '100%';
     const backgroundSize = section.dataset.backgroundSize || 'cover';
-    section.style = `--section-background-image: url(${section.dataset.background});
-       --section-background-height: ${backgroundHeight};
-       --section-mobile-background-image: url(${section.dataset.mobileBackground});
-       --section-mobile-background-height: ${mobilBackgroundHeight};
-       --section-background-size: ${backgroundSize};
-      `;
+    const backgroundPosition = section.dataset.backgroundPosition || 'center';
+    assignCssVariable(section, '--section-background-image', `url(${section.dataset.background})`);
+    assignCssVariable(section, '--section-background-height', backgroundHeight);
+    assignCssVariable(section, '--section-mobile-background-image', `url(${section.dataset.mobileBackground})`);
+    assignCssVariable(section, '--section-mobile-background-height', mobilBackgroundHeight);
+    assignCssVariable(section, '--section-background-size', backgroundSize);
+    assignCssVariable(section, '--section-background-position', backgroundPosition);
   });
 }
 
