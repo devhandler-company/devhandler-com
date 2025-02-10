@@ -1,8 +1,8 @@
-@import url(./common/section.css);
-@import url(./common/headings.css);
-@import url(./common/special-colors.css);
-@import url(./common/buttons.css);
-@import url(./common/common.css);
+@import "./common/section.css";
+@import "./common/headings.css";
+@import "./common/special-colors.css";
+@import "./common/buttons.css";
+@import "./common/common.css";
 @import "./stick/stick.css";
 
 :root {

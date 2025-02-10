@@ -80,9 +80,11 @@ export function decorateMain(main) {
     const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || '100%';
     const backgroundSize = section.dataset.backgroundSize || 'cover';
     const backgroundPosition = section.dataset.backgroundPosition || 'center';
-    assignCssVariable(section, '--section-background-image', `url(${section.dataset.background})`);
+    const backgroundImage = section.dataset.background ? `url(${section.dataset.background})` : 'none';
+    const mobileBackgroundImage = section.dataset.background ? `url(${section.dataset.mobileBackground})` : 'none';
+    assignCssVariable(section, '--section-background-image', backgroundImage);
     assignCssVariable(section, '--section-background-height', backgroundHeight);
-    assignCssVariable(section, '--section-mobile-background-image', `url(${section.dataset.mobileBackground})`);
+    assignCssVariable(section, '--section-mobile-background-image', mobileBackgroundImage);
     assignCssVariable(section, '--section-mobile-background-height', mobilBackgroundHeight);
     assignCssVariable(section, '--section-background-size', backgroundSize);
     assignCssVariable(section, '--section-background-position', backgroundPosition);

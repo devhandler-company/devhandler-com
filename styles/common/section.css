@@ -1,5 +1,12 @@
 .section {
     --section-background-size: cover;
+    --section-background-image: 'none';
+    --section-background-height: '';
+    --section-background-position: '';
+    --section-mobile-height: '';
+    --section-mobile-background-image: '';
+    --section-mobile-background-height: '';
+    --section-height: '';
 }
 
 .section.border-box {
