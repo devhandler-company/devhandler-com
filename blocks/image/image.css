@@ -87,7 +87,7 @@
 
 .image.relative img {
     height: 100%;
-    object-position: top right;
+    object-position: bottom;
     object-fit: contain;
     position: absolute;
     width: 100%;

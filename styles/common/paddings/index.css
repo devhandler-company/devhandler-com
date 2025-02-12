@@ -124,6 +124,14 @@ main div.section.padding-64, .padding-64 {
         padding: 32px;
     }
 
+    main div.section.mobile-padding-bottom-32, .mobile-padding-bottom-32 {
+        padding-bottom: 32px;
+    }
+
+    main div.section.mobile-padding-bottom-48, .mobile-padding-bottom-48 {
+        padding-bottom: 48px;
+    }
+
     main div.section.mobile-padding-top-0, .mobile-padding-top-0 {
         padding-top: 0;
     }
