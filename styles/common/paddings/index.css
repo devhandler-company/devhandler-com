@@ -147,4 +147,9 @@ main div.section.padding-64, .padding-64 {
     main div.section.mobile-padding-right-0, .mobile-padding-right-0 {
         padding-right: 0;
     }
+
+    main div.section.mobile-padding-sides-0, .mobile-padding-sides-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

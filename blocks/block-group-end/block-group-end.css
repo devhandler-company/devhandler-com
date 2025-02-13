@@ -51,6 +51,13 @@
     flex-direction: column-reverse;
 }
 
+@media (min-width: 1025px) {
+    .center-content-desktop {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 1024px) {
     .grid-mobile-reverse > *:first-child {
         order: 2;
