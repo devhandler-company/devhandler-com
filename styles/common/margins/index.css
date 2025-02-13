@@ -14,6 +14,10 @@ main > div.section.margin-top-72, .margin-top-72 {
     margin-top: 72px;
 }
 
+main > div.section.margin-top-102, .margin-top-102 {
+    margin-top: 102px;
+}
+
 main > div.section.margin-top-152, .margin-top-152 {
     margin-top: 152px;
 }
@@ -52,6 +56,9 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
 }
 
 @media (max-width: 1024px) {
+    main div.section.mobile-margin-32, .mobile-margin-32 {
+        margin: 32px;
+    }
 
     main div.section.mobile-margin-top-0, .mobile-margin-top-0 {
         margin-top: 0;

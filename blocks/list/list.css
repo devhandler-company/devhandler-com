@@ -22,16 +22,17 @@
 .list ol {
     counter-reset: item;
 }
+
 .list ol li::before {
     display: inline-block;
-  content: counter(item);
-  counter-increment: item;
-  color: var(--list-dot-color);
-  font-size: var(--font-size-h2);
-  font-family: var(--secondary-font-family);
-  margin-right: 24px;
-  line-height: var(--line-height-normal);
-  width: 32px;
+    content: counter(item);
+    counter-increment: item;
+    color: var(--list-dot-color);
+    font-size: var(--font-size-h2);
+    font-family: var(--secondary-font-family);
+    margin-right: 24px;
+    line-height: var(--line-height-normal);
+    width: 32px;
 }
 
 .list ul > li,
@@ -65,6 +66,9 @@
 @media (max-width: 1024px) {
     .list.mobile-text-white {
         --list-text-color: var(--color-white)
+    }
+    .list ol li::before {
+        font-size: 40px;
     }
 }
 

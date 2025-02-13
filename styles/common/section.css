@@ -65,6 +65,14 @@ main div.section {
     height: var(--section-height);
 }
 
+main div.section.block-group-end {
+    max-width: unset;
+    padding-left: unset;
+    padding-right: unset;
+    margin: unset;
+    margin-top: unset;
+}
+
 main div.section.full-width {
     max-width: unset;
     margin-left: 0;
@@ -78,7 +86,7 @@ main div.section.full-width-with-side-paddings {
     padding-right: calc((100vw - 1200px - 24px) / 2);
 }
 
-@media (width >= 1025px) and (width <= 1248px) {
+@media (width <= 1248px) {
     main div.section.full-width-with-side-paddings {
         padding-left: 24px;
         padding-right: 24px;
@@ -123,7 +131,8 @@ main div.section.background-gradient {
     width: 100%;
     z-index: -1;
     left: 0;
-    top: 0;
+    top: var(--section-background-top);
+    bottom: var(--section-background-bottom);
     background-position: var(--section-background-position);
     background-size: var(--section-background-size);
     background-repeat: no-repeat;

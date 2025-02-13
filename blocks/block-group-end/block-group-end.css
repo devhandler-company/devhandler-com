@@ -50,3 +50,9 @@
 .block-group.column-reverse {
     flex-direction: column-reverse;
 }
+
+@media (max-width: 1024px) {
+    .grid-mobile-reverse > *:first-child {
+        order: 2;
+    }
+}

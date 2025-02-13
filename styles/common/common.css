@@ -18,11 +18,6 @@
     background: var(--color-bg-gray-linear);
 }
 
-.vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-}
-
 .height-auto {
     height: auto;
 }
@@ -35,7 +30,20 @@
     text-align: center;
 }
 
+.align-center {
+    align-items: center;
+}
+
 @media (min-width: 1025px) {
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding-left: 16px;
+        padding-right: 16px;
+        min-height: 91%;
+        height: min-content;
+        display: flex;
+    }
     .desktop-hidden {
         display: none !important;
     }

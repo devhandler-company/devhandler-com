@@ -103,4 +103,7 @@
     .teaser.hero .teaser__video video {
         height: calc(100vh - 50px);
     }
+    .teaser.hero .teaser__content > * {
+        padding-left: 0;
+    }
 }

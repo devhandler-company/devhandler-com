@@ -77,17 +77,20 @@ export function decorateMain(main) {
 
   document.querySelectorAll('.section.bg').forEach((section) => {
     const backgroundHeight = section.dataset.backgroundHeight || '100%';
-    const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || '100%';
+    const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || backgroundHeight;
     const backgroundSize = section.dataset.backgroundSize || 'cover';
     const backgroundPosition = section.dataset.backgroundPosition || 'center';
+    const backgroundBottom = section.dataset.backgroundBottom;
     const backgroundImage = section.dataset.background ? `url(${section.dataset.background})` : 'none';
-    const mobileBackgroundImage = section.dataset.background ? `url(${section.dataset.mobileBackground})` : 'none';
+    const mobileBackgroundImage = section.dataset.mobileBackground || section.dataset.background ? `url(${section.dataset.mobileBackground || section.dataset.background})` : 'none';
     assignCssVariable(section, '--section-background-image', backgroundImage);
     assignCssVariable(section, '--section-background-height', backgroundHeight);
     assignCssVariable(section, '--section-mobile-background-image', mobileBackgroundImage);
     assignCssVariable(section, '--section-mobile-background-height', mobilBackgroundHeight);
     assignCssVariable(section, '--section-background-size', backgroundSize);
     assignCssVariable(section, '--section-background-position', backgroundPosition);
+    assignCssVariable(section, '--section-background-bottom', backgroundBottom);
+    assignCssVariable(section, '--section-background-top', backgroundBottom && backgroundBottom.length ? undefined : '0');
   });
 }
 
@@ -107,7 +110,7 @@ async function loadEager(doc) {
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
+    if (window.innerWidth >= 1025 || sessionStorage.getItem('fonts-loaded')) {
       loadFonts();
     }
   } catch (e) {

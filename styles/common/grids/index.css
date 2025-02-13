@@ -6,12 +6,8 @@
 }
 
 .section.row-grid {
-    display: flex;
-    flex-direction: row;
-}
-
-.section.row-grid > * {
-    flex: 1;
+    display: grid;
+    grid-auto-flow: column;
 }
 
 .section.desktop-grid.desktop-grid-50-50 {
@@ -31,12 +27,12 @@
 
 .section.desktop-grid.desktop-grid-8-92 {
     grid-template-rows: 1fr;
-    grid-template-columns: .08fr .92fr;
+    grid-template-columns: 8fr 92fr;
 }
 
 .section.desktop-grid.desktop-grid-92-8 {
     grid-template-rows: 1fr;
-    grid-template-columns: .92fr .08fr;
+    grid-template-columns: 92fr 8fr;
 }
 
 .section.desktop-grid.desktop-grid-15-85 {
@@ -90,6 +86,12 @@
 }
 
 @media (max-width: 1024px) {
+    .section.row-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 24px;
+        grid-column-gap: 24px;
+    }
     .section.desktop-grid.mobile-grid, .section.mobile-grid {
         display: grid;
         grid-template-rows: 1fr;

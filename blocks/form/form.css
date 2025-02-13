@@ -55,7 +55,7 @@
     }
 }
 
-@media (width >= 900px) {
+@media (width >= 1025px) {
     .form fieldset {
         grid-template-columns: 1fr 1fr;
     }
