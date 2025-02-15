@@ -139,6 +139,25 @@ main div.section.background-gradient {
 }
 
 @media (max-width: 1024px) {
+    .mobile-border-cyan {
+        border-color: var(--color-aqamarine);
+    }
+    .mobile-border {
+        border: var(--border-size) solid var(--color-aqamarine);
+        border-radius: var(--border-radius);
+    }
+
+    .mobile-border-top-none {
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .mobile-border-none {
+        border: none;
+        border-radius: 0;
+    }
+
     main div.section {
         height: var(--section-mobile-height);
     }

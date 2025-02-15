@@ -18,6 +18,13 @@
     text-align: right;
 }
 
+@media (min-width: 1025px) {
+    .button.wide {
+        --button-padding-left: 180px;
+        --button-padding-right: 180px;
+    }
+}
+
 @media (max-width: 1024px) {
     .button.mobile-center-align {
         text-align: center;

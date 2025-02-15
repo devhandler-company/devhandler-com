@@ -1,6 +1,6 @@
 .image-wrapper .image {
     position: relative;
-} 
+}
 
 .image-wrapper:has(.image.full-height) {
     height: 100%;
@@ -80,26 +80,58 @@
     height: 100%;
 }
 
-.image.relative, .image-wrapper:has(.image.relative), .image.relative picture {
+.image.relative:not(.mobile-not-relative),
+.image-wrapper:not(.mobile-not-relative):has(.image.relative),
+.image.relative:not(.mobile-not-relative) picture {
     position: relative;
     height: 100%;
 }
-
 .image.relative img {
+    width: 100%;
+}
+.image.relative:not(.mobile-not-relative) img {
     height: 100%;
-    object-position: bottom;
+    object-position: center;
     object-fit: contain;
     position: absolute;
     width: 100%;
 }
+
+.image.image-bottom img {
+    object-position: bottom;
+}
+
+.image.image-bottom-right img {
+    object-position: bottom right;
+}
+
+.image.image-cover img {
+    object-fit: cover;
+}
+
 .image.relative picture {
     display: flex;
+}
+
+@media (min-width: 1025px) {
+    .image.relative {
+        height: 100%;
+        object-position: center;
+        object-fit: contain;
+        position: absolute;
+        width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
     .image.mobile-height-s img, .image.mobile-height-268 img {
         height: 268px;
         width: 100%;
+    }
+
+    .image.mobile-border-none img {
+        border: none;
+        border-radius: 0;
     }
 
     .image.mobile-height-280 img {

@@ -12,6 +12,12 @@
     object-position: center;
 }
 
+@media (min-width: 1025px) {
+    .teaser.hero {
+        min-height: 485px;
+    }
+}
+
 .teaser.hero .teaser__video video {
     height: 700px;
     width: 100%;

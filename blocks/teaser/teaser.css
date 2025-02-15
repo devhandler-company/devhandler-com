@@ -20,18 +20,25 @@
     font-size: var(--teaser-pretitle-font-size);
     font-family: var(--teaser-pretitle-font-family);
     line-height: var(--teaser-pretitle-line-height);;
+    grid-area: pretitle;
 }
 
 .teaser .teaser__title {
     font-size: var(--teaser-title-font-size);
     font-family: var(--teaser-title-font-family);
     line-height: var(--teaser-title-line-height);;
+    grid-area: title;
 }
 
 .teaser .teaser__description {
     font-size: var(--teaser-description-font-size);
     font-family: var(--teaser-description-font-family);
-    line-height: var(--teaser-description-line-height);;
+    line-height: var(--teaser-description-line-height);
+    grid-area: description;
+}
+
+.teaser .teaser__cta-container {
+    grid-area: ctas;
 }
 
 .teaser .teaser__content {

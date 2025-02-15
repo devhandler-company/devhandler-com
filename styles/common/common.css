@@ -50,10 +50,16 @@
 }
 
 @media (max-width: 1024px) {
+    .mobile-bg-gray-linear {
+        background: var(--color-bg-gray-linear);
+    }
     .mobile-text-center {
         text-align: center;
     }
     .mobile-hidden {
         display: none !important;
+    }
+    .mobile-color-white {
+        color: var(--color-white);
     }
 }

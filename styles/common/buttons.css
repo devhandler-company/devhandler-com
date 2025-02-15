@@ -5,8 +5,8 @@
     --button-background-color: rgba(0, 0, 0, 0) 50%;
     --button-border-color: var(--button-background-hover-color);
     --button-font-size: 42px;
-    --button-padding-left: 180px;
-    --button-padding-right: 180px;
+    --button-padding-left: 40px;
+    --button-padding-right: 40px;
     --button-padding-top: 24px;
     --button-padding-bottom: 24px;
 }
@@ -30,6 +30,13 @@
 }
 
 .button.tile a {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.button.full-width a, .button.full-width button {
     width: 100%;
     width: -moz-available;          /* WebKit-based browsers will ignore this. */
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
@@ -69,7 +76,6 @@ button.button {
     padding-top: var(--button-padding-top);
     padding-bottom: var(--button-padding-bottom);
     border: 3px solid var(--button-border-color);
-    border-radius: 20px;
     position: relative;
     box-sizing: content-box;
     background: linear-gradient(to right, var(--button-background-hover-color) 50%, var(--button-background-color) 50%);

@@ -20,6 +20,13 @@ export function modifyHeaders(block) {
   block.querySelectorAll("h2 > em").forEach((element) => {
       element.replaceWith(createTag("span", { class: "text-color-linear" }, element.innerText));
   });
+
+    block.querySelectorAll("h1 > strong").forEach((element) => {
+        element.replaceWith(createTag("span", { class: "text-color-blue" }, element.innerText));
+    });
+    block.querySelectorAll("h1 > em").forEach((element) => {
+        element.replaceWith(createTag("span", { class: "text-color-linear" }, element.innerText));
+    });
   return block;
 }
 
