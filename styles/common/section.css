@@ -82,8 +82,8 @@ main div.section.full-width {
 }
 
 main div.section.full-width-with-side-paddings {
-    padding-left: calc((100vw - 1200px - 24px) / 2);
-    padding-right: calc((100vw - 1200px - 24px) / 2);
+    padding-left: calc((100vw - 1200px - 12px) / 2);
+    padding-right: calc((100vw - 1200px - 12px) / 2);
 }
 
 @media (width <= 1248px) {
@@ -142,6 +142,11 @@ main div.section.background-gradient {
     .mobile-border-cyan {
         border-color: var(--color-aqamarine);
     }
+
+    .mobile-border-white {
+        border-color: var(--color-white);
+    }
+
     .mobile-border {
         border: var(--border-size) solid var(--color-aqamarine);
         border-radius: var(--border-radius);

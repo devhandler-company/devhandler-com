@@ -53,6 +53,9 @@
     .mobile-bg-gray-linear {
         background: var(--color-bg-gray-linear);
     }
+    .mobile-bg-white {
+        background: var(--color-white);
+    }
     .mobile-text-center {
         text-align: center;
     }
@@ -61,5 +64,8 @@
     }
     .mobile-color-white {
         color: var(--color-white);
+    }
+    .mobile-color-black {
+        color: var(--color-black-lighter);
     }
 }
