@@ -1,0 +1,104 @@
+.accordion {
+    counter-reset: heading;
+}
+
+.accordion-button::before {
+    background-clip: text;
+    background-image: linear-gradient(var(--color-blue), var(--color-aqamarine));
+    color: transparent;
+    content: counter(heading, decimal-leading-zero);
+    counter-increment: heading;
+    font-size: 42px;
+    font-weight: 700;
+    height: 42px;
+    line-height: 1;
+    min-width: 50px;
+}
+
+.accordion-item {
+    display: flex;
+    border-top: 1px solid var(--color-white);
+    padding: 32px 0;
+
+    div {
+        width: 100%;
+    }
+}
+
+.accordion-button {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    gap: 18px;
+    text-align: left;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    min-height: 42px;
+    position: relative;
+}
+
+.accordion-toggle {
+    align-self: stretch;
+    display: flex;
+    width: 38px;
+    height: 38px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    right: 0;
+    margin-left: auto;
+}
+
+.accordion-minus {
+    width: 20px;
+    height: 2px;
+    background: var(--color-white);
+    border-radius: 1px;
+}
+
+.accordion-plus {
+    width: 2px;
+    height: 20px;
+    background: var(--color-white);
+    border-radius: 1px;
+    position: absolute;
+}
+
+.accordion-button[aria-expanded="true"] .accordion-plus {
+    display: none;
+}
+
+.accordion-panel {
+    display: none;
+    padding: 0 60px 0 68px;
+}
+
+.accordion-panel.opened {
+    display: block;
+}
+
+@media (width >= 900px) {
+    .accordion-toggle {
+        width: 64px;
+        height: 64px;
+    }
+
+    .accordion-button {
+        min-height: 67px;
+        gap: 64px;
+    }
+
+    .accordion-panel {
+        padding: 20px 130px 0 114px;
+    }
+}
