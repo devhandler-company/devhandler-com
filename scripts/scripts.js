@@ -13,7 +13,7 @@ import {
   loadCSS,
 } from './aem.js';
 
-import { modifyHeaders } from "./utils.js";
+import { modifyHeaders } from './utils.js';
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -29,8 +29,7 @@ function buildHeroBlock(main) {
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
-    if (!window.location.hostname.includes("localhost"))
-      sessionStorage.setItem("fonts-loaded", "true");
+    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
     // do nothing
   }
@@ -45,7 +44,7 @@ function buildAutoBlocks(main) {
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error("Auto Blocking failed", error);
+    console.error('Auto Blocking failed', error);
   }
 }
 
@@ -80,7 +79,7 @@ export function decorateMain(main) {
     const mobilBackgroundHeight = section.dataset.mobileBackgroundHeight || backgroundHeight;
     const backgroundSize = section.dataset.backgroundSize || 'cover';
     const backgroundPosition = section.dataset.backgroundPosition || 'center';
-    const backgroundBottom = section.dataset.backgroundBottom;
+    const { backgroundBottom } = section.dataset;
     const backgroundImage = section.dataset.background ? `url(${section.dataset.background})` : 'none';
     const mobileBackgroundImage = section.dataset.mobileBackground || section.dataset.background ? `url(${section.dataset.mobileBackground || section.dataset.background})` : 'none';
     assignCssVariable(section, '--section-background-image', backgroundImage);
@@ -147,10 +146,25 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+const appendClutchScript = () => {
+  if (document.querySelectorAll('.clutch-widget').length === 0) {
+    return;
+  }
+  const clutchScript = document.createElement('script');
+  clutchScript.src = 'https://widget.clutch.co/static/js/widget.js';
+  clutchScript.type = 'text/javascript';
+  clutchScript.async = true;
+  clutchScript.onload = () => {
+    window.CLUTCHCO && window.CLUTCHCO.Init && window.CLUTCHCO.Init();
+  };
+  document.head.appendChild(clutchScript);
+};
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  appendClutchScript();
 }
 
 loadPage();

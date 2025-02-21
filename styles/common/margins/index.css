@@ -81,4 +81,8 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
         margin-left: 32px;
         margin-right: 32px;
     }
+
+    main div.section.mobile-negative-margin-top-64, .mobile-negative-margin-top-64 {
+        margin-top: -64px;
+    }
 }

@@ -1,0 +1,10 @@
+.clutch-wrapper .button {
+    --button-background-color: white;
+    --button-padding-top: 8px;
+    --button-padding-bottom: 8px;
+    border: none;
+}
+
+.clutch-wrapper iframe {
+    width: 200px;
+}
