@@ -7,7 +7,7 @@
 }
 
 .color-black {
-    color: var(--color-black-lighter);
+    color: var(--color-black);
 }
 
 .hidden {
@@ -66,6 +66,9 @@
         color: var(--color-white);
     }
     .mobile-color-black {
-        color: var(--color-black-lighter);
+        color: var(--color-black);
+    }
+    .mobile-color-absolute-black {
+        color: var(--color-absolute-black);
     }
 }

@@ -114,7 +114,7 @@ main div.section.background-white {
 }
 
 main div.section.background-dark {
-    background-color: var(--color-black-lighter);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 
@@ -139,23 +139,38 @@ main div.section.background-gradient {
 }
 
 @media (max-width: 1024px) {
-    .mobile-border-cyan {
-        border-color: var(--color-aqamarine);
-    }
-
-    .mobile-border-white {
-        border-color: var(--color-white);
-    }
 
     .mobile-border {
         border: var(--border-size) solid var(--color-aqamarine);
         border-radius: var(--border-radius);
     }
 
+    .mobile-border-cyan {
+        border-color: var(--color-aqamarine);
+    }
+
+    .mobile-border-blue {
+        border-color: var(--color-blue);
+    }
+
+    .mobile-border-white {
+        border-color: var(--color-white);
+    }
+
     .mobile-border-top-none {
         border-top: none;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+    }
+
+    .mobile-border-bottom-none {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .mobile-border-radius-0 {
+        border-radius: 0;
     }
 
     .mobile-border-none {
@@ -187,7 +202,7 @@ main div.section.background-gradient {
     }
 
     main div.section.mobile-background-dark, .mobile-background-dark {
-        background-color: var(--color-black-lighter);
+        background-color: var(--color-black);
         color: var(--color-white);
     }
 }

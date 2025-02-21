@@ -6,7 +6,7 @@
     --button-border-color: transperent;
     --button-background-color: var(--color-white);
     --button-background-hover-color: var(--color-blue);
-    --button-text-color: var(--color-black-lighter);
+    --button-text-color: var(--color-black);
     --button-padding-left: 48px;
     --button-padding-right: 48px;
     --button-padding-top: 16px;

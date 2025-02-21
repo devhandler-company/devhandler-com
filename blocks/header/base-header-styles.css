@@ -9,7 +9,7 @@ header .nav-wrapper.top-animation {
 }
 
 header .nav-wrapper:not(.header-sm) {
-    background-color: var(--color-black-lighter);
+    background-color: var(--color-black);
 }
 
 header nav {
@@ -251,7 +251,7 @@ header .header-sm nav {
         border: none;
         box-shadow: none;
         backdrop-filter: none;
-        background: var(--color-black-lighter);
+        background: var(--color-black);
     }
 }
 

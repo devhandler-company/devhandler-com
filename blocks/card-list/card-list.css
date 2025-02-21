@@ -24,7 +24,7 @@
 }
 
 .card-list div p {
-    color: var(--color-black-lighter);
+    color: var(--color-black);
     text-align: center;
 
     font-size: 28px;
@@ -93,7 +93,7 @@
     }
 
     .card-list div p {
-        color: var(--color-black-lighter);
+        color: var(--color-black);
         font-size: 12px;
         font-style: normal;
         font-weight: 500;

@@ -8,3 +8,9 @@
 .clutch-wrapper iframe {
     width: 200px;
 }
+
+@media (max-width: 1024px) {
+    .clutch-wrapper .clutch.mini iframe {
+        width: 148px;
+    }
+}

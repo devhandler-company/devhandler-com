@@ -18,7 +18,7 @@
 }
 
 .button.tile {
-    --button-text-color: var(--color-black-lighter);
+    --button-text-color: var(--color-black);
     --button-text-color-hover: var(--button-text-color);
     --button-background-color: var(--color-white);
     --button-border-color: transperent;

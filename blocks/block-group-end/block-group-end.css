@@ -34,6 +34,10 @@
     gap: 4px;
 }
 
+.block-group.gap-0 {
+    gap: 0;
+}
+
 .block-group.gap-16 {
     gap: 16px;
 }
@@ -59,6 +63,12 @@
 }
 
 @media (max-width: 1024px) {
+    .block-group.mobile-gap-0 {
+        gap: 0;
+    }
+    .block-group.mobile-gap-10 {
+        gap: 10px;
+    }
     .grid-mobile-reverse > *:first-child {
         order: 10;
     }

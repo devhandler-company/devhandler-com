@@ -13,3 +13,9 @@
     color: transparent;
     background-clip: text;
 }
+
+@media (max-width: 1024px) {
+    .text-color-blue {
+        color: var(--color-blue-lighter);
+    }
+}

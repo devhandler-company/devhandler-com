@@ -140,6 +140,14 @@ main div.section.padding-64, .padding-64 {
         padding: 32px;
     }
 
+    main div.section.mobile-padding-bottom-8, .mobile-padding-bottom-8 {
+        padding-bottom: 8px;
+    }
+
+    main div.section.mobile-padding-bottom-24, .mobile-padding-bottom-24 {
+        padding-bottom: 24px;
+    }
+
     main div.section.mobile-padding-bottom-32, .mobile-padding-bottom-32 {
         padding-bottom: 32px;
     }
@@ -152,6 +160,14 @@ main div.section.padding-64, .padding-64 {
         padding-top: 0;
     }
 
+    main div.section.mobile-padding-top-8, .mobile-padding-top-8 {
+        padding-top: 8px;
+    }
+
+    main div.section.mobile-padding-top-32, .mobile-padding-top-32 {
+        padding-top: 32px;
+    }
+
     main div.section.mobile-padding-right-0, .mobile-padding-right-0 {
         padding-right: 0;
     }
@@ -159,5 +175,10 @@ main div.section.padding-64, .padding-64 {
     main div.section.mobile-padding-sides-0, .mobile-padding-sides-0 {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    main div.section.mobile-padding-sides-24, .mobile-padding-sides-24 {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }

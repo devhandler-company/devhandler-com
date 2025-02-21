@@ -10,3 +10,13 @@
     background-color: var(--color-blue);
 }
 
+@media (max-width: 1024px) {
+    .mobile-bg-blue {
+        background-color: var(--color-blue);
+    }
+
+    .mobile-bg-cyan {
+        background-color: var(--color-aqamarine);
+    }
+}
+

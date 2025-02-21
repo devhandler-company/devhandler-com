@@ -1,5 +1,5 @@
 .list {
-    --list-text-color: var(--color-black-lighter);
+    --list-text-color: var(--color-black);
     --list-dot-color: var(--color-aqamarine);
 }
 
@@ -75,6 +75,9 @@
     }
     .list ol li::before {
         font-size: 40px;
+    }
+    .list.mobile-dot-cyan {
+        --list-dot-color: var(--color-aqamarine)
     }
 }
 
