@@ -218,7 +218,7 @@ header .header-sm nav {
     max-width: 1248px;
     background: linear-gradient(12deg, rgba(80, 80, 80, 0.9) 0%, rgba(34, 34, 34, 0.9) 100%);
     border: 2px solid var(--color-aqamarine);
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     box-shadow: 0px 8.693px 43.463px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(32.59724807739258px);
 }

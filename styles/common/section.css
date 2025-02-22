@@ -25,6 +25,10 @@
     border-radius: var(--border-radius);
 }
 
+.default-border-radius {
+    border-radius: var(--border-radius);
+}
+
 .border-blue {
     border-color: var(--color-blue);
 }

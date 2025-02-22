@@ -5,7 +5,7 @@
     }
 
     .stick-right.stick-right-border::after {
-        border: 3px solid var(--color-aqamarine);
+        border: var(--border-size) solid var(--color-aqamarine);
         border-radius: 20px 0 0 20px;
         border-right: none;
     }
@@ -21,7 +21,7 @@
         left: 0;
         right: 0;
         top: 0;
-        border-radius: 20px;
+        border-radius: var(--border-radius);
     }
 
     .stick-bg-gray::after, .stick-bg-gray::before {

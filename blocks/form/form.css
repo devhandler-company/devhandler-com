@@ -168,7 +168,7 @@
 }
 
 .form .blue-button .button {
-    border: 3px solid var(--color-blue);
+    border: var(--border-size) solid var(--color-blue);
     background: linear-gradient(to right, var(--color-blue) 50%, rgba(0, 0, 0, 0) 50%);
     background-size: 200% 100%;
     background-position: right bottom;
@@ -207,7 +207,7 @@
     border-radius: 3px;
     margin-right: 24px;
     vertical-align: middle;
-    background-color: #fff;
+    background-color: var(--color-white);
 }
 
 .form input[type="checkbox"] + label:hover {
@@ -218,7 +218,7 @@
     background-image: url("/icons/checked.svg");
     background-repeat: no-repeat;
     background-position: center;
-    color: #fff;
+    color: var(--color-white);
     text-align: center;
     line-height: 18px;
 }

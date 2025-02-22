@@ -49,7 +49,7 @@
     height: 32px;
     width: 16px;
     display: inline-block;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     border-top-right-radius: 0px;
     border-top-left-radius: 40px;
     margin-right: 24px;

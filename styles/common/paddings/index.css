@@ -140,6 +140,10 @@ main div.section.padding-64, .padding-64 {
         padding: 32px;
     }
 
+    main div.section.mobile-padding-bottom-0, .mobile-padding-bottom-0 {
+        padding-bottom: 0;
+    }
+
     main div.section.mobile-padding-bottom-8, .mobile-padding-bottom-8 {
         padding-bottom: 8px;
     }
