@@ -153,7 +153,7 @@ const appendClutchScript = () => {
   const clutchScript = document.createElement('script');
   clutchScript.src = 'https://widget.clutch.co/static/js/widget.js';
   clutchScript.type = 'text/javascript';
-  clutchScript.async = true;
+  clutchScript.defer = true;
   clutchScript.onload = () => {
     window.CLUTCHCO && window.CLUTCHCO.Init && window.CLUTCHCO.Init();
   };

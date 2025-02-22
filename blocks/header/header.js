@@ -185,7 +185,7 @@ export default async function decorate(block) {
   // hamburger for mobile
   const logo = document.createElement('div');
   logo.classList.add('nav-logo');
-  logo.innerHTML = '<a aria-label="Home page" href="/"><img src="/icons/header-logo.svg" alt="Logo" height="24"></a>';
+  logo.innerHTML = '<a aria-label="Home page" href="/"><img src="/icons/header-logo.svg" alt="Logo" height="24" width="106"></a>';
 
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
