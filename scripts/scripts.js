@@ -146,25 +146,10 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
-const appendClutchScript = () => {
-  if (document.querySelectorAll('.clutch-widget').length === 0) {
-    return;
-  }
-  const clutchScript = document.createElement('script');
-  clutchScript.src = 'https://widget.clutch.co/static/js/widget.js';
-  clutchScript.type = 'text/javascript';
-  clutchScript.defer = true;
-  clutchScript.onload = () => {
-    window.CLUTCHCO && window.CLUTCHCO.Init && window.CLUTCHCO.Init();
-  };
-  document.head.appendChild(clutchScript);
-};
-
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
-  appendClutchScript();
 }
 
 loadPage();
