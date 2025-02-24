@@ -3,8 +3,12 @@ export default function decorate(block) {
   const isMobileHidden = block.classList.contains('no-mobile-scroll');
   Array.from(block.children).forEach((element) => {
     const dupplicate = element.cloneNode(true);
-    isDesktopHidden && dupplicate.classList.add('desktop-hidden');
-    isMobileHidden && dupplicate.classList.add('mobile-hidden');
+    if (isDesktopHidden) {
+      dupplicate.classList.add('desktop-hidden');
+    }
+    if (isMobileHidden) {
+      dupplicate.classList.add('mobile-hidden');
+    }
     block.appendChild(dupplicate);
   });
 }

@@ -24,7 +24,7 @@ const buildIcon = (iconContainer) => {
 
 const getIconsTag = (block) => {
   const icons = [];
-  for (let i = 1; i < block.children.length; i++) {
+  for (let i = 1; i < block.children.length; i += 1) {
     const iconContainer = block.children[i];
     icons.push(buildIcon(iconContainer));
   }

@@ -120,9 +120,9 @@ const addScrollListener = () => {
     const breakpoint = clientHeight;
 
     if (scrollTop > headerHeight) {
-        header.classList.add('top-animation')
-    } else  {
-        header.classList.remove('top-animation')
+      header.classList.add('top-animation');
+    } else {
+      header.classList.remove('top-animation');
     }
 
     if (scrollTop > lastScroll) {
@@ -133,19 +133,19 @@ const addScrollListener = () => {
       header.style.top = `-${newScrollTop}px`;
     } else {
       let newScrollTop = 0;
-        if (scrollTop > breakpoint) {
-            newScrollTop = 24;
-        }
-        if (scrollTop < headerHeight && header.style.top !== '0px') {
-            newScrollTop = -scrollTop;
-        }
+      if (scrollTop > breakpoint) {
+        newScrollTop = 24;
+      }
+      if (scrollTop < headerHeight && header.style.top !== '0px') {
+        newScrollTop = -scrollTop;
+      }
       header.style.top = `${newScrollTop}px`;
     }
 
     if (scrollTop > breakpoint) {
-        header.classList.add('header-sm');
+      header.classList.add('header-sm');
     } else {
-        header.classList.remove('header-sm');
+      header.classList.remove('header-sm');
     }
 
     lastScroll = scrollTop;
