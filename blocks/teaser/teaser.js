@@ -24,6 +24,8 @@ export default function decorate(block) {
   const video = blockContent.querySelector('h6');
   const linkBlock = blockContent.querySelector('p a');
 
+  const titleElements = blockContent.querySelectorAll('h2');
+
   let teaserImage;
   let teaserVideo;
 
@@ -34,30 +36,50 @@ export default function decorate(block) {
     videoTag.loop = true;
     videoTag.autoplay = true;
     videoTag.muted = true;
-    teaserVideo = createTag('div', { class: 'teaser__video' }, videoTag);
+    teaserVideo = createTag('div', { class: 'teaser-video' }, videoTag);
   } else if (imageBlock) {
-    teaserImage = createTag('div', { class: 'teaser__image' }, imageBlock);
+    teaserImage = createTag('div', { class: 'teaser-image' }, imageBlock);
   }
 
-  const teaserContent = createTag('div', { class: 'teaser__content' });
+  const teaserContent = createTag('div', { class: 'teaser-content' });
 
-  pretitleBlock
-        && teaserContent.appendChild(createTag('div', { class: 'teaser__pretitle' }, pretitleBlock.innerHTML));
+  if (pretitleBlock) {
+    teaserContent.appendChild(createTag('div', { class: 'teaser-pretitle' }, pretitleBlock.innerHTML));
+  }
 
-  titleBlock
-        && teaserContent.appendChild(createTag('h1', { class: 'teaser__title' }, modifyText(titleBlock).innerHTML));
+  if (titleBlock) {
+    if (titleElements.length <= 1) {
+      teaserContent.appendChild(createTag('h1', { class: 'teaser-title' }, modifyText(titleBlock).innerHTML));
+    } else {
+      let newTitles = '';
+      titleElements.forEach((element) => {
+        newTitles += modifyText(element).outerHTML;
+      });
+      const teaserTitlesWrapper = `<div class="teaser-titles-wrapper"><div class="teaser-titles">${newTitles}</div></div>`;
+      teaserContent.appendChild(createTag('div', { class: 'multiple-titles' }, teaserTitlesWrapper));
+      const divs = Array.from(teaserContent.querySelectorAll('h2'));
+      let i = -1;
+      setInterval(() => {
+        i = (i + 1) % divs.length;
+        const y = -(i * divs[0].offsetHeight);
+        teaserContent.querySelector('.teaser-titles-wrapper').style.maxHeight = `${divs[i].clientHeight}px`;
+        teaserContent.querySelector('.teaser-titles').style.transform = `translateY(${y}px)`;
+      }, 2500);
+    }
+  }
 
-  descriptionBlock
-        && teaserContent.appendChild(createTag('div', { class: 'teaser__description' }, descriptionBlock.innerHTML));
+  if (descriptionBlock) {
+    teaserContent.appendChild(createTag('div', { class: 'teaser-description' }, descriptionBlock.innerHTML));
+  }
 
   if (linkBlock) {
-    const link = createTag('a', { class: 'teaser__cta button' }, linkBlock.innerText);
+    const link = createTag('a', { class: 'teaser-cta button' }, linkBlock.innerText);
     link.setAttribute('href', linkBlock.getAttribute('href'));
-    teaserContent.appendChild(createTag('div', { class: 'teaser__cta-container' }, link));
+    teaserContent.appendChild(createTag('div', { class: 'teaser-cta-container' }, link));
   }
 
   block.innerHTML = '';
-  teaserImage && block.appendChild(teaserImage);
-  teaserVideo && block.appendChild(teaserVideo);
+  if (teaserImage) block.appendChild(teaserImage);
+  if (teaserVideo) block.appendChild(teaserVideo);
   block.appendChild(teaserContent);
 }
