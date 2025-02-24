@@ -5,29 +5,29 @@
     color: #000;
 }
 
-.quote__content-top-left {
+.quote-content-top-left {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.quote__content-top-right {
+.quote-content-top-right {
     display: inline-flex;
     gap: 24px
 }
 
-.quote__reviews {
+.quote-reviews {
     display: inline-flex;
     gap: 4px;
     width: max-content;
 }
 
-.quote__review {
+.quote-review {
     width: 20px;
     height: 20px;
 }
 
-.quote .quote__content-top {
+.quote .quote-content-top {
     display: flex;
     justify-content: space-between;
     padding-left: 24px;
@@ -35,20 +35,20 @@
     gap: 40px;
 }
 
-.quote .quote__divider {
+.quote .quote-divider {
     height: 1px;
     background: var(--color-gray);
     margin-top: 16px;
     margin-bottom: 16px;
 }
 
-.quote .quote__content-bottom {
+.quote .quote-content-bottom {
     padding-left: 24px;
     padding-right: 24px;
 }
 
 
-.quote .quote__title {
+.quote .quote-title {
     font-size: 28px;
     line-height: 26px;
     font-weight: 500;
@@ -56,21 +56,21 @@
     text-overflow: ellipsis;
 }
 
-.quote .quote__aftertitle {
+.quote .quote-aftertitle {
     white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
-    .quote .quote__content-top {
+@media (width <= 1024px) {
+    .quote .quote-content-top {
         flex-direction: column;
         gap: 8px;
     }
 
-    .quote__content-top-left {
+    .quote-content-top-left {
         flex-direction: column;
     }
 
-    .quote__content-top-right {
+    .quote-content-top-right {
         flex-direction: column;
         gap: 8px;
     }

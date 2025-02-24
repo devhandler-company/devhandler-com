@@ -16,6 +16,7 @@
 
 .text-tile {
     --text-tile-padding: 32px;
+
     background-color: transparent;
     color: var(--secondary-text-color);
     padding: var(--text-tile-padding);

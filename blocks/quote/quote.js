@@ -1,10 +1,10 @@
 import { createTag } from '../../scripts/utils.js';
 
 const getReviews = () => {
-  const reviews = createTag('span', { class: 'quote__reviews' }, '');
+  const reviews = createTag('span', { class: 'quote-reviews' }, '');
   for (let index = 0; index < 5; index += 1) {
     const reviewImage = createTag('img', {
-      class: 'quote__review',
+      class: 'quote-review',
       alt: 'Quote review icon',
     });
     reviewImage.setAttribute('src', '/icons/review-star.svg');
@@ -20,26 +20,26 @@ export default function decorate(block) {
   const afterTitleBlock = blockContent.querySelectorAll('p')[0];
   const descriptionBlock = blockContent.querySelectorAll('p')[1];
 
-  const quoteContent = createTag('div', { class: 'quote__content' });
-  const topRow = createTag('div', { class: 'quote__content-top' }, '');
-  const topRowLeft = createTag('div', { class: 'quote__content-top-left' }, '');
+  const quoteContent = createTag('div', { class: 'quote-content' });
+  const topRow = createTag('div', { class: 'quote-content-top' }, '');
+  const topRowLeft = createTag('div', { class: 'quote-content-top-left' }, '');
   const topRowRight = createTag(
     'div',
-    { class: 'quote__content-top-right' },
+    { class: 'quote-content-top-right' },
     '',
   );
   topRow.appendChild(topRowLeft);
   topRow.appendChild(topRowRight);
 
   if (titleBlock) {
-    topRowLeft.appendChild(createTag('div', { class: 'quote__title h4' }, titleBlock.innerHTML));
+    topRowLeft.appendChild(createTag('div', { class: 'quote-title h4' }, titleBlock.innerHTML));
   }
 
   if (afterTitleBlock) {
     topRowRight.appendChild(
       createTag(
         'span',
-        { class: 'quote__aftertitle' },
+        { class: 'quote-aftertitle' },
         afterTitleBlock.innerHTML,
       ),
     );
@@ -50,12 +50,12 @@ export default function decorate(block) {
   quoteContent.appendChild(topRow);
 
   if (descriptionBlock) {
-    const divider = createTag('div', { class: 'quote__divider' }, '');
-    const bottomRow = createTag('div', { class: 'quote__content-bottom' }, '');
+    const divider = createTag('div', { class: 'quote-divider' }, '');
+    const bottomRow = createTag('div', { class: 'quote-content-bottom' }, '');
     bottomRow.appendChild(
       createTag(
         'span',
-        { class: 'quote__description' },
+        { class: 'quote-description' },
         descriptionBlock.innerHTML,
       ),
     );

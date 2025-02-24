@@ -1,5 +1,6 @@
 .form {
     color: #000;
+
     --checkbox-side-size: 28px;
 }
 
@@ -106,7 +107,7 @@
     color: black;
     padding-left: unset;
     padding-right: unset;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .form .field-wrapper.selection-wrapper {
@@ -167,17 +168,21 @@
     transform: translateX(24px);
 }
 
+.form.multistep .button {
+    margin: unset;
+    line-height: 32px;
+}
+
 .form .blue-button .button {
     border: var(--border-size) solid var(--color-blue);
-    background: linear-gradient(to right, var(--color-blue) 50%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(to right, var(--color-blue) 50%, rgb(0 0 0 / 0%) 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     background-origin: border-box;
     background-repeat: no-repeat;
 }
 
-.form .blue-button .button:after {
-    background-color: var(--color-blue);
+.form .blue-button .button::after {
     background: var(--color-blue);
     background-origin: border-box;
     background-repeat: no-repeat;
@@ -198,7 +203,7 @@
     position: absolute;
 }
 
-.form input[type="checkbox"] + label:before {
+.form input[type="checkbox"] + label::before {
     content: "";
     display: inline-block;
     width: var(--checkbox-side-size);
@@ -214,7 +219,7 @@
     cursor: pointer;
 }
 
-.form input[type="checkbox"]:checked + label:before {
+.form input[type="checkbox"]:checked + label::before {
     background-image: url("/icons/checked.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -233,11 +238,6 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-}
-
-.form.multistep .button {
-    margin: unset;
-    line-height: 32px;
 }
 
 .thankyou-message-container {
@@ -267,11 +267,12 @@
     display: block;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .Submit-wrapper {
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .form.multistep form {
         grid-template-columns: 1fr;
         row-gap: 24px;
@@ -287,6 +288,8 @@
         --button-padding-top: 20px;
         --button-padding-bottom: 20px;
         --button-font-size: 18px;
+
+        line-height: normal;
     }
 
     .form label, .form fieldset > legend {
@@ -307,10 +310,6 @@
 
     .form .small-field label {
         font-size: 12px;
-    }
-
-    .form.multistep .button {
-        line-height: normal;
     }
 
     .form .field-wrapper {

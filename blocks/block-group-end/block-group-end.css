@@ -1,4 +1,4 @@
-/*Colors*/
+/* Colors */
 .block-group.bg-aqamarine, .block-group.bg-cyan {
     background-color: var(--color-aqamarine);
 }
@@ -11,7 +11,7 @@
     background-color: var(--color-blue);
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .mobile-bg-blue {
         background-color: var(--color-blue);
     }
@@ -21,7 +21,7 @@
     }
 }
 
-/*Common*/
+/* Common */
 .block-group {
     display: flex;
     flex-direction: column;
@@ -77,47 +77,58 @@
     flex-direction: column-reverse;
 }
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     .center-content-desktop {
         align-items: center;
         justify-content: center;
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .block-group.mobile-gap-0 {
         gap: 0;
     }
+
     .block-group.mobile-gap-10 {
         gap: 10px;
     }
+
     .grid-mobile-reverse > *:first-child {
         order: 10;
     }
+
     .grid-mobile-reverse > *:nth-child(2) {
         order: 9;
     }
+
     .grid-mobile-reverse > *:nth-child(3) {
         order: 8;
     }
+
     .grid-mobile-reverse > *:nth-child(4) {
         order: 7;
     }
+
     .grid-mobile-reverse > *:nth-child(5) {
         order: 6;
     }
+
     .grid-mobile-reverse > *:nth-child(6) {
         order: 5;
     }
+
     .grid-mobile-reverse > *:nth-child(7) {
         order: 4;
     }
+
     .grid-mobile-reverse > *:nth-child(8) {
         order: 3;
     }
+
     .grid-mobile-reverse > *:nth-child(9) {
         order: 2;
     }
+
     .grid-mobile-reverse > *:nth-child(10) {
         order: 1;
     }

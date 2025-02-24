@@ -13,6 +13,7 @@
 .text-tile.title-only:hover {
     cursor: default;
 }
+
 .text-tile.title-only::after {
     content: ' ';
     position: absolute;

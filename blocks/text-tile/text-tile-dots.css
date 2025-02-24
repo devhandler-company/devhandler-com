@@ -15,10 +15,11 @@
     background: linear-gradient(var(--color-blue), var(--color-aqamarine));
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .text-tile.gradient-dot-left {
         padding-left: 64px;
     }
+
     .text-tile.gradient-dot-left::before {
         width: 30px;
         height: 20px;

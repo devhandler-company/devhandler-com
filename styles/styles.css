@@ -1,13 +1,13 @@
-@import "./common/section.css";
-@import "./common/headings.css";
-@import "./common/buttons.css";
-@import "./common/spacings.css";
-@import "./common/grids.css";
-@import "./common/common.css";
-@import "./common/stick.css";
+@import url("./common/section.css");
+@import url("./common/headings.css");
+@import url("./common/buttons.css");
+@import url("./common/spacings.css");
+@import url("./common/grids.css");
+@import url("./common/common.css");
+@import url("./common/stick.css");
 
 :root {
-    /*breakpoints*/
+    /* breakpoints */
     --desktop-breakpoint: 1024px;
 
     /* colors */
@@ -25,14 +25,12 @@
     --heading-font-size-m: 28px; /* h4 */
     --heading-font-size-s: 22px; /* h5 */
     --heading-font-size-xs: 18px; /* h6 */
-
     --font-size-h1: var(--heading-font-size-xxl);
     --font-size-h2: var(--heading-font-size-xl);
     --font-size-h3: var(--heading-font-size-l);
     --font-size-h4: var(--heading-font-size-m);
     --font-size-h5: var(--heading-font-size-s);
     --font-size-h6: var(--heading-font-size-xs);
-
     --line-height-normal: normal;
     --line-height-m: 26px;
 
@@ -40,8 +38,8 @@
     --nav-height: 64px;
 
     /* Fonts */
-    --secondary-font-family: AmpleAlt, 'sans-serif';
-    --primary-font-family: Hind, 'sans-serif';
+    --secondary-font-family: amplealt, 'sans-serif';
+    --primary-font-family: hind, 'sans-serif';
 
     /* Seciton */
     --section-gap: 24px;
@@ -52,18 +50,18 @@
     --color-blue-lighter: #3585ff;
     --color-gray: #929292;
     --color-gray-blue: #89B7D0;
-    --color-black: #222222;
+    --color-black: #222;
     --color-white: #fff;
     --color-dark: #505050;
     --color-absolute-black: #000;
     --color-bg-gray-linear: linear-gradient(to right, var(--color-gray) -50%, var(--color-black));
-    --color-bg-gray-linear-transperent: linear-gradient(110deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 100%);
+    --color-bg-gray-linear-transperent: linear-gradient(110deg, rgb(255 255 255 / 35%) 0%, rgb(255 255 255 / 6%) 100%);
 
     /* Text Colors */
     --primary-text-color: var(--color-white);
     --secondary-text-color: var(--color-black);
 
-    /*Borders*/
+    /* Borders */
     --border-radius: 20px;
     --border-size: 3px;
 }
@@ -96,7 +94,7 @@ footer .footer[data-block-status="loaded"] {
     visibility: visible;
 }
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     header .header[data-block-status="loaded"] {
         display: flex;
         justify-content: center;
@@ -167,14 +165,13 @@ main > .section:first-of-type {
     margin-top: 0;
 }
 
-@media (min-width: 1025px) {
-
+@media (width >= 1025px) {
     .desktop-hidden {
         display: none !important;
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     :root {
         --heading-font-size-xxl: 22px; /* h1 */
         --heading-font-size-xl: 20px; /* h2 */
@@ -182,11 +179,11 @@ main > .section:first-of-type {
         --heading-font-size-m: 16px; /* h4 */
         --heading-font-size-s: 14px; /* h5 */
         --heading-font-size-xs: 12px; /* h6 */
-
         --body-font-size-m: 12px;
         --body-font-size-s: 19px;
         --body-font-size-xs: 17px;
     }
+
     .mobile-hidden {
         display: none !important;
     }

@@ -2,6 +2,7 @@
     --button-background-color: white;
     --button-padding-top: 8px;
     --button-padding-bottom: 8px;
+
     border: none;
 }
 
@@ -9,7 +10,7 @@
     width: 200px;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .clutch-wrapper .clutch.mini iframe {
         width: 148px;
     }

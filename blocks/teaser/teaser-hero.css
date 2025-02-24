@@ -12,7 +12,7 @@
     object-position: center;
 }
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     .teaser.hero {
         min-height: 485px;
     }
@@ -95,13 +95,7 @@
     will-change: transform;
 }
 
-.teaser.hero:has(.teaser-titles-wrapper) .teaser-content {
-}
-
-.teaser.hero:has(.teaser-titles-wrapper) .teaser-cta-container {
-}
-
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .teaser.hero .teaser-content {
         padding-top: 0;
         width: 100%;

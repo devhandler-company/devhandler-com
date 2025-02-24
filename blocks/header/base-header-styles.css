@@ -4,6 +4,10 @@ header .nav-wrapper {
     position: fixed;
 }
 
+header nav .nav-tools {
+    grid-area: tools;
+}
+
 header .nav-wrapper.top-animation {
     transition: top 500ms ease;
 }
@@ -79,6 +83,7 @@ header nav .nav-hamburger button {
 header nav[aria-expanded="true"] .nav-hamburger button {
     background-image: url('/icons/hamburger-icon-close.svg');
 }
+
 /* brand */
 header .nav-brand {
     display: none;
@@ -216,21 +221,21 @@ header nav .nav-sections ul > li > ul > li {
 header .header-sm nav {
     transition: max-width 500ms ease;
     max-width: 1248px;
-    background: linear-gradient(12deg, rgba(80, 80, 80, 0.9) 0%, rgba(34, 34, 34, 0.9) 100%);
+    background: linear-gradient(12deg, rgb(80 80 80 / 90%) 0%, rgb(34 34 34 / 90%) 100%);
     border: 2px solid var(--color-aqamarine);
     border-radius: var(--border-radius);
-    box-shadow: 0px 8.693px 43.463px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(32.59724807739258px);
+    box-shadow: 0 8.693px 43.463px 0 rgb(0 0 0 / 25%);
+    backdrop-filter: blur(32px);
 }
 
-@media (min-width: 1025px) and (max-width: 1248px){
+@media (width >= 1025px) and (width <= 1248px){
     header .header-sm nav {
         margin-left: 12px;
         margin-right: 12px;
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     header .header-sm {
         margin-left: 12px;
         margin-right: 12px;
@@ -253,11 +258,4 @@ header .header-sm nav {
         backdrop-filter: none;
         background: var(--color-black);
     }
-}
-
-
-
-/* tools */
-header nav .nav-tools {
-    grid-area: tools;
 }

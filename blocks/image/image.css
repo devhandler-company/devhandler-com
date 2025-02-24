@@ -10,6 +10,11 @@
     font-size: 0;
 }
 
+.image img {
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
 .image.full-height {
     height: 100%;
 }
@@ -20,11 +25,6 @@
 
 .image.position-left img {
     object-position: left;
-}
-
-.image img {
-    border-radius: var(--border-radius);
-    object-fit: cover;
 }
 
 .image.height-s img, .image.height-268 img {
@@ -80,23 +80,6 @@
     height: 100%;
 }
 
-.image.relative:not(.mobile-not-relative),
-.image-wrapper:not(.mobile-not-relative):has(.image.relative),
-.image.relative:not(.mobile-not-relative) picture {
-    position: relative;
-    height: 100%;
-}
-.image.relative img {
-    width: 100%;
-}
-.image.relative:not(.mobile-not-relative) img {
-    height: 100%;
-    object-position: center;
-    object-fit: contain;
-    position: absolute;
-    width: 100%;
-}
-
 .image.image-bottom img {
     object-position: bottom;
 }
@@ -113,7 +96,26 @@
     display: flex;
 }
 
-@media (min-width: 1025px) {
+.image.relative img {
+    width: 100%;
+}
+
+.image.relative:not(.mobile-not-relative),
+.image-wrapper:not(.mobile-not-relative):has(.image.relative),
+.image.relative:not(.mobile-not-relative) picture {
+    position: relative;
+    height: 100%;
+}
+
+.image.relative:not(.mobile-not-relative) img {
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+}
+
+@media (width >= 1025px) {
     .image.relative {
         height: 100%;
         object-position: center;
@@ -123,7 +125,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .image.mobile-height-s img, .image.mobile-height-268 img {
         height: 268px;
         width: 100%;

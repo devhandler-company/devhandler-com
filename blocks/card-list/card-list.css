@@ -6,7 +6,7 @@
     column-gap: 20px;
     padding-top: 48px;
     padding-bottom: 48px;
-    animation-name: cardListScroll;
+    animation-name: card-list-scroll;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -14,6 +14,10 @@
 
 .card-list div p img {
     width: 88px;
+}
+
+.card-list > div {
+    text-align: center;
 }
 
 .card-list div div {
@@ -26,44 +30,41 @@
 .card-list div p {
     color: var(--color-black);
     text-align: center;
-
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: 26px;
 }
 
-.card-list > div {
-    text-align: center;
-}
-
 .card-list-wrapper {
     overflow: hidden;
 }
 
-@keyframes cardListScroll {
+@keyframes card-list-scroll {
     from {
         transform: translateX(0)
     }
+
     to {
         transform: translateX(calc(0px - 50%));
     }
 }
 
-@keyframes cardListScrollToLeft {
+@keyframes card-list-scroll-to-left {
     to {
         transform: translateX(0)
     }
+
     from {
         transform: translateX(calc(0px - 50%));
     }
 }
 
 .card-list.to-left {
-    animation-name: cardListScrollToLeft;
+    animation-name: card-list-scroll-to-left;
 }
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     .card-list.no-desktop-scroll {
         animation: none;
     }
@@ -81,7 +82,7 @@
     align-items: center;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .card-list {
         padding-top: 24px;
         padding-bottom: 24px;
@@ -99,6 +100,7 @@
         font-weight: 500;
         line-height: 12px; /* 100% */
     }
+
     .card-list > div {
         width: 100px;
     }
