@@ -1,9 +1,10 @@
 @import "./common/section.css";
 @import "./common/headings.css";
-@import "./common/special-colors.css";
 @import "./common/buttons.css";
+@import "./common/spacings.css";
+@import "./common/grids.css";
 @import "./common/common.css";
-@import "./stick/stick.css";
+@import "./common/stick.css";
 
 :root {
     /*breakpoints*/
@@ -55,7 +56,8 @@
     --color-white: #fff;
     --color-dark: #505050;
     --color-absolute-black: #000;
-    --color-bg-gray-linear: linear-gradient(110deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 100%);
+    --color-bg-gray-linear: linear-gradient(to right, var(--color-gray) -50%, var(--color-black));
+    --color-bg-gray-linear-transperent: linear-gradient(110deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.06) 100%);
 
     /* Text Colors */
     --primary-text-color: var(--color-white);

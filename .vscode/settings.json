@@ -1,7 +1,0 @@
-{
-  "editor.formatOnSaveMode": "modifications",
-  "editor.formatOnSave": true,
-  "files.autoSave": "onFocusChange",
-  "prettier.printWidth": 120,
-  "yaml.format.printWidth": 120
-}

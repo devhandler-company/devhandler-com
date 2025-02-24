@@ -1,6 +1,27 @@
-@import url(./margins/index.css);
-@import url(./paddings/index.css);
-@import url(./grids/index.css);
+/*Text Colors*/
+.text-color-blue {
+    color: var(--color-blue);
+}
+
+.text-color-linear {
+    background-image: linear-gradient(var(--color-blue), var(--color-aqamarine));
+    color: transparent;
+    background-clip: text;
+}
+
+.text-color-linear-to-bottom {
+    background-image: linear-gradient(to bottom, var(--color-blue), var(--color-aqamarine));
+    color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 1024px) {
+    .text-color-blue {
+        color: var(--color-blue-lighter);
+    }
+}
+
+/*Common*/
 
 .color-white {
     color: var(--color-white);
