@@ -1,3 +1,9 @@
+@import url("./common/section.css");
+@import url("./common/buttons.css");
+@import url("./common/grids.css");
+@import url("./common/common.css");
+@import url("./common/stick.css");
+
 :root {
     /* breakpoints */
     --desktop-breakpoint: 1024px;
