@@ -60,7 +60,7 @@
 
 body {
     margin: 0;
-    display: block;
+    display: none;
     background-color: var(--color-black);
     color: var(--primary-text-color);
     font-family: var(--primary-font-family);
