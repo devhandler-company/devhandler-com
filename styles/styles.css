@@ -67,8 +67,8 @@
 }
 
 body {
-    display: none;
     margin: 0;
+    display: block;
     background-color: var(--color-black);
     color: var(--primary-text-color);
     font-family: var(--primary-font-family);
