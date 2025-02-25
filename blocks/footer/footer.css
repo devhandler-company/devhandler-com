@@ -20,3 +20,36 @@ footer .footer > div {
 footer .footer p {
   margin: 0;
 }
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-container > div {
+    align-items: end;
+}
+
+@media (width < 900px) {
+    footer .footer > div {
+        padding: 20px 24px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-container .order-1-mobile {
+        order: 1;
+    }
+
+    .footer-container .order-2-mobile {
+        order: 2;
+    }
+
+    .footer-container .order-3-mobile {
+        order: 3;
+    }
+}

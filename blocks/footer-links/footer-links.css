@@ -1,0 +1,19 @@
+.footer-links a {
+    color: var(--color-white);
+}
+
+.footer-links a:hover {
+    color: var(--color-blue);
+}
+
+.footer-links ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+@media (width < 700px) {
+    .footer-links ul {
+        gap: 12px;
+    }
+}

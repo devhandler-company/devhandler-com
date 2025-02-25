@@ -45,6 +45,11 @@
     justify-content: end;
 }
 
+
+.block-group.row.justify-content-center  {
+    justify-content: center;
+}
+
 .block-group.max-width-1200 {
     max-width: 1200px;
     width: 100%;
@@ -64,6 +69,10 @@
     gap: 16px;
 }
 
+.block-group.gap-60 {
+    gap: 60px;
+}
+
 .block-group.full-height {
     height: 100%;
 }
@@ -72,7 +81,7 @@
     width: max-content;
 }
 
-.center-content {
+.block-group.center-content {
     align-items: center;
     justify-content: center;
 }
@@ -95,6 +104,10 @@
 
     .block-group.mobile-gap-10 {
         gap: 10px;
+    }
+
+    .block-group.mobile-gap-12 {
+        gap: 12px;
     }
 
     .grid-mobile-reverse > *:first-child {
