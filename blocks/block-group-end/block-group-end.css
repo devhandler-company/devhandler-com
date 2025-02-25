@@ -68,6 +68,10 @@
     height: 100%;
 }
 
+.block-group.max-width {
+    width: max-content;
+}
+
 .center-content {
     align-items: center;
     justify-content: center;

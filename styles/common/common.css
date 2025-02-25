@@ -55,6 +55,18 @@
     align-items: center;
 }
 
+.plain-text h2, .plain-text h3,.plain-text h4,.plain-text h5,.plain-text h6 {
+    margin-top: 16px;
+}
+
+.plain-text ul, .plain-text ol {
+    margin-left: 32px;
+}
+
+.plain-text a {
+    color: var(--color-blue);
+}
+
 @media (min-width: 1025px) {
     .vertical-text {
         writing-mode: vertical-rl;
