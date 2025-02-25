@@ -1156,3 +1156,106 @@ main div.section.padding-64, .padding-64 {
         padding-right: 24px;
     }
 }
+
+/*Grids*/
+.section.desktop-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+}
+
+.section.row-grid {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.section.desktop-grid.desktop-grid-50-50 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section.desktop-grid.desktop-grid-10-90 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .1fr .9fr;
+}
+
+.section.desktop-grid.desktop-grid-90-10 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .9fr .1fr;
+}
+
+.section.desktop-grid.desktop-grid-8-92 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 8fr 92fr;
+}
+
+.section.desktop-grid.desktop-grid-92-8 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 92fr 8fr;
+}
+
+.section.desktop-grid.desktop-grid-15-85 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .15fr .85fr;
+}
+
+.section.desktop-grid.desktop-grid-85-15 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .85fr .15fr;
+}
+
+.section.desktop-grid.desktop-grid-8-52-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: .08fr .52fr .4fr;
+}
+
+.section.desktop-grid.desktop-grid-20-40-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 4fr 4fr;
+}
+
+.section.desktop-grid.desktop-grid-40-40-20 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 4fr 4fr;
+}
+
+.section.desktop-grid.desktop-grid-2-1 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.section.desktop-grid.desktop-grid-1-2 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+.section.desktop-grid.desktop-grid-60-40 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.6fr 0.4fr;
+}
+
+.section.desktop-grid.desktop-grid-40-60 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.4fr 0.6fr;
+}
+
+.section.desktop-grid.desktop-grid-25-25-25-25 {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 1024px) {
+    .section.row-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 24px;
+        grid-column-gap: 24px;
+    }
+    .section.desktop-grid.mobile-grid, .section.mobile-grid {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        column-gap: 24px;
+    }
+}
