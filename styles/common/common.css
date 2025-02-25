@@ -64,7 +64,7 @@
 }
 
 .plain-text a {
-    color: var(--color-blue);
+    color: var(--color-blue-lighter);
 }
 
 @media (min-width: 1025px) {
