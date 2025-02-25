@@ -110,7 +110,6 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
-  loadFonts();
 }
 
 /**
@@ -124,6 +123,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  await loadFonts();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
