@@ -1,7 +1,1 @@
-@import url("./common/section.css");
-@import url("./common/headings.css");
-@import url("./common/buttons.css");
-@import url("./common/spacings.css");
-@import url("./common/grids.css");
-@import url("./common/common.css");
-@import url("./common/stick.css");/* add global styles that can be loaded post LCP here */
+/* add global styles that can be loaded post LCP here */
