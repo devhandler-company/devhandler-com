@@ -32,9 +32,10 @@ export default function decorate(block) {
   if (block.classList.contains('video') && video) {
     const videoTag = document.createElement('video');
     videoTag.src = video.querySelector('a').href;
-    videoTag.loop = true;
-    videoTag.autoplay = true;
-    videoTag.muted = true;
+    videoTag.setAttribute('playsinline', '');
+    videoTag.setAttribute('loop', '');
+    videoTag.setAttribute('autoplay', 'true');
+    videoTag.setAttribute('muted', '');
     teaserVideo = createTag('div', { class: 'teaser-video' }, videoTag);
   } else if (imageBlock) {
     teaserImage = createTag('div', { class: 'teaser-image' }, imageBlock);
