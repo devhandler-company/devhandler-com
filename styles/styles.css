@@ -618,7 +618,7 @@ main div.section.background-gradient {
     }
 
     .desktop-grid-40-60 .stick-right::after {
-        margin-right: calc((100% / 3 * 5 + 24px / 5 * 3 - 100vw) / 2 + 12px);
+        margin-right: calc((100% / 3 * 5 + 24px / 5 * 3 - 100vw) / 2 + 13px);
     }
 
     .desktop-grid-60-40 .stick-right::after {
@@ -654,7 +654,7 @@ main div.section.background-gradient {
     }
 
     .desktop-grid-2-1 .stick-right::after {
-        margin-right: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
+        margin-right: calc((100% * 3 + 24px - 100vw) / 2 + 9px);
     }
 
     .desktop-grid-1-1 .stick-right::after {
@@ -674,7 +674,7 @@ main div.section.background-gradient {
     }
 
     .desktop-grid-50-50 .stick-right::after {
-        margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
+        margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 9px);
     }
 
     .section.stick-right::after {

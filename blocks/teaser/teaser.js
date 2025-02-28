@@ -32,7 +32,7 @@ export default function decorate(block) {
   if (block.classList.contains('video') && video) {
     const videoTag = document.createElement('video');
     videoTag.src = video.querySelector('a').href;
-    videoTag.setAttribute('playsinline', true)
+    videoTag.setAttribute('playsinline', true);
     videoTag.loop = true;
     videoTag.autoplay = true;
     videoTag.muted = true;
