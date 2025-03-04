@@ -1,0 +1,17 @@
+@import url('/blocks/image/image.css');
+
+
+@media (max-width: 1024px) {
+    .section.developers-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section.developers-container .developers > .section {
+        margin-top: -20px;
+    }
+
+    .section.developers-container .developers-body {
+        z-index: 1;
+    }
+}
