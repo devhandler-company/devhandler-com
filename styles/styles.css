@@ -280,7 +280,7 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
 }
 
 .bg-gray-linear {
-    background-color: var(--color-bg-gray-linear);
+    background: var(--color-bg-gray-linear);
 }
 
 .height-auto {
@@ -312,6 +312,9 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
 }
 
 @media (min-width: 1025px) {
+    .desktop-bg-gray-linear {
+        background: var(--color-bg-gray-linear);
+    }
     .vertical-text {
         writing-mode: vertical-rl;
         text-orientation: mixed;
