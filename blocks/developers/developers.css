@@ -4,6 +4,18 @@
     .section.developers-container .developers-left {
         padding-left: 0;
     }
+
+    .section.developers-container .developers .image-wrapper {
+        height: 100%;
+    }
+
+    .section.developers-container .developers .image-wrapper .image {
+        height: 100%;
+    }
+
+    .section.developers-container .developers .image-wrapper .image img {
+        height: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -18,6 +30,10 @@
 
     .section.developers-container .developers-body {
         z-index: 1;
+    }
+
+    .section.developers-container .developers .image-wrapper img {
+        width: 100%;
     }
 }
 
