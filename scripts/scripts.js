@@ -33,6 +33,50 @@ const assignCssVariable = (htmlElement, variableName, variableValue) => {
   htmlElement.style.setProperty(variableName, variableValue);
 };
 
+const scrollLeftElements = () => {
+  const fromRightElements = document.querySelectorAll('.show-from-left');
+  const windowHeight = window.innerHeight;
+  fromRightElements.forEach((el) => {
+    const elementOffset = el.getBoundingClientRect().y;
+
+    if (((windowHeight / 2 - elementOffset) / windowHeight) * 500 > 0) {
+      el.classList.remove('show-from-left');
+      el.style.left = 'unset';
+    } else {
+      el.style.left = `${((windowHeight / 2 - elementOffset) / windowHeight) * 500}%`;
+    }
+  });
+};
+
+const processShowFromLeft = () => {
+  scrollLeftElements();
+  document.addEventListener('scroll', () => {
+    scrollLeftElements();
+  });
+};
+
+const scrollRightElements = () => {
+  const fromRightElements = document.querySelectorAll('.show-from-right');
+  const windowHeight = window.innerHeight;
+  fromRightElements.forEach((el) => {
+    const elementOffset = el.getBoundingClientRect().y;
+
+    if (((windowHeight / 2 - elementOffset) / windowHeight) * 500 > 0) {
+      el.classList.remove('show-from-right');
+      el.style.right = 'unset';
+    } else {
+      el.style.right = `${((windowHeight / 2 - elementOffset) / windowHeight) * 500}%`;
+    }
+  });
+};
+
+const processShowFromRight = () => {
+  scrollRightElements();
+  document.addEventListener('scroll', () => {
+    scrollRightElements();
+  });
+};
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -127,6 +171,8 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  processShowFromRight();
+  processShowFromLeft();
 }
 
 loadPage();

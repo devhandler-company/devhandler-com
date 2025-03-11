@@ -369,6 +369,14 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
     box-sizing: border-box;
 }
 
+.section.overflow-hidden, .overflow-hidden {
+    overflow: hidden;
+}
+
+.show-from-right, .show-from-left {
+    position: relative;
+}
+
 @media (width >= 1025px) and (width <= 1248px) {
     .section.border-box {
         margin-left: 24px;
