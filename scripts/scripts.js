@@ -34,16 +34,13 @@ const assignCssVariable = (htmlElement, variableName, variableValue) => {
 };
 
 const scrollLeftElements = () => {
-  const fromRightElements = document.querySelectorAll('.show-from-left');
+  const fromRightElements = document.querySelectorAll('.show-from-left:not(.show-animation-finished)');
   const windowHeight = window.innerHeight;
   fromRightElements.forEach((el) => {
     const elementOffset = el.getBoundingClientRect().y;
-
-    if (((windowHeight / 2 - elementOffset) / windowHeight) * 500 > 0) {
-      el.classList.remove('show-from-left');
-      el.style.left = 'unset';
-    } else {
-      el.style.left = `${((windowHeight / 2 - elementOffset) / windowHeight) * 500}%`;
+    if (elementOffset < windowHeight) {
+      el.classList.add('show-animation-finished');
+      el.style.left = '0';
     }
   });
 };
@@ -56,16 +53,13 @@ const processShowFromLeft = () => {
 };
 
 const scrollRightElements = () => {
-  const fromRightElements = document.querySelectorAll('.show-from-right');
+  const fromRightElements = document.querySelectorAll('.show-from-right:not(.show-animation-finished)');
   const windowHeight = window.innerHeight;
   fromRightElements.forEach((el) => {
     const elementOffset = el.getBoundingClientRect().y;
-
-    if (((windowHeight / 2 - elementOffset) / windowHeight) * 500 > 0) {
-      el.classList.remove('show-from-right');
-      el.style.right = 'unset';
-    } else {
-      el.style.right = `${((windowHeight / 2 - elementOffset) / windowHeight) * 500}%`;
+    if (elementOffset < windowHeight) {
+      el.classList.add('show-animation-finished');
+      el.style.right = '0';
     }
   });
 };

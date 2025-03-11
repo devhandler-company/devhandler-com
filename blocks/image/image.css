@@ -107,6 +107,10 @@
     height: 100%;
 }
 
+.image.relative.image-bottom-right:not(.mobile-not-relative) img, .image.image-bottom-right img {
+    object-position: bottom right;
+}
+
 .image.relative:not(.mobile-not-relative) img {
     height: 100%;
     object-position: center;
@@ -142,5 +146,9 @@
 
     .image.mobile-object-position-top img {
         object-position: top;
+    }
+
+    .image.image-bottom-right img {
+        object-position: bottom right;
     }
 }
