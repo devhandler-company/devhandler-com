@@ -8,7 +8,7 @@ const getSubtitle = (subtitle) => {
 const getLeftSideContent = (name, text, pictureHtml, subTitle, index) => {
   const greenClasses = 'block-group developers-body block-group-end desktop-bg-gray-linear border default-padding text-bottom mobile-border-top-none mobile-bg-cyan mobile-border-cyan mobile-color-black block';
   const whiteClasses = 'block-group developers-body block-group-end bg-white border border-white color-black default-padding text-bottom mobile-border-top-none mobile-bg-cyan mobile-border-cyan block';
-  return `<div class="section developers-left desktop-grid desktop-grid-20-40-40 mobile-grid grid-mobile-reverse mobile-gap-0 mobile-padding-0 block-group-start-container block-group-end-container custom-heading-container image-container"
+  return `<div class="section show-from-left developers-left desktop-grid desktop-grid-20-40-40 mobile-grid grid-mobile-reverse mobile-gap-0 mobile-padding-0 block-group-start-container block-group-end-container custom-heading-container image-container"
      data-section-status="loaded" style="">
 
 
@@ -34,7 +34,7 @@ const getLeftSideContent = (name, text, pictureHtml, subTitle, index) => {
 };
 
 const getRightSideContent = (name, text, pictureHtml, subTitle) => `
-  <div class="section desktop-grid desktop-grid-60-40 mobile-grid mobile-gap-0 mobile-padding-0 mobile-margin-top-0 block-group-start-container image-container block-group-end-container custom-heading-container"
+  <div class="show-from-right section desktop-grid desktop-grid-60-40 mobile-grid mobile-gap-0 mobile-padding-0 mobile-margin-top-0 block-group-start-container image-container block-group-end-container custom-heading-container"
      data-section-status="loaded" style="">
     <div class="block-group block-group-end block">
         <div class="image-wrapper">
