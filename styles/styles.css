@@ -241,6 +241,10 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
     margin-top: 10px;
 }
 
+h2 + p {
+    margin-top: 16px;
+}
+
 /*Common Styles*/
 /*Text Colors*/
 .text-color-blue {
@@ -503,7 +507,7 @@ main div.section.background-dark {
 }
 
 main div.section.background-gradient {
-    background: linear-gradient(to right, var(--color-aqamarine) 70%, var(--color-blue));
+    background: linear-gradient(90deg, #4DE4B9 51.15%, #0358D8 99.98%);
     color: black;
 }
 
