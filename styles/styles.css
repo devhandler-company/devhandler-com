@@ -899,6 +899,10 @@ button.button:focus {
         --button-padding-top: 8px;
         --button-padding-bottom: 8px;
     }
+
+    .button.mobile-radius-10 {
+        --border-radius: 10px;
+    }
 }
 
 /*Spacings*/
