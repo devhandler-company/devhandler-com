@@ -62,7 +62,7 @@
 
 @media (width <= 1024px) {
     .quote {
-        max-width: 75vw;
+        max-width: 68vw;
     }
     .quote .quote-content-top {
         flex-direction: column;
