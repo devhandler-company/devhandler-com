@@ -111,12 +111,20 @@
     object-position: bottom right;
 }
 
+.image.relative.image-bottom-center:not(.mobile-not-relative) img, .image.image-bottom-center img {
+    object-position: bottom center;
+}
+
 .image.relative:not(.mobile-not-relative) img {
     height: 100%;
     object-position: center;
     object-fit: contain;
     position: absolute;
     width: 100%;
+}
+
+.image.border-none img {
+    border: none;
 }
 
 @media (width >= 1025px) {
@@ -148,7 +156,13 @@
         object-position: top;
     }
 
-    .image.image-bottom-right img {
+    .image.mobile-image-bottom-right img {
         object-position: bottom right;
+    }
+
+    .image.relative.under-form picture {
+        position: absolute;
+        width: 248px;
+        left: -20px;
     }
 }

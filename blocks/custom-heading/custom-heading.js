@@ -23,7 +23,7 @@ const processTypedBlock = (element) => {
     if (charIndex < text.length) {
       typedTextContainer.innerHTML += text.charAt(charIndex);
       charIndex += 1;
-      setTimeout(typeWriter, 50);
+      setTimeout(typeWriter, 20);
     }
   }
   typeWriter();

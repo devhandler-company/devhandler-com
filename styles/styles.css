@@ -471,6 +471,10 @@ main div.section.full-width-with-side-paddings {
         padding-left: 24px;
         padding-right: 24px;
     }
+
+    .section.mobile-overflow-x-clip, .mobile-overflow-x-clip {
+        overflow-x: clip;
+    }
 }
 
 main div.section.background-container img {
