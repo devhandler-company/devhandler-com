@@ -245,11 +245,6 @@ p + h2 {
     margin-top: 16px;
 }
 
-.text-14 p, .text-14 span {
-    font-size: 14px;
-    line-height: 14px;
-}
-
 /*Common Styles*/
 /*Text Colors*/
 .text-color-blue {
@@ -271,6 +266,11 @@ p + h2 {
 @media (max-width: 1024px) {
     .text-color-blue {
         color: var(--color-blue-lighter);
+    }
+
+    .text-14 p, .text-14 span {
+        font-size: 14px;
+        line-height: 14px;
     }
 }
 
