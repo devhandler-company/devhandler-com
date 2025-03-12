@@ -32,7 +32,7 @@ export default function decorate(block) {
   topRow.appendChild(topRowRight);
 
   if (titleBlock) {
-    topRowLeft.appendChild(createTag('div', { class: 'quote-title h4' }, titleBlock.innerHTML));
+    topRowLeft.appendChild(createTag('div', { class: 'quote-title h5' }, titleBlock.innerHTML));
   }
 
   if (afterTitleBlock) {

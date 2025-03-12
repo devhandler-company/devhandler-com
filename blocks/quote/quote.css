@@ -62,7 +62,16 @@
 
 @media (width <= 1024px) {
     .quote {
-        max-width: 68vw;
+        width: 68vw;
+        line-height: 125%;
+        height: calc(100% - 48px);
+    }
+
+    .quote .quote-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 32px;
     }
     .quote .quote-content-top {
         flex-direction: column;
@@ -71,6 +80,7 @@
 
     .quote-content-top-left {
         flex-direction: column;
+        white-space: unset;
     }
 
     .quote-content-top-right {
