@@ -241,8 +241,13 @@ h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
     margin-top: 10px;
 }
 
-h2 + p {
+p + h2 {
     margin-top: 16px;
+}
+
+.text-14 p, .text-14 span {
+    font-size: 14px;
+    line-height: 14px;
 }
 
 /*Common Styles*/
