@@ -586,6 +586,10 @@ main div.section.background-gradient {
         gap: 0;
     }
 
+    main div.section.mobile-gap-12, .mobile-gap-12 {
+        gap: 12px;
+    }
+
     .bg:after {
         background-image: var(--section-mobile-background-image);
         height: var(--section-mobile-background-height);
@@ -771,6 +775,10 @@ main div.section.background-gradient {
     --button-padding-bottom: 16px;
 }
 
+.button.radius-10 {
+    --border-radius: 10px;
+}
+
 .button.tile a {
     width: 100%;
     width: -moz-available;          /* WebKit-based browsers will ignore this. */
@@ -798,8 +806,8 @@ main div.section.background-gradient {
 .button.to-left .button:after {
     right: 0;
     left: unset;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
 
 .color-gray {
@@ -843,7 +851,7 @@ button.button::after {
     height: 100%;
     background: var(--button-background-hover-color);
     width: 40px;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: var(--border-radius);
     top: 0;
     left: 0;
     transition: width 0.5s ease-in-out,
