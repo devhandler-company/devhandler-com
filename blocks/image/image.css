@@ -92,6 +92,10 @@
     object-fit: cover;
 }
 
+.image.image-contain img {
+    object-fit: contain;
+}
+
 .image.relative picture {
     display: flex;
 }
