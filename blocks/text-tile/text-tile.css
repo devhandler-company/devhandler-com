@@ -28,7 +28,7 @@
     margin-top: 18px;
     font-family: var(--primary-font-family);
     line-height: 26px;
-    font-size: 18px;
+    font-size: var(--body-font-size-m);
 }
 
 .text-tile.empty-tile {
@@ -47,4 +47,10 @@
 
 .text-tile.small-space p {
     margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+    .text-tile.small-space p {
+        padding-left: 20px;
+    }
 }
