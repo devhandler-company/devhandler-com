@@ -168,10 +168,10 @@ main > .section:first-of-type {
         --heading-font-size-xxl: 22px; /* h1 */
         --heading-font-size-xl: 20px; /* h2 */
         --heading-font-size-l: 18px; /* h3 */
-        --heading-font-size-m: 16px; /* h4 */
-        --heading-font-size-s: 14px; /* h5 */
-        --heading-font-size-xs: 12px; /* h6 */
-        --body-font-size-m: 12px;
+        --heading-font-size-m: 17px; /* h4 */
+        --heading-font-size-s: 17px; /* h5 */
+        --heading-font-size-xs: 16px; /* h6 */
+        --body-font-size-m: 16px;
         --body-font-size-s: 19px;
         --body-font-size-xs: 17px;
     }
