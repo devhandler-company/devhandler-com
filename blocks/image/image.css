@@ -98,6 +98,7 @@
 
 .image.relative picture {
     display: flex;
+    height: 100%;
 }
 
 .image.relative img {
