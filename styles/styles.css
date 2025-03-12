@@ -768,6 +768,14 @@ main div.section.background-gradient {
     font-size: 0;
 }
 
+.button.gray {
+    border-radius: var(--border-radius);
+    background: var(--color-bg-gray-linear);
+    margin: auto;
+    width: 100%;
+    width: fit-content;
+}
+
 .button.tile {
     --button-text-color: var(--color-black);
     --button-text-color-hover: var(--button-text-color);
