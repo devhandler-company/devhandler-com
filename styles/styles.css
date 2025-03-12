@@ -479,6 +479,10 @@ main div.section.full-width-with-side-paddings {
     .section.mobile-overflow-x-clip, .mobile-overflow-x-clip {
         overflow-x: clip;
     }
+
+    .section.mobile-overflow-x-auto, .mobile-overflow-x-auto {
+        overflow-x: auto;
+    }
 }
 
 main div.section.background-container img {
@@ -527,6 +531,10 @@ main div.section.background-gradient {
 }
 
 @media (max-width: 1024px) {
+
+    main div.section.mobile-direction-row {
+        flex-direction: row;
+    }
 
     .mobile-border {
         border: var(--border-size) solid var(--color-aqamarine);
