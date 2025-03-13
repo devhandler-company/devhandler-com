@@ -17,7 +17,7 @@
 
 @media (width <= 1024px) {
     .text-tile.gradient-dot-left {
-        padding-left: 64px;
+        padding-left: 48px;
     }
 
     .text-tile.gradient-dot-left::before {
