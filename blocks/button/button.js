@@ -15,6 +15,7 @@ export default function decorate(block) {
       }
       scrollToElement.scrollIntoView({
         behavior: 'smooth',
+        block: 'center',
       });
     });
   }
