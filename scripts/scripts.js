@@ -108,6 +108,29 @@ export function decorateMain(main) {
   });
 }
 
+const setSmoothButtonScroll = (link) => {
+  const href = link.getAttribute('href');
+  if (href && href.startsWith('#')) {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const scrollToElementId = href.replace('#', '');
+      const scrollToElement = document.getElementById(scrollToElementId);
+      if (!scrollToElement) {
+        return;
+      }
+      scrollToElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    });
+  }
+};
+
+const setSmoothButtonsScroll = () => {
+  const links = document.querySelectorAll('a');
+  links.forEach(setSmoothButtonScroll);
+};
+
 /**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
@@ -163,6 +186,7 @@ function loadDelayed() {
 async function loadPage() {
   await loadFonts();
   await loadEager(document);
+  setSmoothButtonsScroll();
   await loadLazy(document);
   loadDelayed();
   processShowFromRight();
