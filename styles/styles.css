@@ -1033,6 +1033,30 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
         margin-top: 48px;
     }
 
+    main div.section.mobile-margin-bottom-0, .mobile-margin-bottom-0 {
+        margin-bottom: 0;
+    }
+
+    main div.section.mobile-margin-bottom-16, .mobile-margin-bottom-16 {
+        margin-bottom: 16px;
+    }
+
+    main div.section.mobile-margin-bottom-20, .mobile-margin-bottom-20 {
+        margin-bottom: 20px;
+    }
+
+    main div.section.mobile-margin-bottom-24, .mobile-margin-bottom-24 {
+        margin-bottom: 24px;
+    }
+
+    main div.section.mobile-margin-bottom-32, .mobile-margin-bottom-32 {
+        margin-bottom: 32px;
+    }
+
+    main div.section.mobile-margin-bottom-48, .mobile-margin-bottom-48 {
+        margin-bottom: 48px;
+    }
+
     main div.section.mobile-margin-sides-24, .mobile-margin-sides-24 {
         margin-left: 24px;
         margin-right: 24px;
