@@ -7,5 +7,7 @@ main {
 }
 
 @media (max-width: 1024px) {
-    background-image: url("https://media.devhandler.com/static/images/bg-mobile.png");
+    main {
+        background-image: url("https://media.devhandler.com/static/images/bg-mobile.png");
+    }
 }
