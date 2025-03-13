@@ -1017,6 +1017,10 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
         margin-top: 24px;
     }
 
+    main div.section.mobile-margin-top-32, .mobile-margin-top-32 {
+        margin-top: 32px;
+    }
+
     main div.section.mobile-margin-top-48, .mobile-margin-top-48 {
         margin-top: 48px;
     }
