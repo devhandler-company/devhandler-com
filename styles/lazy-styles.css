@@ -3,7 +3,7 @@ main {
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.png");
     background-size: contain;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 @media (max-width: 1024px) {

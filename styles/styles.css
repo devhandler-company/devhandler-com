@@ -612,7 +612,7 @@ main div.section.background-gradient {
     }
 
     main div.section.mobile-background-transparent, .mobile-background-transparent {
-        background-color: var(--color-black);
+        background-color: transparent;
         color: var(--color-white);
     }
 }
