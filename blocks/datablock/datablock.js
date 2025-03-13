@@ -28,10 +28,10 @@ export default function decorate(block) {
 
   let datablockImage;
   let datablockVideo;
+  let videoTag;
 
   if (block.classList.contains('video') && video) {
-    const videoTag = document.createElement('video');
-    videoTag.src = video.querySelector('a').href;
+    videoTag = document.createElement('video');
     videoTag.setAttribute('playsinline', true);
     videoTag.loop = true;
     videoTag.autoplay = true;
@@ -82,4 +82,9 @@ export default function decorate(block) {
   if (datablockImage) block.appendChild(datablockImage);
   if (datablockVideo) block.appendChild(datablockVideo);
   block.appendChild(datablockContent);
+  if (datablockVideo) {
+    setTimeout(() => {
+      videoTag.src = video.querySelector('a').href;
+    }, 0);
+  }
 }
