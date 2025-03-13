@@ -1236,6 +1236,11 @@ main div.section.padding-64, .padding-64 {
         padding-left: 24px;
         padding-right: 24px;
     }
+
+    main div.section.mobile-padding-sides-32, .mobile-padding-sides-32 {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 }
 
 /*Grids*/
