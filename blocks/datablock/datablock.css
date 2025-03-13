@@ -1,0 +1,86 @@
+@import url("./datablock-hero.css");
+
+.datablock {
+    --datablock-pretitle-font-size: var(--body-font-size-m);
+    --datablock-pretitle-font-family: var(--primary-font-family);
+    --datablock-pretitle-line-height: var(--line-height-normal);
+    --datablock-title-font-size: var(--font-size-h2);
+    --datablock-title-font-family: var(--secondary-font-family);
+    --datablock-title-line-height: var(--line-height-normal);
+    --datablock-description-font-size: var(--font-size-h4);
+    --datablock-description-font-family: var(--primary-font-family);
+    --datablock-description-line-height: var(--line-height-normal);
+    --datablock-content-gap: 0px;
+}
+
+.datablock .datablock-pretitle {
+    font-size: var(--datablock-pretitle-font-size);
+    font-family: var(--datablock-pretitle-font-family);
+    line-height: var(--datablock-pretitle-line-height);;
+    grid-area: pretitle;
+}
+
+.datablock .datablock-title {
+    font-size: var(--datablock-title-font-size);
+    font-family: var(--datablock-title-font-family);
+    line-height: var(--datablock-title-line-height);;
+    grid-area: title;
+}
+
+.datablock .datablock-description {
+    font-size: var(--datablock-description-font-size);
+    font-family: var(--datablock-description-font-family);
+    line-height: var(--datablock-description-line-height);
+    grid-area: description;
+}
+
+.datablock .datablock-cta-container {
+    grid-area: ctas;
+}
+
+.datablock .datablock-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: var(--datablock-content-gap);
+}
+
+.datablock.pretitle-hidden .datablock-pretitle {
+    display: none;
+}
+
+.datablock .datablock-image {
+    font-size: 0;
+}
+
+.datablock.image-center .datablock-image {
+    text-align: center;
+}
+
+.datablock.image-right .datablock-image {
+    text-align: right;
+}
+
+.datablock.center-content {
+    text-align: center;
+}
+
+.datablock.small-text {
+    --datablock-description-font-size: var(--font-size-h2);
+    --datablock-description-font-family: var(--secondary-font-family);
+    --datablock-content-gap: 16px;
+}
+
+
+
+.datablock.slim {
+    --button-border-color: transperent;
+    --button-background-color: var(--color-white);
+    --button-background-hover-color: var(--color-blue);
+    --button-text-color: var(--color-black);
+    --button-padding-left: 48px;
+    --button-padding-right: 48px;
+    --button-padding-top: 16px;
+    --button-padding-bottom: 16px;
+    --button-font-size: 32px;
+}

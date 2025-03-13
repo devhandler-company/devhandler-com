@@ -1,42 +1,42 @@
-.teaser-wrapper:has(.teaser.hero) {
+.datablock-wrapper:has(.datablock.hero) {
     max-width: unset;
     margin: unset;
     padding: unset;
 }
 
 /* Image Styles */
-.teaser.hero .teaser-image img {
+.datablock.hero .datablock-image img {
     width: 100%;
     height: 700px;
     object-fit: cover;
     object-position: center;
 }
 
-.teaser.hero.small-hero .teaser-image img {
+.datablock.hero.small-hero .datablock-image img {
     height: 360px;
 }
 
 @media (width >= 1025px) {
-    .teaser.hero {
+    .datablock.hero {
         min-height: 485px;
     }
 
-    .teaser.hero.small-hero {
+    .datablock.hero.small-hero {
         min-height: 360px;
     }
 }
 
-.teaser.hero .teaser-video video {
+.datablock.hero .datablock-video video {
     height: 700px;
     width: 100%;
     object-fit: cover;
 }
 
-.teaser.hero .teaser-video {
+.datablock.hero .datablock-video {
     font-size: 0;
 }
 
-.teaser.hero .teaser-content {
+.datablock.hero .datablock-content {
     position: absolute;
     top: 0;
     padding-top: 150px;
@@ -44,16 +44,16 @@
     box-sizing: border-box;
 }
 
-.teaser.hero.small-hero .teaser-content {
+.datablock.hero.small-hero .datablock-content {
     width: 100%;
 }
 
-.teaser.hero .teaser-title {
+.datablock.hero .datablock-title {
     font-size: var(--font-size-h1);
     font-family: var(--secondary-font-family);
 }
 
-.teaser.hero .teaser-content .teaser-description {
+.datablock.hero .datablock-content .datablock-description {
     font-size: var(--font-size-h3);
     line-height: normal;
     font-family: var(--primary-font-family);
@@ -61,7 +61,7 @@
     margin-top: 16px;
 }
 
-.teaser.hero.highlight-title .teaser-title {
+.datablock.hero.highlight-title .datablock-title {
     backdrop-filter: blur(4px);
     border: var(--border-size) solid var(--color-aqamarine);
     border-top-left-radius: 0;
@@ -69,55 +69,55 @@
     border-left: none;
 }
 
-.teaser.hero .teaser-cta-container {
+.datablock.hero .datablock-cta-container {
     margin-top: 32px;
     display: flex;
     width: fit-content;
 }
 
-.teaser.hero .teaser-content > * {
+.datablock.hero .datablock-content > * {
     max-width: 720px;
     line-height: normal;
     padding-left: 8%;
 }
 
-.teaser.hero.small-hero .teaser-content > * {
+.datablock.hero.small-hero .datablock-content > * {
     max-width: unset;
     padding-right: 8%;
 }
 
-.teaser.hero.small-hero {
+.datablock.hero.small-hero {
     text-align: center;
 }
 
-.teaser.hero .teaser-cta {
+.datablock.hero .datablock-cta {
     font-size: var(--font-size-h2);
     padding: 24px 64px;
     backdrop-filter: blur(20px);
 }
 
-.teaser.hero .teaser-cta:hover {
+.datablock.hero .datablock-cta:hover {
     color: white;
 }
 
-.teaser.hero .multiple-titles {
+.datablock.hero .multiple-titles {
     height: 150px;
 }
 
-.teaser.hero .teaser-titles-wrapper {
+.datablock.hero .datablock-titles-wrapper {
     max-height: 86px;
     transition: max-height .5s ease;
     overflow: hidden; /* Hide the rest */
 }
 
-.teaser.hero .teaser-titles {
+.datablock.hero .datablock-titles {
     transform: translateY(0);
     transition: transform 1s;
     will-change: transform;
 }
 
 @media (width <= 1024px) {
-    .teaser.hero .teaser-content {
+    .datablock.hero .datablock-content {
         padding-top: 0;
         width: 100%;
         top: 50%;
@@ -128,47 +128,47 @@
         text-align: center;
     }
 
-    .teaser.hero .teaser-titles-wrapper {
+    .datablock.hero .datablock-titles-wrapper {
         max-height: 40px;
     }
 
-    .teaser.hero .teaser-content > div {
+    .datablock.hero .datablock-content > div {
         padding-left: 0;
     }
 
-    .teaser.hero .teaser-content .teaser-description {
+    .datablock.hero .datablock-content .datablock-description {
         font-size: 16px;
     }
 
-    .teaser.hero .teaser-cta {
+    .datablock.hero .datablock-cta {
         font-size: 18px;
         padding: 24px 64px;
     }
 
-    .teaser.hero .teaser-cta-container {
+    .datablock.hero .datablock-cta-container {
         margin-top: 8px;
     }
 
-    .teaser.hero .teaser-video video {
+    .datablock.hero .datablock-video video {
         height: calc(100vh - 50px);
     }
 
-    .teaser.hero .teaser-content > * {
+    .datablock.hero .datablock-content > * {
         padding-left: 0;
     }
 
-    .teaser.hero.small-hero .teaser-content > * {
+    .datablock.hero.small-hero .datablock-content > * {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .teaser.hero:has(.teaser-titles-wrapper) .teaser-content {
+    .datablock.hero:has(.datablock-titles-wrapper) .datablock-content {
         height: unset;
         gap: 16px;
         justify-content: space-between;
     }
 
-    .teaser.hero .multiple-titles {
+    .datablock.hero .multiple-titles {
         height: 40px;
     }
 }

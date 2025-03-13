@@ -26,8 +26,8 @@ export default function decorate(block) {
 
   const titleElements = blockContent.querySelectorAll('h2');
 
-  let teaserImage;
-  let teaserVideo;
+  let datablockImage;
+  let datablockVideo;
 
   if (block.classList.contains('video') && video) {
     const videoTag = document.createElement('video');
@@ -36,50 +36,50 @@ export default function decorate(block) {
     videoTag.loop = true;
     videoTag.autoplay = true;
     videoTag.muted = true;
-    teaserVideo = createTag('div', { class: 'teaser-video' }, videoTag);
+    datablockVideo = createTag('div', { class: 'datablock-video' }, videoTag);
   } else if (imageBlock) {
-    teaserImage = createTag('div', { class: 'teaser-image' }, imageBlock);
+    datablockImage = createTag('div', { class: 'datablock-image' }, imageBlock);
   }
 
-  const teaserContent = createTag('div', { class: 'teaser-content' });
+  const datablockContent = createTag('div', { class: 'datablock-content' });
 
   if (pretitleBlock) {
-    teaserContent.appendChild(createTag('div', { class: 'teaser-pretitle' }, pretitleBlock.innerHTML));
+    datablockContent.appendChild(createTag('div', { class: 'datablock-pretitle' }, pretitleBlock.innerHTML));
   }
 
   if (titleBlock) {
     if (titleElements.length <= 1) {
-      teaserContent.appendChild(createTag('h1', { class: 'teaser-title' }, modifyText(titleBlock).innerHTML));
+      datablockContent.appendChild(createTag('h1', { class: 'datablock-title' }, modifyText(titleBlock).innerHTML));
     } else {
       let newTitles = '';
       titleElements.forEach((element) => {
         newTitles += modifyText(element).outerHTML;
       });
-      const teaserTitlesWrapper = `<div class="teaser-titles-wrapper"><div class="teaser-titles">${newTitles}</div></div>`;
-      teaserContent.appendChild(createTag('div', { class: 'multiple-titles' }, teaserTitlesWrapper));
-      const divs = Array.from(teaserContent.querySelectorAll('h2'));
+      const datablockTitlesWrapper = `<div class="datablock-titles-wrapper"><div class="datablock-titles">${newTitles}</div></div>`;
+      datablockContent.appendChild(createTag('div', { class: 'multiple-titles' }, datablockTitlesWrapper));
+      const divs = Array.from(datablockContent.querySelectorAll('h2'));
       let i = -1;
       setInterval(() => {
         i = (i + 1) % divs.length;
         const y = -(i * divs[0].offsetHeight);
-        teaserContent.querySelector('.teaser-titles-wrapper').style.maxHeight = `${divs[i].clientHeight}px`;
-        teaserContent.querySelector('.teaser-titles').style.transform = `translateY(${y}px)`;
+        datablockContent.querySelector('.datablock-titles-wrapper').style.maxHeight = `${divs[i].clientHeight}px`;
+        datablockContent.querySelector('.datablock-titles').style.transform = `translateY(${y}px)`;
       }, 2500);
     }
   }
 
   if (descriptionBlock) {
-    teaserContent.appendChild(createTag('div', { class: 'teaser-description' }, descriptionBlock.innerHTML));
+    datablockContent.appendChild(createTag('div', { class: 'datablock-description' }, descriptionBlock.innerHTML));
   }
 
   if (linkBlock) {
-    const link = createTag('a', { class: 'teaser-cta button' }, linkBlock.innerText);
+    const link = createTag('a', { class: 'datablock-cta button' }, linkBlock.innerText);
     link.setAttribute('href', linkBlock.getAttribute('href'));
-    teaserContent.appendChild(createTag('div', { class: 'teaser-cta-container' }, link));
+    datablockContent.appendChild(createTag('div', { class: 'datablock-cta-container' }, link));
   }
 
   block.innerHTML = '';
-  if (teaserImage) block.appendChild(teaserImage);
-  if (teaserVideo) block.appendChild(teaserVideo);
-  block.appendChild(teaserContent);
+  if (datablockImage) block.appendChild(datablockImage);
+  if (datablockVideo) block.appendChild(datablockVideo);
+  block.appendChild(datablockContent);
 }
