@@ -2,7 +2,8 @@
 main {
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.png");
     background-size: contain;
-    transition: background 0.5s ease, background-image 0.5s ease;
+    position: relative;
+    z-index: -1;
 }
 
 @media (max-width: 1024px) {
