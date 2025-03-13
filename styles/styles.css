@@ -610,6 +610,11 @@ main div.section.background-gradient {
         background-color: var(--color-black);
         color: var(--color-white);
     }
+
+    main div.section.mobile-background-transparent, .mobile-background-transparent {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
 }
 
 /*Stick Styles*/
