@@ -116,16 +116,14 @@ pre {
     white-space: pre;
 }
 
-main {
+body {
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.png");
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
     background-size: cover;
-    position: relative;
-    z-index: 0;
 }
 
 @media (max-width: 1024px) {
-    main {
+    body {
         background-image: url("https://media.devhandler.com/static/images/bg-mobile.png");
         background-image: url("https://media.devhandler.com/static/images/bg-mobile.webp");
     }
