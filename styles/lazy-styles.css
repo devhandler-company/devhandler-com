@@ -1,7 +1,7 @@
 /* add global styles that can be loaded post LCP here */
 main {
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.png");
-    background-size: contain;
+    background-size: cover;
     position: relative;
     z-index: 0;
 }
