@@ -11,4 +11,10 @@ export default function decorate(block) {
     }
     block.appendChild(dupplicate);
   });
+  if (block.classList.contains('images')) {
+    block.querySelectorAll('img').forEach((element) => {
+      element.width = '300';
+      element.height = '100';
+    });
+  }
 }
