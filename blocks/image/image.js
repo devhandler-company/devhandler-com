@@ -1,4 +1,5 @@
 import { createTag } from '../../scripts/utils.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 const buildIcon = (iconContainer) => {
   const icons = iconContainer.querySelectorAll('p:not(:has(sub))');
@@ -36,12 +37,29 @@ const getIconsTag = (block) => {
   return iconsTag;
 };
 
+const optimizePicture = (block, picture) => {
+  if (!block.classList.contains('optimize')) {
+    return;
+  }
+  let optimizeSize = 750;
+  if (block.classList.contains('optimize-large')) {
+    optimizeSize = 300;
+  } else if (block.classList.contains('optimize-medium')) {
+    optimizeSize = 500;
+  }
+
+  picture.querySelectorAll('img')
+    .forEach((img) => img.closest('picture')
+      .replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: optimizeSize }])));
+};
+
 export default function decorate(block) {
   const picture = block.querySelector('picture');
   picture.querySelector('img').removeAttribute('loading', 'eager');
   const icons = getIconsTag(block);
   block.innerHTML = '';
   block.appendChild(picture);
+  optimizePicture(block, picture);
   if (icons) {
     block.appendChild(icons);
   }
