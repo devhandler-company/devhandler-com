@@ -1,3 +1,170 @@
+
+
+
+/*Button Styles*/
+:root {
+    --button-text-color: var(--color-aqamarine);
+    --button-text-color-hover: var(--button-text-color);
+    --button-background-hover-color: var(--color-aqamarine);
+    --button-background-color: rgba(0, 0, 0, 0) 50%;
+    --button-border-color: var(--button-background-hover-color);
+    --button-font-size: 42px;
+    --button-padding-left: 40px;
+    --button-padding-right: 40px;
+    --button-padding-top: 24px;
+    --button-padding-bottom: 24px;
+}
+
+.button p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 0;
+}
+
+.button.gray {
+    border-radius: var(--border-radius);
+    background: var(--color-bg-gray-linear);
+    margin: auto;
+    width: 100%;
+    width: fit-content;
+}
+
+.button.tile {
+    --button-text-color: var(--color-black);
+    --button-text-color-hover: var(--button-text-color);
+    --button-background-color: var(--color-white);
+    --button-border-color: transperent;
+    --button-font-size: var(--font-size-h4);
+    --button-padding-left: 40px;
+    --button-padding-right: 40px;
+    --button-padding-top: 16px;
+    --button-padding-bottom: 16px;
+}
+
+.button.radius-10 {
+    --border-radius: 10px;
+}
+
+.button.tile a {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.button.full-width a, .button.full-width button {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.button.button-bg-blue {
+    --button-background-hover-color: var(--color-blue);
+}
+
+.button.to-left .button {
+    background: linear-gradient(to right, var(--button-background-color) 50%, var(--button-background-hover-color) 50%);
+    background-size: 200% 200%;
+    background-position: left bottom;
+}
+
+.button.to-left .button:after {
+    right: 0;
+    left: unset;
+    border-bottom-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.color-gray {
+    --button-background-hover-color: var(--color-gray);
+    --button-border-color: var(--color-gray);
+}
+
+a.button,
+button.button {
+    font-size: var(--button-font-size);
+    color: var(--button-text-color);
+    font-family: var(--secondary-font-family);
+    border-radius: var(--border-radius);
+    padding-left: var(--button-padding-left);
+    padding-right: var(--button-padding-right);
+    padding-top: var(--button-padding-top);
+    padding-bottom: var(--button-padding-bottom);
+    border: var(--border-size) solid var(--button-border-color);
+    position: relative;
+    box-sizing: content-box;
+    background: linear-gradient(to right, var(--button-background-hover-color) 50%, var(--button-background-color) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    z-index: 1;
+    display: inline-block;
+    font-style: normal;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+a.button::after,
+button.button::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background: var(--button-background-hover-color);
+    width: 40px;
+    border-bottom-right-radius: var(--border-radius);
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out,
+    border-top-right-radius 0.5s ease-in-out,
+    border-bottom-right-radius 0.5s ease-in-out;
+    z-index: -1;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+}
+
+a.button:hover,
+a.button:focus,
+button.button:hover,
+button.button:focus {
+    color: var(--button-text-hover);
+    background-position: left top;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.to-left a.button:hover,
+.to-left a.button:focus,
+.to-left button.button:hover,
+.to-left button.button:focus {
+    color: var(--button-text-hover);
+    background-position: right top;
+}
+
+@media (min-width: 1025px) {
+    .button.desktop-bg-gray-linear {
+        --button-background-color: var(--color-bg-gray-linear)
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --button-font-size: 32px;
+        --button-padding-left: 48px;
+        --button-padding-right: 48px;
+        --button-padding-top: 8px;
+        --button-padding-bottom: 8px;
+    }
+
+    .button.mobile-radius-10 {
+        --border-radius: 10px;
+    }
+}
 .button.center {
     margin: auto;
 }

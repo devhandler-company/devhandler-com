@@ -1,4 +1,5 @@
 @import url("./datablock-hero.css");
+@import url("./../button/button.css");
 
 .datablock {
     --datablock-pretitle-font-size: var(--body-font-size-m);

@@ -1,0 +1,137 @@
+/*Stick Styles*/
+
+@media (min-width: 1025px) {
+
+    .stick-right, .stick-left {
+        position: relative;
+    }
+
+    .stick-right.stick-right-border::after {
+        border: var(--border-size) solid var(--color-aqamarine);
+        border-radius: 20px 0 0 20px;
+        border-right: none;
+    }
+
+    .stick-right::after, .stick-left::before {
+        content: " ";
+        background-color: var(--color-aqamarine);
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-radius: var(--border-radius);
+    }
+
+    .stick-bg-gray::after, .stick-bg-gray::before {
+        background-color: var(--color-gray);
+    }
+
+    .stick-bg-blue::after, .stick-bg-blue::before {
+        background-color: var(--color-blue);
+    }
+
+    .stick-bg-white::after, .stick-bg-white::before {
+        background-color: var(--color-white);
+    }
+
+    .stick-bg-transparent::after, .stick-bg-transparent::before {
+        background-color: transparent;
+    }
+
+    .stick-right::after {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .stick-left::before {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .desktop-grid-40-60 .stick-right::after {
+        margin-right: calc((100% / 3 * 5 + 24px / 5 * 3 - 100vw) / 2 + 13px);
+    }
+
+    .desktop-grid-60-40 .stick-right::after {
+        margin-right: calc((100% / 2 * 5 + 24px / 5 * 2 - 100vw) / 2 + 15px);
+    }
+
+    .desktop-grid-20-40-40 .stick-left::before {
+        margin-left: calc((100% / 2 * 10 + 24px / 5 * 10 - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-2-1 .stick-left::before {
+        margin-left: calc((100% / 2 * 3 + 24px - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-8-52-40 .stick-left::before {
+        margin-left: calc((100% / 8 * 100 + 24px * 2 - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-8-92 .stick-left::before {
+        margin-left: calc((100% / 8 * 100 + 24px - 100vw) / 2 + 7px);
+    }
+
+    .desktop-grid-8-92 .stick-right::after {
+        margin-right: calc((100% / 92 * 100 + 24px - 100vw) / 2 + 7px);
+    }
+
+    .desktop-grid-92-8 .stick-left::before {
+        margin-left: calc((100% / 92 * 100 + 24px - 100vw) / 2 + 7px);
+    }
+
+    .desktop-grid-92-8 .stick-right::after {
+        margin-right: calc((100% / 8 * 100 + 24px - 100vw) / 2 + 7px);
+    }
+
+    .desktop-grid-2-1 .stick-right::after {
+        margin-right: calc((100% * 3 + 24px - 100vw) / 2 + 9px);
+    }
+
+    .desktop-grid-1-1 .stick-right::after {
+        margin-right: calc((100% * 2 + 24px - 100vw) / 2 + 12px);
+    }
+
+    .desktop-grid-1-2 .stick-left::before {
+        margin-left: calc((100% * 3 + 24px - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-1-2 .stick-right::after {
+        margin-right: calc(((100% / 2 * 3 + 24px) - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-50-50 .stick-left::before {
+        margin-left: calc(((100% * 2 + 24px) - 100vw) / 2 + 8px);
+    }
+
+    .desktop-grid-50-50 .stick-right::after {
+        margin-right: calc(((100% * 2 + 24px) - 100vw) / 2 + 9px);
+    }
+
+    .section.stick-right::after {
+        left: 100%;
+        margin-right: calc((100% - 100vw) / 2 + 8px);
+    }
+
+    .section.stick-right.stick-right-no-space::after {
+        left: calc(100% - 24px);
+    }
+
+    .section.stick-left::before {
+        right: 100%;
+        margin-left: calc((100% - 100vw) / 2 + 7px);
+    }
+
+    .section.stick-left.stick-left-no-space::before {
+        right: calc(100% - 24px);
+    }
+
+    .stick-left-no-borders::before, .stick-right-no-borders::after {
+        border-radius: 0;
+    }
+}
+
