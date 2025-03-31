@@ -495,50 +495,8 @@ main div.section.zindex-negative-1 {
         flex-direction: row;
     }
 
-    .mobile-border {
-        border: var(--border-size) solid var(--color-aqamarine);
-        border-radius: var(--border-radius);
-    }
-
-    .mobile-border-cyan {
-        border-color: var(--color-aqamarine);
-    }
-
-    .mobile-border-blue {
-        border-color: var(--color-blue);
-    }
-
-    .mobile-border-white {
-        border-color: var(--color-white);
-    }
-
-    .mobile-border-top-none {
-        border-top: none;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    .mobile-border-bottom-none {
-        border-bottom: none;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .mobile-border-radius-0 {
-        border-radius: 0;
-    }
-
-    .mobile-border-none {
-        border: none;
-        border-radius: 0;
-    }
-
     main div.section {
         height: var(--section-mobile-height);
-    }
-
-    main div.section.mobile-border-radius, .mobile-border-radius {
-        border-radius: var(--border-radius);
     }
 
     main div.section.mobile-gap-0 {
@@ -609,4 +567,48 @@ main div.section.zindex-negative-1 {
 
 .border-cyan {
     border-color: var(--color-aqamarine);
+}
+
+@media (max-width: 1024px) {
+    .mobile-border {
+        border: var(--border-size) solid var(--color-aqamarine);
+        border-radius: var(--border-radius);
+    }
+
+    .mobile-border-cyan {
+        border-color: var(--color-aqamarine);
+    }
+
+    .mobile-border-blue {
+        border-color: var(--color-blue);
+    }
+
+    .mobile-border-white {
+        border-color: var(--color-white);
+    }
+
+    .mobile-border-top-none {
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .mobile-border-bottom-none {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .mobile-border-radius-0 {
+        border-radius: 0;
+    }
+
+    .mobile-border-none {
+        border: none;
+        border-radius: 0;
+    }
+
+    main div.section.mobile-border-radius, .mobile-border-radius {
+        border-radius: var(--border-radius);
+    }
 }
