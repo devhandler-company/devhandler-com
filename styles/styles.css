@@ -179,18 +179,24 @@ main > .section:first-of-type {
 
 /*Headings*/
 
+body:not(.blog-page-template) h1,
+body:not(.blog-page-template) h2,
+body:not(.blog-page-template) h3,
+body:not(.blog-page-template) h4,
+body:not(.blog-page-template) h5,
+body:not(.blog-page-template) h6 {
+    margin: 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    margin-bottom: 0;
     font-family: var(--heading-font-family);
     line-height: normal;
     scroll-margin: 40px;
-    margin: 0;
 }
 
 h1, .h1 {
@@ -458,12 +464,18 @@ main div.section.full-width {
 main div.section.full-width-with-side-paddings {
     padding-left: calc((100vw - 1200px - 12px) / 2);
     padding-right: calc((100vw - 1200px - 12px) / 2);
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 @media (width <= 1248px) {
     main div.section.full-width-with-side-paddings {
         padding-left: 24px;
         padding-right: 24px;
+        max-width: unset;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .section.mobile-overflow-x-clip, .mobile-overflow-x-clip {
