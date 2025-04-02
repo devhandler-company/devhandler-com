@@ -76,12 +76,12 @@ header {
     height: var(--nav-height);
 }
 
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
+body:not(.blog-page-template) p,
+body:not(.blog-page-template) dl,
+body:not(.blog-page-template) ol,
+body:not(.blog-page-template) ul,
+body:not(.blog-page-template) pre,
+body:not(.blog-page-template) blockquote {
     margin: 0;
     padding: 0;
 }
