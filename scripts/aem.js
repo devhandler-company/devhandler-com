@@ -321,6 +321,17 @@ function createOptimizedPicture(
   return picture;
 }
 
+const loadTemplateStyles = (template) => {
+  if (template !== 'blog-page-template') {
+    return;
+  }
+  const linkElement = document.createElement('link');
+  linkElement.setAttribute('rel', 'stylesheet');
+  linkElement.setAttribute('type', 'text/css');
+  linkElement.setAttribute('href', '/styles/blog-page-template.css');
+  document.head.appendChild(linkElement);
+};
+
 /**
  * Set template (page structure) and theme (page styles).
  */
@@ -331,7 +342,10 @@ function decorateTemplateAndTheme() {
     });
   };
   const template = getMetadata('template');
-  if (template) addClasses(document.body, template);
+  if (template) {
+    loadTemplateStyles(template);
+    addClasses(document.body, template);
+  }
   const theme = getMetadata('theme');
   if (theme) addClasses(document.body, theme);
 }

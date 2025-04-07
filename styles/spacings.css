@@ -1,4 +1,4 @@
-/*Spacings*/
+/* Spacings */
 main div.section.margin-top-0, .margin-top-0 {
     margin-top: 0;
 }
@@ -84,7 +84,7 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
     margin-left: -48px;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     main div.section.mobile-margin-32, .mobile-margin-32 {
         margin: 32px;
     }
@@ -152,7 +152,8 @@ main div.section.negative-margin-left-48, .negative-margin-left-48 {
     }
 }
 
-/*Paddings*/
+/* Paddings */
+
 /* Paddings */
 main div.section.padding-top-16, .padding-top-16 {
     padding-top: 16px;
@@ -277,7 +278,7 @@ main div.section.padding-64, .padding-64 {
     padding: 64px;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     main div.section.mobile-vertical-padding-48, .mobile-vertical-padding-48 {
         padding-top: 48px;
         padding-bottom: 48px;

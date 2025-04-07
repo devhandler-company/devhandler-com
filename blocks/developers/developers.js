@@ -57,7 +57,7 @@ const getRightSideContent = (name, text, pictureHtml, subTitle) => `
     </div>
 </div>
   `;
-export default function (block) {
+export default function decorate(block) {
   let finalHtml = '';
   [...block.children].forEach((row, index) => {
     const pictureHtml = row.querySelector('picture').outerHTML;
@@ -67,8 +67,8 @@ export default function (block) {
     const text = [...row.querySelectorAll('p')].map((element) => element.outerHTML).join('');
     // eslint-disable-next-line no-mixed-operators
     finalHtml += (index % 2 === 0
-      ? getLeftSideContent(name, text, pictureHtml, subtitleText, index)
-      : getRightSideContent(name, text, pictureHtml, subtitleText));
+      ? getRightSideContent(name, text, pictureHtml, subtitleText)
+      : getLeftSideContent(name, text, pictureHtml, subtitleText, index));
   });
   block.textContent = '';
   block.innerHTML = finalHtml;

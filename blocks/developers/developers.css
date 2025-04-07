@@ -1,6 +1,6 @@
 @import url('/blocks/image/image.css');
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     .section.developers-container .developers-left {
         padding-left: 0;
     }
@@ -18,7 +18,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .section.developers-container {
         padding-left: 0;
         padding-right: 0;

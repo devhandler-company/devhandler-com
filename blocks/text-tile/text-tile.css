@@ -49,7 +49,7 @@
     margin-top: 4px;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .text-tile.small-space p {
         padding-left: 20px;
     }
