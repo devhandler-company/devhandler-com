@@ -57,7 +57,7 @@ const getRightSideContent = (name, text, pictureHtml, subTitle) => `
     </div>
 </div>
   `;
-export default function (block) {
+export default function decorate(block) {
   let finalHtml = '';
   [...block.children].forEach((row, index) => {
     const pictureHtml = row.querySelector('picture').outerHTML;

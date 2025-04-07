@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: 'Adjusted Arial Fallback';
-  src: local(Arial);
+  src: local(arial);
   size-adjust: 100%;
   ascent-override: normal;
   descent-override: normal;

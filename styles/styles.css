@@ -30,8 +30,8 @@
     --nav-height: 64px;
 
     /* Fonts */
-    --secondary-font-family: Amplealt, 'sans-serif';
-    --primary-font-family: Hind, 'Adjusted Arial Fallback';
+    --secondary-font-family: amplealt, 'sans-serif';
+    --primary-font-family: hind, 'Adjusted Arial Fallback';
 
     /* Seciton */
     --section-gap: 24px;
@@ -66,6 +66,8 @@ body {
     font-family: var(--primary-font-family);
     font-size: var(--body-font-size-m);
     line-height: 1.6;
+    background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
+    background-size: cover;
 }
 
 body.appear {
@@ -99,15 +101,8 @@ pre {
     white-space: pre;
 }
 
-body {
-    background-image: url("https://media.devhandler.com/static/images/bg-desktop.png");
-    background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
-    background-size: cover;
-}
-
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     body {
-        background-image: url("https://media.devhandler.com/static/images/bg-mobile.png");
         background-image: url("https://media.devhandler.com/static/images/bg-mobile.webp");
     }
 }
@@ -177,7 +172,7 @@ main > .section:first-of-type {
     }
 }
 
-/*Headings*/
+/* Headings */
 
 body:not(.blog-page-template) h1,
 body:not(.blog-page-template) h2,
@@ -216,6 +211,8 @@ h3, .h3 {
 
 h4, .h4 {
     font-size: var(--heading-font-size-m);
+    font-family: var(--primary-font-family);
+    line-height: 26px;
 }
 
 h5, .h5 {
@@ -230,11 +227,6 @@ h1, .h1, h2, .h2, h3, .h3 {
     font-family: var(--secondary-font-family);
 }
 
-h4, .h4 {
-    font-family: var(--primary-font-family);
-    line-height: 26px;
-}
-
 .font-weight-500 {
     font-weight: 500;
 }
@@ -247,7 +239,7 @@ p + h2 {
     margin-top: 16px;
 }
 
-/*Colors*/
+/* Colors */
 .text-color-blue {
     color: var(--color-blue);
 }
@@ -291,7 +283,7 @@ main div.section.background-gradient {
     color: black;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .text-color-blue {
         color: var(--color-blue-lighter);
     }
@@ -304,27 +296,33 @@ main div.section.background-gradient {
     .mobile-bg-gray-linear {
         background: var(--color-bg-gray-linear);
     }
+
     .mobile-bg-white {
         background: var(--color-white);
     }
+
     .mobile-text-center {
         text-align: center;
     }
+
     .mobile-hidden {
         display: none !important;
     }
+
     .mobile-color-white {
         color: var(--color-white);
     }
+
     .mobile-color-black {
         color: var(--color-black);
     }
+
     .mobile-color-absolute-black {
         color: var(--color-absolute-black);
     }
 }
 
-/*Common*/
+/* Common */
 .hidden {
     display: none !important;
 }
@@ -357,10 +355,11 @@ main div.section.background-gradient {
     color: var(--color-blue-lighter);
 }
 
-@media (min-width: 1025px) {
+@media (width >= 1025px) {
     .desktop-bg-gray-linear {
         background: var(--color-bg-gray-linear);
     }
+
     .vertical-text {
         writing-mode: vertical-rl;
         text-orientation: mixed;
@@ -370,11 +369,13 @@ main div.section.background-gradient {
         height: min-content;
         display: flex;
     }
+
     .desktop-hidden {
         display: none !important;
     }
 }
-/*Section Styles*/
+
+/* Section Styles */
 .section {
     --section-background-size: cover;
     --section-background-image: 'none';
@@ -418,10 +419,7 @@ main div.section.background-gradient {
 }
 
 .section.default-border-padding {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 32px 64px;
 }
 
 .section.row-gap-24 {
@@ -501,8 +499,7 @@ main div.section.zindex-negative-1 {
     z-index: -1;
 }
 
-@media (max-width: 1024px) {
-
+@media (width <= 1024px) {
     main div.section.mobile-direction-row {
         flex-direction: row;
     }
@@ -537,7 +534,7 @@ main div.section.zindex-negative-1 {
 }
 
 /* section background */
-.bg:after {
+.bg::after {
     content: " ";
     position: absolute;
     background-image: var(--section-background-image);
@@ -552,8 +549,8 @@ main div.section.zindex-negative-1 {
     background-repeat: no-repeat;
 }
 
-@media (max-width: 1024px) {
-    .bg:after {
+@media (width <= 1024px) {
+    .bg::after {
         background-image: var(--section-mobile-background-image);
         height: var(--section-mobile-background-height);
         background-position: var(--section-background-position);
@@ -582,7 +579,7 @@ main div.section.zindex-negative-1 {
     border-color: var(--color-aqamarine);
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .mobile-border {
         border: var(--border-size) solid var(--color-aqamarine);
         border-radius: var(--border-radius);

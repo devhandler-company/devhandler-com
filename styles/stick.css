@@ -1,7 +1,6 @@
-/*Stick Styles*/
+/* Stick Styles */
 
-@media (min-width: 1025px) {
-
+@media (width >= 1025px) {
     .stick-right, .stick-left {
         position: relative;
     }
@@ -18,8 +17,7 @@
         height: 100%;
         position: absolute;
         z-index: -1;
-        overflow-x: hidden;
-        overflow-y: hidden;
+        overflow: hidden;
         left: 0;
         right: 0;
         top: 0;
