@@ -2,7 +2,7 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--devhandler-com--devhandler-company.aem.page/
+- Preview: https://stage--devhandler-com--devhandler-company.aem.page/
 - Live: https://devhandler.com/
 
 ## Documentation
