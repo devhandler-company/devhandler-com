@@ -21,7 +21,7 @@
 }
 
 .blog-hero h1, .blog-hero p {
-    margin: 0 auto 24px auto;
+    margin: 0 auto 24px;
     -webkit-box-orient: vertical !important;
     display: -webkit-box !important;
     overflow: hidden !important;
@@ -67,10 +67,10 @@
         text-wrap:balance;
         -webkit-line-clamp: 6 !important;
     }
+    
     .blog-hero .blog-hero-text-short{
         -webkit-line-clamp: 2 !important;
     }
-
 
     .blog-hero-optional-container {
         position: absolute;
@@ -83,6 +83,7 @@
     .blog-hero {
         min-height: 335px;
     }
+    
     .blog-hero h1{
         font-size: 20px;
         -webkit-line-clamp: 15 !important;
