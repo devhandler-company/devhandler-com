@@ -15,6 +15,14 @@
     overflow: hidden;
 }
 
+.blog-hero.cyan {
+    color: var(--color-aqamarine);
+}
+
+.blog-hero.black {
+    color: var(--color-black);
+}
+
 .blog-hero-texts {
     position: relative;
     width: 100%;
