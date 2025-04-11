@@ -1,3 +1,5 @@
+import { getMetadata } from './aem.js';
+
 export function createTag(tag, attributes, content) {
   // eslint-disable-next-line no-param-reassign
   attributes = attributes || {};
@@ -16,6 +18,9 @@ export function createTag(tag, attributes, content) {
 }
 
 export function modifyHeaders(block) {
+  if (getMetadata('template') === 'blog-page-template') {
+    return null;
+  }
   block.querySelectorAll('h2 > strong').forEach((element) => {
     element.replaceWith(createTag('span', { class: 'text-color-blue' }, element.innerText));
   });
