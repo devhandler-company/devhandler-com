@@ -1,0 +1,141 @@
+/* stylelint-disable-next-line no-empty-source */
+
+.blog-heading-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-heading-container .blog-heading-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-heading-wrapper .blog-heading {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.blog-heading-wrapper .blog-heading.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.blog-heading-wrapper .blog-heading.bg-white {
+    background-color: var(--background-color);
+}
+
+.blog-heading-wrapper .blog-heading.bg-cyan {
+    background-color: var(--color-aqamarine);
+}
+
+.blog-heading h1,
+.blog-heading h2,
+.blog-heading h3,
+.blog-heading h4,
+.blog-heading h5,
+.blog-heading h6 {
+    color: var(--background-color);
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-family: var(--primary-font-family);
+    font-style: normal;
+    font-weight: 400;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.blog-heading-wrapper .blog-heading.bg-blue h1,
+.blog-heading-wrapper .blog-heading.bg-blue h2,
+.blog-heading-wrapper .blog-heading.bg-blue h3,
+.blog-heading-wrapper .blog-heading.bg-blue h4,
+.blog-heading-wrapper .blog-heading.bg-blue h5,
+.blog-heading-wrapper .blog-heading.bg-blue h6 {
+    color: var(--background-color);
+}
+
+.blog-heading-wrapper .blog-heading.bg-white h1,
+.blog-heading-wrapper .blog-heading.bg-white h2,
+.blog-heading-wrapper .blog-heading.bg-white h3,
+.blog-heading-wrapper .blog-heading.bg-white h4,
+.blog-heading-wrapper .blog-heading.bg-white h5,
+.blog-heading-wrapper .blog-heading.bg-white h6 {
+    color: var(--color-black);
+}
+
+.blog-heading-wrapper .blog-heading.bg-cyan h1,
+.blog-heading-wrapper .blog-heading.bg-cyan h2,
+.blog-heading-wrapper .blog-heading.bg-cyan h3,
+.blog-heading-wrapper .blog-heading.bg-cyan h4,
+.blog-heading-wrapper .blog-heading.bg-cyan h5,
+.blog-heading-wrapper .blog-heading.bg-cyan h6 {
+    color: var(--background-color);
+}
+
+.blog-heading h1 {
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.blog-heading h2 {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.blog-heading h3 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.blog-heading h4 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.blog-heading h5 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.blog-heading h6 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media (width <= 991px) {
+    .blog-heading h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .blog-heading h2 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .blog-heading h3 {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    .blog-heading h4 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .blog-heading h5 {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .blog-heading h6 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
