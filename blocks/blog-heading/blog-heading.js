@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 const existingHeadingIds = new Set();
 
 function generateCustomId(text = '') {
@@ -6,7 +5,7 @@ function generateCustomId(text = '') {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-    .substring(0, 25);
+    .substring(0, 100);
 
   let id = base || `heading-${Math.random().toString(36).substring(2, 8)}`;
   let counter = 1;
@@ -21,52 +20,60 @@ function generateCustomId(text = '') {
 }
 
 export default function decorate(block) {
-  const rows = [...block.children];
-
-  let level = 2;
-  let id = '';
-  let text = '';
+  const rows = Array.from(block.children);
+  const data = {};
 
   rows.forEach((row) => {
-    if (!row || row.children.length < 2) return;
-
-    const key = row.children[0]?.textContent?.trim()?.toLowerCase();
-    const valueEl = row.children[1];
-
-    if (!key || !valueEl) return;
-
-    switch (key) {
-      case 'level': {
-        const lvl = parseInt(valueEl.textContent.trim(), 10);
-        level = Number.isNaN(lvl) || lvl < 1 || lvl > 6 ? 2 : lvl;
-        break;
-      }
-      case 'id': {
-        const hTag = valueEl.querySelector('h1,h2,h3,h4,h5,h6');
-        id = hTag?.id || valueEl.textContent.trim();
-        break;
-      }
-      case 'text': {
-        text = valueEl.textContent.trim();
-        break;
-      }
-      default:
-        break;
-    }
+    const label = row.children[0]?.textContent?.trim().toLowerCase();
+    const valueCell = row.children[1];
+    if (!label || !valueCell) return;
+    data[label] = valueCell;
   });
 
-  if (!text) text = 'untitled';
+  block.innerHTML = '';
 
-  if (!id) {
-    id = generateCustomId(text);
-  } else {
-    id = generateCustomId(id);
+  const headingText = data.text?.textContent?.trim() || '';
+  const headingLevel = 'h2';
+  let headingId = data.id?.querySelector(headingLevel)?.id;
+
+  if (!headingId) {
+    headingId = generateCustomId(headingText);
   }
 
-  const heading = document.createElement(`h${level}`);
-  heading.id = id;
-  heading.textContent = text;
+  const headingEl = document.createElement(headingLevel);
+  headingEl.id = headingId;
 
-  block.innerHTML = '';
-  block.appendChild(heading);
+  // Icon (optional, goes inside heading)
+  if (data.icon) {
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'blog-heading-icon';
+
+    const picture = data.icon.querySelector('picture');
+    const svg = data.icon.querySelector('svg');
+    const img = data.icon.querySelector('img');
+
+    if (picture) {
+      iconSpan.appendChild(picture.cloneNode(true));
+    } else if (svg) {
+      iconSpan.appendChild(svg.cloneNode(true));
+    } else if (img) {
+      iconSpan.appendChild(img.cloneNode(true));
+    } else {
+      iconSpan.textContent = data.icon.textContent.trim();
+    }
+
+    headingEl.appendChild(iconSpan);
+  }
+
+  // Add heading text after icon
+  headingEl.append(`${headingText}`);
+  block.appendChild(headingEl);
+
+  // Subtitle
+  if (data.subtitle) {
+    const subtitleEl = document.createElement('p');
+    subtitleEl.className = 'blog-heading-subtitle';
+    subtitleEl.textContent = data.subtitle.textContent.trim();
+    block.appendChild(subtitleEl);
+  }
 }
