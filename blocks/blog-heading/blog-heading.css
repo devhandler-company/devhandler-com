@@ -183,3 +183,15 @@
     font-family: var(--primary-font-family);
     color: var(--background-color);
 }
+
+.blog-heading.bg-blue .blog-heading-subtitle {
+    color: var(--background-color);
+}
+
+.blog-heading.bg-white .blog-heading-subtitle {
+    color: var(--color-black);
+}
+
+.blog-heading.bg-cyan .blog-heading-subtitle {
+    color: var(--background-color);
+}
