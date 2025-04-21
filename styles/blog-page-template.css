@@ -5,7 +5,7 @@
 .blog-page-template main h6 a::before {
   content: '#';
   margin-right: 0.25em;
-  color: var(--link-color, white);
+  color: var(--primary-text-color);
   text-decoration: none;
 }
 
@@ -14,7 +14,7 @@
 .blog-page-template main h4 a,
 .blog-page-template main h5 a,
 .blog-page-template main h6 a {
-  color: var(--link-color, white);
+  color: var(--primary-text-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -24,29 +24,27 @@
 .blog-page-template main h4 a:hover,
 .blog-page-template main h5 a:hover,
 .blog-page-template main h6 a:hover {
-  background: linear-gradient(to right, #00ffff, #00bfff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
   text-decoration: none;
 }
 
 .blog-page-template main a {
-  color: var(--link-color, #00ffff);
+  color: var(--color-aqamarine);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .blog-page-template main a:hover {
-  color: var(--link-hover-color, #00bfff);
+  color: var(--color-blue-lighter);
   text-decoration: underline;
 }
 
 .blog-page-template main code {
-  color: var(--code-color, #00ffff);
-  background-color: var(--code-bg, #2e2e2e);
-  border: 1px solid var(--code-border, #444);
-  border-radius: 4px;
+  color: var(--color-aqamarine);
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-black);
+  border-radius: var(--border-radius);
   padding: 0.2em 0.4em;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 0.95em;
+  font-size: var(--body-font-size-xs);
 }
