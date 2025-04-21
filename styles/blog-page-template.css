@@ -1,3 +1,52 @@
-.blog-page-template {
-    /* Placeholder */
+.blog-page-template main h2 a::before,
+.blog-page-template main h3 a::before,
+.blog-page-template main h4 a::before,
+.blog-page-template main h5 a::before,
+.blog-page-template main h6 a::before {
+  content: '#';
+  margin-right: 0.25em;
+  color: var(--link-color, white);
+  text-decoration: none;
+}
+
+.blog-page-template main h2 a,
+.blog-page-template main h3 a,
+.blog-page-template main h4 a,
+.blog-page-template main h5 a,
+.blog-page-template main h6 a {
+  color: var(--link-color, white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-page-template main h2 a:hover,
+.blog-page-template main h3 a:hover,
+.blog-page-template main h4 a:hover,
+.blog-page-template main h5 a:hover,
+.blog-page-template main h6 a:hover {
+  background: linear-gradient(to right, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.blog-page-template main a {
+  color: var(--link-color, #00ffff);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-page-template main a:hover {
+  color: var(--link-hover-color, #00bfff);
+  text-decoration: underline;
+}
+
+.blog-page-template main code {
+  color: var(--code-color, #00ffff);
+  background-color: var(--code-bg, #2e2e2e);
+  border: 1px solid var(--code-border, #444);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95em;
 }
