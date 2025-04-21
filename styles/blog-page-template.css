@@ -45,6 +45,6 @@
   border: 1px solid var(--color-black);
   border-radius: var(--border-radius);
   padding: 0.2em 0.4em;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--primary-font-family);
   font-size: var(--body-font-size-xs);
 }
