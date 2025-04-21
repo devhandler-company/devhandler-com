@@ -5,7 +5,7 @@ function generateId(text = '') {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-    .substring(0, 25);
+    .substring(0, 100);
 
   let id = base || `heading-${Math.random().toString(36).substring(2, 8)}`;
   let counter = 1;
@@ -77,8 +77,8 @@ function renderList(container, items) {
   container.appendChild(tocList);
 }
 
-function extractHeadings(scope = document, usedIds = new Set()) {
-  const headings = scope.querySelectorAll('h1, h2, h3, h4, h5, h6');
+function extractHeadings(scope = document, usedIds = new Set(), selector = 'h2, h3, h4, h5, h6') {
+  const headings = scope.querySelectorAll(selector);
   const items = [];
 
   headings.forEach((heading) => {
@@ -98,18 +98,30 @@ function extractHeadings(scope = document, usedIds = new Set()) {
   return items;
 }
 
+function normalizeHref(href = '') {
+  try {
+    const url = new URL(href, window.location.href);
+    return url.hash || `#${generateId(href)}`; // fallback if no hash
+  } catch {
+    // Not a valid URL, assume it's a simple hash or ID
+    return href.startsWith('#') ? href : `#${href}`;
+  }
+}
+
 function parseManualList(ul) {
   const items = [];
 
   function traverseList(list, level = 2) {
     [...list.children].forEach((li) => {
-      const match = li.textContent.match(/\[(.+?)\]\(#(.+?)\)/);
-      if (match) {
-        const [, text, id] = match;
-        items.push({ text, href: `#${id}`, level });
+      const a = li.querySelector(':scope > a');
+      if (a) {
+        const text = a.textContent.trim();
+        const rawHref = a.getAttribute('href') || '';
+        const href = normalizeHref(rawHref);
+        items.push({ text, href, level });
       }
 
-      const subUl = li.querySelector('ul');
+      const subUl = li.querySelector(':scope > ul');
       if (subUl) {
         traverseList(subUl, level + 1);
       }
@@ -121,26 +133,24 @@ function parseManualList(ul) {
 }
 
 export default function decorate(block) {
-  const rows = [...block.querySelectorAll(':scope > div')];
-  const config = {};
-
-  rows.forEach((row) => {
-    const key = row.children[0]?.textContent?.trim().toLowerCase();
-    const value = row.children[1];
-
-    if (key === 'source') {
-      config.source = value.textContent.trim().toLowerCase();
-    }
-
-    if (key === 'headings') {
-      config.headingsList = value.querySelector('ul');
-    }
-  });
+  const classList = block.className.split(/\s+/);
+  const sourceClass = classList.find((cls) => [
+    'heading-blocks',
+    'all-headings',
+    'manual',
+    'editable',
+    'section-blocks',
+    'nav-links',
+    'h2-only',
+    'inline-markers',
+    'external-json',
+  ].includes(cls));
+  const source = sourceClass || 'all-headings';
 
   const usedIds = new Set();
   let items = [];
 
-  switch (config.source) {
+  switch (source) {
     case 'heading-blocks': {
       const headingBlocks = document.querySelectorAll(
         '.blog-heading h1, .blog-heading h2, .blog-heading h3, .blog-heading h4, .blog-heading h5, .blog-heading h6',
@@ -166,24 +176,84 @@ export default function decorate(block) {
       break;
     }
 
-    case 'manual': {
-      if (config.headingsList) {
-        items = parseManualList(config.headingsList, usedIds);
+    case 'manual':
+    case 'editable': {
+      const ul = block.querySelector('ul');
+      const manualItems = ul ? parseManualList(ul) : [];
+
+      if (source === 'editable') {
+        const allItems = extractHeadings(document, usedIds);
+        const manualIds = new Set(manualItems.map((i) => i.href));
+        const uniqueAllItems = allItems.filter((i) => !manualIds.has(i.href));
+        items = [...manualItems, ...uniqueAllItems];
+      } else {
+        items = manualItems;
       }
       break;
     }
 
-    case 'editable': {
-      const manualItems = config.headingsList ? parseManualList(config.headingsList, usedIds) : [];
-      const allItems = extractHeadings(document, usedIds);
-      const manualIds = new Set(manualItems.map((i) => i.href));
-      const uniqueAllItems = allItems.filter((i) => !manualIds.has(i.href));
-      items = [...manualItems, ...uniqueAllItems];
+    case 'section-blocks': {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section) => {
+        const heading = section.querySelector('h2, h3, h4, h5, h6');
+        if (heading) {
+          const level = parseInt(heading.tagName[1], 10);
+          const text = heading.textContent.trim();
+          let { id } = heading;
+          if (!id) {
+            id = generateId(text, usedIds);
+            heading.id = id;
+          }
+          usedIds.add(id);
+          items.push({ text, href: `#${id}`, level });
+        }
+      });
+      break;
+    }
+
+    case 'nav-links': {
+      const links = document.querySelectorAll('.nav a, .toc-links a');
+      links.forEach((link) => {
+        const text = link.textContent.trim();
+        const href = link.getAttribute('href');
+        items.push({ text, href, level: 2 });
+      });
+      break;
+    }
+
+    case 'h2-only': {
+      items = extractHeadings(document, usedIds, 'h2');
+      break;
+    }
+
+    case 'inline-markers': {
+      const start = document.querySelector('<!-- toc-start -->');
+      const end = document.querySelector('<!-- toc-end -->');
+      if (start && end) {
+        const range = document.createRange();
+        range.setStartAfter(start);
+        range.setEndBefore(end);
+        const fragment = range.cloneContents();
+        items = extractHeadings(fragment, usedIds);
+      }
+      break;
+    }
+
+    case 'external-json': {
+      const jsonMeta = document.querySelector('script[type="application/json"].toc-data');
+      if (jsonMeta) {
+        try {
+          const data = JSON.parse(jsonMeta.textContent);
+          items = data.items || [];
+        } catch (e) {
+          break;
+        }
+      }
       break;
     }
 
     default:
-      break;
+      items = extractHeadings(document, usedIds);
   }
 
   if (items.length) {
