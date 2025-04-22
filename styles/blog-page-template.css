@@ -30,11 +30,11 @@
 .blog-page-template main h5 a:hover,
 .blog-page-template main h6 a:hover {
   background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   -webkit-text-stroke: 0.4px var(--primary-text-color);
-  text-stroke: 0.4px var(--primary-text-color);
 }
 
 /* ---------------------------------------
