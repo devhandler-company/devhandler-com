@@ -45,10 +45,16 @@ function parseBlockData(block) {
  */
 export default function decorate(block) {
   const data = parseBlockData(block);
-  const headingText = data.text?.textContent?.trim() || '';
-  const headingLevel = 'h2';
 
-  let headingId = data.id?.querySelector(headingLevel)?.id;
+  const textContainer = data.text;
+  const headingNode = textContainer?.querySelector('h2,h3,h4,h5,h6');
+  const fallbackTextNode = textContainer?.querySelector('p');
+
+  const headingText = headingNode?.textContent?.trim() || fallbackTextNode?.textContent?.trim() || '';
+
+  const headingLevel = headingNode?.tagName.toLowerCase() || 'h2';
+
+  let headingId = data.id?.querySelector('h2,h3,h4,h5,h6')?.id;
   if (!headingId) headingId = generateCustomId(headingText);
 
   const headingEl = document.createElement(headingLevel);
@@ -72,7 +78,7 @@ export default function decorate(block) {
   // Text after icon
   headingEl.append(headingText);
 
-  // Clear block and append elements
+  // Clear and build block
   block.innerHTML = '';
   block.appendChild(headingEl);
 
