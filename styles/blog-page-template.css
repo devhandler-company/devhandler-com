@@ -1,3 +1,6 @@
+/* ---------------------------------------
+   Headings (h2–h6) with anchor links
+---------------------------------------- */
 .blog-page-template main h2 a::before,
 .blog-page-template main h3 a::before,
 .blog-page-template main h4 a::before,
@@ -9,6 +12,7 @@
   text-decoration: none;
 }
 
+/* Default heading link style */
 .blog-page-template main h2 a,
 .blog-page-template main h3 a,
 .blog-page-template main h4 a,
@@ -19,15 +23,23 @@
   transition: color 0.3s ease;
 }
 
+/* On hover: gradient + improved text visibility */
 .blog-page-template main h2 a:hover,
 .blog-page-template main h3 a:hover,
 .blog-page-template main h4 a:hover,
 .blog-page-template main h5 a:hover,
 .blog-page-template main h6 a:hover {
   background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
+  -webkit-text-stroke: 0.4px var(--primary-text-color);
+  text-stroke: 0.4px var(--primary-text-color);
 }
 
+/* ---------------------------------------
+   General anchor link styles
+---------------------------------------- */
 .blog-page-template main a {
   color: var(--color-aqamarine);
   text-decoration: none;
@@ -39,11 +51,14 @@
   text-decoration: underline;
 }
 
+/* ---------------------------------------
+   Inline <code> styling
+---------------------------------------- */
 .blog-page-template main code {
   color: var(--color-aqamarine);
   background-color: var(--color-dark);
-  border: 1px solid var(--color-black);
-  border-radius: var(--border-radius);
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;        
   padding: 0.2em 0.4em;
   font-family: var(--primary-font-family);
   font-size: var(--body-font-size-xs);
