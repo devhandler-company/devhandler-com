@@ -78,7 +78,6 @@ export default function decorate(block) {
   // Text after icon
   headingEl.append(headingText);
 
-  // Clear and build block
   block.innerHTML = '';
   block.appendChild(headingEl);
 
