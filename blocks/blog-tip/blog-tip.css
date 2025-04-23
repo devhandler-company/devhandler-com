@@ -1,0 +1,155 @@
+/* === Blog Tip Wrapper === */
+.blog-tip-wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+@media (width <= 991px) {
+    .blog-tip-wrapper {
+        margin: 21px 0;
+    }
+}
+
+.blog-tip-wrapper * {
+    box-sizing: border-box;
+}
+
+/* === Blog Tip Block === */
+.block.blog-tip {
+    padding-left: calc((100vw - 1200px - 12px) / 2);
+    padding-right: calc((100vw - 1200px - 12px) / 2);
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* === Tip Body Base === */
+.block.blog-tip .tip-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 188px;
+    height: 100%;
+    padding: 55px 25px 55px 111px;
+    background-color: #0062f7;
+    position: relative;
+    border-radius: 0 20px 20px 0;
+}
+
+@media (width <= 991px) {
+    .block.blog-tip .tip-body {
+        min-height: 95px;
+        padding: 24px 40px;
+    }
+}
+
+/* === Tip Body Left Alignment === */
+.block.blog-tip.to-left .tip-body {
+    border-radius: 20px 0 0 20px;
+    padding-right: 25px;
+    padding-left: 111px;
+}
+
+.block.blog-tip.to-right .tip-body {
+    border-radius: 0 20px 20px 0;
+    padding-left: 25px;
+    padding-right: 111px;
+}
+
+@media (width <= 991px) {
+    .block.blog-tip.to-right .tip-body,
+    .block.blog-tip.to-left .tip-body {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* === Tip Body Background Extension === */
+.block.blog-tip .tip-body::before {
+    position: absolute;
+    content: " ";
+    background-color: #0062f7;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    left: -100%;
+    right: 0;
+    top: 0;
+    border-radius: 0 20px 20px 0;
+}
+
+.block.blog-tip.to-left .tip-body::before {
+    right: -100%;
+    left: 0;
+    border-radius: 20px 0 0 20px;
+}
+
+.block.blog-tip.to-right .tip-body::before {
+    left: -100%;
+    right: 0;
+    border-radius: 0 20px 20px 0;
+}
+
+.blog-tip.bg-white.block .tip-body,
+.blog-tip.bg-white.block .tip-body::after,
+.blog-tip.bg-white.block .tip-body::before {
+    background-color: var(--background-color);
+}
+
+.blog-tip.bg-cyan.block .tip-body,
+.blog-tip.bg-cyan.block .tip-body::after,
+.blog-tip.bg-cyan.block .tip-body::before {
+    background-color: var(--color-aqamarine);
+}
+
+/* === Tip Text Styles === */
+.block.blog-tip .tip-paragraph {
+    margin: 0 0 1em;
+    max-width: 978px;
+    color: var(--primary-text-color);
+    font-size: 22px;
+    font-style: normal;
+    text-align: left;
+    font-weight: 400;
+    line-height: 26px;
+    font-family: var(--primary-font-family);
+}
+
+@media (width <= 991px) {
+    .block.blog-tip .tip-paragraph {
+        font-size: 12px;
+        line-height: normal;
+    }
+}
+
+/* Theme-specific paragraph color overrides */
+.blog-tip.bg-white.block .tip-paragraph {
+    color: var(--color-black);
+}
+
+.blog-tip.bg-cyan.block .tip-paragraph {
+    color: var(--background-color);
+}
+
+.block.blog-tip .tip-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Emphasis styling */
+.block.blog-tip .tip-emphasis {
+    font-weight: bold;
+}
