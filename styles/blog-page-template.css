@@ -8,7 +8,7 @@
 .blog-page-template main h6 a::before {
   content: '#';
   margin-right: 0.25em;
-  color: var(--primary-text-color);
+  color: var(--color-gray);
   text-decoration: none;
 }
 
@@ -57,9 +57,9 @@
 .blog-page-template main code {
   color: var(--color-aqamarine);
   background-color: var(--color-dark);
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--color-gray-darker);
   border-radius: 12px;        
-  padding: 0.2em 0.4em;
+  padding: 0 0.4em;
   font-family: var(--primary-font-family);
   font-size: var(--body-font-size-xs);
 }
