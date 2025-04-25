@@ -57,6 +57,9 @@
     /* Borders */
     --border-radius: 20px;
     --border-size: 3px;
+
+    /* Cards */
+    --card-spacing: -20px;
 }
 
 body {
