@@ -1,5 +1,10 @@
 const existingHeadingIds = new Set();
 
+/**
+ * Generates a sanitized and unique ID from a given heading text.
+ * @param {string} text
+ * @returns {string}
+ */
 function generateCustomId(text = '') {
   const base = text
     .toLowerCase()
@@ -11,53 +16,58 @@ function generateCustomId(text = '') {
   let counter = 1;
 
   while (existingHeadingIds.has(id)) {
-    id = `${base}-${counter}`;
     counter += 1;
+    id = `${base}-${counter}`;
   }
 
   existingHeadingIds.add(id);
   return id;
 }
 
-export default function decorate(block) {
-  const rows = Array.from(block.children);
+/**
+ * Extracts and maps content rows into a key-value object.
+ * @param {HTMLElement} block
+ * @returns {Record<string, HTMLElement>}
+ */
+function parseBlockData(block) {
   const data = {};
-
-  rows.forEach((row) => {
+  Array.from(block.children).forEach((row) => {
     const label = row.children[0]?.textContent?.trim().toLowerCase();
-    const valueCell = row.children[1];
-    if (!label || !valueCell) return;
-    data[label] = valueCell;
+    const value = row.children[1];
+    if (label && value) data[label] = value;
   });
+  return data;
+}
 
-  block.innerHTML = '';
+/**
+ * Creates a blog heading with optional icon and subtitle.
+ * @param {HTMLElement} block
+ */
+export default function decorate(block) {
+  const data = parseBlockData(block);
 
-  const headingText = data.text?.textContent?.trim() || '';
-  const headingLevel = 'h2';
-  let headingId = data.id?.querySelector(headingLevel)?.id;
+  const textContainer = data.text;
+  const headingNode = textContainer?.querySelector('h2,h3,h4,h5,h6');
+  const fallbackTextNode = textContainer?.querySelector('p');
 
-  if (!headingId) {
-    headingId = generateCustomId(headingText);
-  }
+  const headingText = headingNode?.textContent?.trim() || fallbackTextNode?.textContent?.trim() || '';
+
+  const headingLevel = headingNode?.tagName.toLowerCase() || 'h2';
+
+  let headingId = data.id?.querySelector('h2,h3,h4,h5,h6')?.id;
+  if (!headingId) headingId = generateCustomId(headingText);
 
   const headingEl = document.createElement(headingLevel);
   headingEl.id = headingId;
 
-  // Icon (optional, goes inside heading)
+  // Icon (optional)
   if (data.icon) {
     const iconSpan = document.createElement('span');
     iconSpan.className = 'blog-heading-icon';
 
-    const picture = data.icon.querySelector('picture');
-    const svg = data.icon.querySelector('svg');
-    const img = data.icon.querySelector('img');
-
-    if (picture) {
-      iconSpan.appendChild(picture.cloneNode(true));
-    } else if (svg) {
-      iconSpan.appendChild(svg.cloneNode(true));
-    } else if (img) {
-      iconSpan.appendChild(img.cloneNode(true));
+    const icon = data.icon.querySelector('picture, svg, img');
+    if (icon) {
+      iconSpan.appendChild(icon.cloneNode(true));
     } else {
       iconSpan.textContent = data.icon.textContent.trim();
     }
@@ -65,11 +75,13 @@ export default function decorate(block) {
     headingEl.appendChild(iconSpan);
   }
 
-  // Add heading text after icon
-  headingEl.append(`${headingText}`);
+  // Text after icon
+  headingEl.append(headingText);
+
+  block.innerHTML = '';
   block.appendChild(headingEl);
 
-  // Subtitle
+  // Subtitle (optional)
   if (data.subtitle) {
     const subtitleEl = document.createElement('p');
     subtitleEl.className = 'blog-heading-subtitle';

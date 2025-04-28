@@ -37,14 +37,6 @@
     text-overflow: ellipsis !important;
 }
 
-.blog-hero.content-left {
-    text-align: left;
-}
-
-.blog-hero.content-right {
-    text-align: right;
-}
-
 .blog-hero.content-left h1 {
     margin-left: 0;
 }
@@ -93,7 +85,7 @@
         -webkit-line-clamp: 6 !important;
     }
     
-    .blog-hero .blog-hero-text-short{
+    .blog-hero .blog-hero-text-short {
         -webkit-line-clamp: 2 !important;
     }
 
@@ -101,6 +93,14 @@
         position: absolute;
         width: 100%;
         inset-inline: 0;
+    }
+
+    .blog-hero.content-left {
+        text-align: left;
+    }
+
+    .blog-hero.content-right {
+        text-align: right;
     }
 }
 
