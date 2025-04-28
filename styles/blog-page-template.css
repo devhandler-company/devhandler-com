@@ -1,6 +1,17 @@
 /* ---------------------------------------
    Headings (h2–h6) with anchor links
 ---------------------------------------- */
+
+.blog-page-template {
+    font-size: var(--body-font-size-s);
+    line-height: 30px;
+}
+
+.blog-page-template,
+.blog-page-template * {
+    box-sizing: border-box;
+}
+
 .blog-page-template main h2 a::before,
 .blog-page-template main h3 a::before,
 .blog-page-template main h4 a::before,
@@ -61,5 +72,5 @@
   border-radius: 12px;        
   padding: 0 0.4em;
   font-family: var(--primary-font-family);
-  font-size: var(--body-font-size-xs);
+  font-size: 16px;
 }
