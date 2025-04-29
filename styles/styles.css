@@ -95,6 +95,7 @@ body:not(.blog-page-template) blockquote {
 code,
 pre {
     font-size: var(--body-font-size-s);
+    white-space: nowrap;
 }
 
 pre {
