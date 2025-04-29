@@ -3,8 +3,8 @@
 ---------------------------------------- */
 
 .blog-page-template {
-    font-size: var(--body-font-size-s);
-    line-height: 30px;
+    font-size: var(--body-font-size-m);
+    line-height: var(--bode-line-height-xl);
 }
 
 .blog-page-template,
