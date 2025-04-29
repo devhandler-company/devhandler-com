@@ -43,7 +43,8 @@
     --color-aqamarine: #4ce1ba;
     --color-blue: #0063F8;
     --color-blue-lighter: #3585ff;
-    --color-gray: #929292;
+    --color-gray: #bdbdbd;
+    --color-gray-darker: #606060;
     --color-gray-blue: #89B7D0;
     --color-black: #222;
     --color-white: #fff;
@@ -59,6 +60,9 @@
     /* Borders */
     --border-radius: 20px;
     --border-size: 3px;
+
+    /* Cards */
+    --card-spacing: -20px;
 }
 
 body {
@@ -94,6 +98,7 @@ body:not(.blog-page-template) blockquote {
 code,
 pre {
     font-size: var(--body-font-size-s);
+    white-space: nowrap;
 }
 
 pre {
