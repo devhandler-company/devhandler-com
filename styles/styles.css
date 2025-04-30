@@ -4,7 +4,11 @@
 
     /* colors */
     --background-color: white;
-
+    
+    /* line heights */
+    --default-line-height: 1.6;
+    --bode-line-height-xl: 30px;
+    
     /* body sizes */
     --body-font-size-m: 22px;
     --body-font-size-s: 19px;
