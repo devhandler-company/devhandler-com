@@ -1,7 +1,8 @@
 export default async function decorate(block) {
   try {
     const getFieldValue = (label) => {
-      const row = [...block.children].find((div) => div.children[0]?.textContent.trim().toLowerCase() === label);
+      const row = [...block.children]
+        .find((div) => div.children[0]?.textContent.trim().toLowerCase() === label);
       return row?.children[1] || null;
     };
 
