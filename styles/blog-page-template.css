@@ -1,10 +1,22 @@
 /* ---------------------------------------
    Headings (h2–h6) with anchor links
 ---------------------------------------- */
-
 .blog-page-template {
     font-size: var(--body-font-size-s);
     line-height: 30px;
+
+    --default-line-height: 30px;
+    --body-font-size-m: 16px;
+    --body-font-size-s: 14px;
+    --body-font-size-xs: 14px;
+}
+
+@media (width >= 1025px) {
+    .blog-page-template {
+        --body-font-size-m: 18px;
+        --body-font-size-s: 16px;
+        --body-font-size-xs: 16px;
+    }
 }
 
 .blog-page-template,
@@ -17,10 +29,10 @@
 .blog-page-template main h4 a::before,
 .blog-page-template main h5 a::before,
 .blog-page-template main h6 a::before {
-  content: '#';
-  margin-right: 0.25em;
-  color: var(--color-gray);
-  text-decoration: none;
+    content: "#";
+    margin-right: 0.25em;
+    color: var(--primary-text-color);
+    text-decoration: none;
 }
 
 /* Default heading link style */
@@ -29,9 +41,9 @@
 .blog-page-template main h4 a,
 .blog-page-template main h5 a,
 .blog-page-template main h6 a {
-  color: var(--primary-text-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 /* On hover: gradient + improved text visibility */
@@ -40,37 +52,37 @@
 .blog-page-template main h4 a:hover,
 .blog-page-template main h5 a:hover,
 .blog-page-template main h6 a:hover {
-  background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
-  /* stylelint-disable-next-line property-no-vendor-prefix */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-  -webkit-text-stroke: 0.4px var(--primary-text-color);
+    background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    -webkit-text-stroke: 0.4px var(--primary-text-color);
 }
 
 /* ---------------------------------------
    General anchor link styles
 ---------------------------------------- */
 .blog-page-template main a {
-  color: var(--color-aqamarine);
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: var(--color-aqamarine);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .blog-page-template main a:hover {
-  color: var(--color-blue-lighter);
-  text-decoration: underline;
+    color: var(--color-blue-lighter);
+    text-decoration: underline;
 }
 
 /* ---------------------------------------
    Inline <code> styling
 ---------------------------------------- */
 .blog-page-template main code {
-  color: var(--color-aqamarine);
-  background-color: var(--color-dark);
-  border: 1px solid var(--color-gray-darker);
-  border-radius: 12px;        
-  padding: 0 0.4em;
-  font-family: var(--primary-font-family);
-  font-size: 16px;
+    color: var(--color-aqamarine);
+    background-color: var(--color-dark);
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 0.2em 0.4em;
+    font-family: var(--primary-font-family);
+    font-size: var(--body-font-size-xs);
 }

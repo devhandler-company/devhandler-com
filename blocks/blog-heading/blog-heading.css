@@ -14,10 +14,15 @@
 .blog-heading-wrapper {
     display: block;
     width: 100%;
+    box-sizing: border-box;
     height: 100%;
 }
 
-.blog-heading {
+.blog-heading-container .blog-heading-wrapper  * {
+    box-sizing: border-box;
+}
+
+.blog-heading-wrapper .blog-heading {
     display: block;
     width: 100%;
     height: auto;

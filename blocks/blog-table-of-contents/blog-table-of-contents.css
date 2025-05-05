@@ -1,0 +1,156 @@
+/* stylelint-disable-next-line no-empty-source */
+.blog-table-of-contents-wrapper {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.blog-table-of-contents-wrapper * {
+    box-sizing: border-box;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 60px;
+    background-color: var(--background-color);
+}
+
+@media (width <= 991px) {
+    .blog-table-of-contents-wrapper .blog-table-of-contents {
+        padding: 24px 40px;
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-white {
+    background-color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-cyan {
+    background-color: var(--color-aqamarine);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-title {
+    color: var(--color-black);
+    font-family: var(--primary-font-family);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    width: 100%;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-white .toc-title {
+    color: var(--color-black);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-cyan .toc-title {
+    color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-blue .toc-title {
+    color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .table-of-contents {
+    width: 100%;
+    margin-top: 27px;
+    margin-left: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 18px;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-item .toc-link {
+    color: var(--color-black);
+    font-family: var(--primary-font-family);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    position: relative;
+}
+
+@media (width <= 991px) {
+    .blog-table-of-contents-wrapper .blog-table-of-contents .toc-item .toc-link {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-white .toc-item .toc-link {
+    color: var(--color-black);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-cyan .toc-item .toc-link {
+    color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-blue .toc-item .toc-link {
+    color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-item .toc-link::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 32px;
+    top: -5px;
+    left: -30px;
+    background-color: var(--color-blue);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: var(--border-radius);
+    border-top-right-radius: 0;
+    border-top-left-radius: 40px;
+    margin-right: 24px;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-white .toc-item .toc-link::before {
+    background-color: var(--color-black);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-cyan .toc-item .toc-link::before {
+    background-color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents.bg-blue .toc-item .toc-link::before {
+    background-color: var(--background-color);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .table-of-contents .toc-list.toc-level-3,
+.blog-table-of-contents-wrapper .blog-table-of-contents .table-of-contents .toc-list.toc-level-4,
+.blog-table-of-contents-wrapper .blog-table-of-contents .table-of-contents .toc-list.toc-level-5,
+.blog-table-of-contents-wrapper .blog-table-of-contents .table-of-contents .toc-list.toc-level-6 {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-top: 27px;
+}

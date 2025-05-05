@@ -4,6 +4,9 @@
 
     /* colors */
     --background-color: white;
+    
+    /* line heights */
+    --default-line-height: 1.6;
 
     /* body sizes */
     --body-font-size-m: 22px;
@@ -95,6 +98,7 @@ body:not(.blog-page-template) blockquote {
 code,
 pre {
     font-size: var(--body-font-size-s);
+    white-space: nowrap;
 }
 
 pre {
