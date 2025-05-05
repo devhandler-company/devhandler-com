@@ -1,8 +1,10 @@
 /* ---------------------------------------
    Headings (h2–h6) with anchor links
 ---------------------------------------- */
-
 .blog-page-template {
+    font-size: var(--body-font-size-s);
+    line-height: 30px;
+
     --default-line-height: 30px;
     --body-font-size-m: 16px;
     --body-font-size-s: 14px;
