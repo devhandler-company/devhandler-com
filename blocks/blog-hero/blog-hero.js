@@ -1,4 +1,6 @@
-export default function decorate(block) {
+import { loadFragment } from '../fragment/fragment.js';
+
+export default async function decorate(block) {
   const picture = block.querySelector('picture');
   const texts = block.querySelectorAll('p');
   const titleText = texts[0].innerText;
@@ -8,8 +10,8 @@ export default function decorate(block) {
   block.innerText = '';
   block.appendChild(picture);
 
-  const heroTexts = document.createElement('div');
-  heroTexts.classList.add('blog-hero-texts');
+  const heroContent = document.createElement('div');
+  heroContent.classList.add('blog-hero-content');
 
   const heroOptionalContainer = document.createElement('div');
   heroOptionalContainer.classList.add('blog-hero-optional-container');
@@ -19,7 +21,7 @@ export default function decorate(block) {
     heading.classList.add('blog-hero-text-short');
   }
   heading.innerText = titleText;
-  heroTexts.appendChild(heading);
+  heroContent.appendChild(heading);
 
   if (descriptionText) {
     const description = document.createElement('p');
@@ -31,7 +33,12 @@ export default function decorate(block) {
     link.classList.add('text-color-blue');
     heroOptionalContainer.appendChild(link);
   }
-  heroTexts.appendChild(heroOptionalContainer);
+  heroContent.appendChild(heroOptionalContainer);
 
-  block.appendChild(heroTexts);
+  if (block.classList.contains('search')) {
+    const searchFragment = await loadFragment('/fragments/search-blog');
+    heroContent.appendChild(searchFragment?.firstElementChild?.firstElementChild);
+  }
+
+  block.appendChild(heroContent);
 }

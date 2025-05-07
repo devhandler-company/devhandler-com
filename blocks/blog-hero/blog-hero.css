@@ -35,10 +35,14 @@
     color: var(--color-black);
 }
 
-.blog-hero-texts {
+.blog-hero-content {
     position: relative;
     width: 100%;
     max-width: 1200px;
+}
+
+.blog-hero:has(.search) {
+    height: 400px;
 }
 
 .blog-hero h1, .blog-hero p {
@@ -84,6 +88,10 @@
     margin-bottom: 0;
 }
 
+.blog-hero:has(.search) .blog-hero-optional-container {
+    position: static;
+}
+
 @media (width >= 1025px) {
     .blog-hero {
         padding: 40px 32px;
@@ -120,6 +128,10 @@
     .blog-hero {
         min-height: 335px;
     }
+
+    .blog-hero:has(.search) {
+        height: auto;
+    }    
     
     .blog-hero h1{
         font-size: 20px;
