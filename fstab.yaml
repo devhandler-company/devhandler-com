@@ -1,5 +1,2 @@
 mountpoints:
   /: https://drive.google.com/drive/folders/1iGQS95veQhH2HXfEa8lm1X2LpK2c7v0l
-  /da:
-    url: https://content.da.live/devhandler-company/devhandler-com/
-    type: markup
