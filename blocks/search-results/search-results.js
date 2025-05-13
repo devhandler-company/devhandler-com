@@ -426,7 +426,7 @@ export default async function decorate(block) {
       const increaseSizeButton = document.createElement('button');
       increaseSizeButton.type = 'button';
       increaseSizeButton.textContent = finalConfig.loadMoreIncreaseSizeButtonText;
-      increaseSizeButton.className = 'search-increase-size-button button secondary';
+      increaseSizeButton.className = 'search-increase-size-button';
       increaseSizeButton.addEventListener('click', () => {
         const newPageSize = Math.min(
           Math.round(effectivePageSize * 1.5),
