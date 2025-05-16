@@ -276,6 +276,9 @@ document.addEventListener('keydown', (e) => {
     searchResultsElement.getElementsByTagName('li')[prevSearchResultIndex].classList.remove('selected');
   } else if (e.key === 'Enter' && searchResultIndex != null) {
     window.location.href = searchResultsElement.getElementsByTagName('li')[searchResultIndex]?.firstChild?.href;
+  } else if (e.key === 'Enter' && searchResultIndex == null) {
+    window.location.href = `/blog/search?q=${searchBoxElement.querySelector('input').value}&page=1&pageSize=9`;
+    //TODO: move to config
   }
 });
 
