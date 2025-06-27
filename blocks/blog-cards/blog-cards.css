@@ -17,10 +17,15 @@
 .blog-cards ul > li {
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.blog-cards ul > li .blog-cards-card {
     display: flex !important;
     flex-direction: column;
-    overflow: hidden;
-    transition: 0.3s;
+    height: 100%;
+    text-decoration: none;
 }
 
 .blog-cards ul > li:first-child {
@@ -104,6 +109,10 @@
 
 .blog-cards .cards-card-body .button-container .button::after, .blog-cards .blog-cards-card-body .button-container .button::after {
     display: none;
+}
+
+.blog-cards .cards-card-body .button-container .button:hover, .blog-cards .blog-cards-card-body .button-container .button:hover {
+    text-decoration: underline;
 }
 
 .tns-outer {
