@@ -58,7 +58,9 @@ export default async function decorate(block) {
         description,
       }) => {
         const li = document.createElement('li');
-        li.classList.add('blog-cards-card');
+        const a = document.createElement('a');
+        a.classList.add('blog-cards-card');
+        a.href = path;
 
         const cardImage = document.createElement('div');
         cardImage.className = 'blog-cards-card-image';
@@ -75,14 +77,15 @@ export default async function decorate(block) {
         descriptionElement.innerText = description;
         const linkElement = document.createElement('p');
         linkElement.classList.add('button-container');
-        linkElement.innerHTML = `<a href=${path} title="Read more" class="button">Read more</a>`;
+        linkElement.innerHTML = "<span class='button'>Read more</span>";
 
         cardBody.appendChild(titleElement);
         cardBody.appendChild(descriptionElement);
         cardBody.appendChild(linkElement);
 
-        li.appendChild(cardImage);
-        li.appendChild(cardBody);
+        a.appendChild(cardImage);
+        a.appendChild(cardBody);
+        li.appendChild(a);
         ul.appendChild(li);
         if (ulMobile) {
           const liMobile = li.cloneNode(true);
