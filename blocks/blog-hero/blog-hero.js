@@ -46,11 +46,12 @@ export default async function decorate(block) {
     const imgEl = picture.querySelector('img');
     const url = imgEl?.currentSrc || imgEl?.src;
     if (url) {
-      block.style.backgroundImage = `url("${url}")`;
+      // block.style.backgroundImage = `url("${url}")`;
       block.style.backgroundSize = 'cover';
       block.style.backgroundPosition = 'top';
       block.style.backgroundAttachment = 'fixed';
       block.style.backgroundRepeat = 'no-repeat';
+      block.style.filter = 'contrast(1.05) brightness(1.03) saturate(1.1)';
 
       const setAspectRatioOnResize = () => {
         let w = imgEl.width;
@@ -66,23 +67,22 @@ export default async function decorate(block) {
           block.style.backgroundAttachment = 'scroll';
         }
         if (w > 0 && h > 0 && CSS.supports('aspect-ratio', '1/1')) {
-          block.style.aspectRatio = `${w} / ${h - 60}`;
-          block.style.backgroundSize = `${w}px  ${h}px`;
+          // block.style.aspectRatio = `${w} / ${h - 60}`;
+          // block.style.backgroundSize = `${w}px  ${h}px`;
         }
       };
 
       const setAspectRatioOnLoad = () => {
-        const w = parseInt(window.innerWidth, 10);
-        const h = parseInt(window.innerHeight, 10);
+        // const w = parseInt(window.innerWidth, 10);
+        // const h = parseInt(window.innerHeight, 10);
         if (window.innerWidth > 1024) {
           block.style.backgroundAttachment = 'fixed';
         }
         if (window.innerWidth <= 1024) {
           block.style.backgroundAttachment = 'scroll';
-          return;
         }
-        block.style.aspectRatio = `${w} / ${h * 0.95 - 60}`;
-        block.style.backgroundSize = `${w}px  ${h * 0.95}px`;
+        // block.style.aspectRatio = `${w} / ${h * 0.95}`;
+        // block.style.backgroundSize = `${w}px  ${h * 0.95}px`;
       };
 
       setAspectRatioOnLoad();
