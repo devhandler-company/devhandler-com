@@ -66,7 +66,7 @@ export default async function decorate(block) {
           block.style.backgroundAttachment = 'scroll';
         }
         if (w > 0 && h > 0 && CSS.supports('aspect-ratio', '1/1')) {
-          block.style.aspectRatio = `${w} / ${h}`;
+          block.style.aspectRatio = `${w} / ${h - 60}`;
           block.style.backgroundSize = `${w}px  ${h}px`;
         }
       };
@@ -81,7 +81,7 @@ export default async function decorate(block) {
           block.style.backgroundAttachment = 'scroll';
           return;
         }
-        block.style.aspectRatio = `${w} / ${h * 0.95}`;
+        block.style.aspectRatio = `${w} / ${h * 0.95 - 60}`;
         block.style.backgroundSize = `${w}px  ${h * 0.95}px`;
       };
 
