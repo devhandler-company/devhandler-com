@@ -50,7 +50,9 @@ export async function getLatestBlogCards(
   offset = 0,
 ) {
   if (blogCardsData?.length) {
-    const filteredPages = blogCardsData.filter((page) => page.template === template);
+    const filteredPages = blogCardsData
+      .filter((page) => page.template === template)
+      .filter((page) => page.path !== '/blog/' && page.path !== '/blog/search'); // Todo move it into config
     return filteredPages.slice(offset, offset + countOfArticles);
   }
   return [];
