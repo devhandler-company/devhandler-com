@@ -1,0 +1,251 @@
+/* ======================================================
+   Table Component – Responsive, Theme‑Aware
+   ====================================================== */
+
+/* ---------- 1. Design Tokens ---------- */
+.table {
+    --default-line-height: 30px;
+    --body-font-size-m: 16px;
+    --body-font-size-s: 14px;
+    --body-font-size-xs: 14px;
+
+    /* Global corner‑radius token – change once, update everywhere */
+    --border-radius: 8px;
+}
+
+/* Upgrade typographic scale on larger desktops */
+@media (width >= 1025px) {
+    .table {
+        --body-font-size-m: 18px;
+        --body-font-size-s: 16px;
+        --body-font-size-xs: 16px;
+    }
+}
+
+/* Ensure consistent sizing model throughout */
+.table,
+.table * {
+    box-sizing: border-box;
+}
+
+/* ---------- 2. Heading Links ---------- */
+.table h2 a::before,
+.table h3 a::before,
+.table h4 a::before,
+.table h5 a::before,
+.table h6 a::before {
+    content: "#";
+    margin-right: 0.25em;
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+/* Default state */
+.table h2 a,
+.table h3 a,
+.table h4 a,
+.table h5 a,
+.table h6 a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover state – gradient fill with crisp outline for readability */
+.table h2 a:hover,
+.table h3 a:hover,
+.table h4 a:hover,
+.table h5 a:hover,
+.table h6 a:hover {
+    background: linear-gradient(to right, var(--color-aqamarine), var(--color-blue-lighter));
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    -webkit-text-stroke: 0.4px var(--primary-text-color);
+}
+
+/* ---------- 3. General Anchor Links ---------- */
+.table a {
+    color: var(--color-aqamarine);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.table a:hover {
+    color: var(--color-blue-lighter);
+    text-decoration: underline;
+}
+
+/* ---------- 4. Inline Code ---------- */
+.table code {
+    color: var(--color-aqamarine);
+    background-color: var(--color-dark);
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 0.2em 0.4em;
+    font-family: var(--primary-font-family);
+    font-size: var(--body-font-size-xs);
+}
+
+/* ---------- 5. Base Table Layout ---------- */
+.table table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    font-size: var(--body-font-size-xs);
+    border-radius: 0;
+    overflow: hidden; /* Prevent cell backgrounds from spilling outside the radius */
+}
+
+/* Step up font sizes with viewport */
+@media (width >= 600px) {
+    .table table {
+        font-size: var(--body-font-size-s);
+    }
+}
+
+@media (width >= 900px) {
+    .table table {
+        font-size: var(--body-font-size-m);
+    }
+}
+
+/* Header row & body rows */
+.table table thead tr {
+    border-top: 2px solid var(--color-gray);
+    border-bottom: 2px solid var(--color-gray);
+}
+
+.table table tbody tr {
+    border-bottom: 1px solid var(--color-gray);
+}
+
+/* Cells */
+.table table th {
+    font-weight: 700;
+}
+
+.table table th,
+.table table td {
+    padding: 0.5em;
+    text-align: left;
+}
+
+/* Compact spacing for paragraph stacks inside cells */
+.table table th p,
+.table table td p {
+    margin: 0;
+}
+
+.table table td p + p {
+    margin-top: 0.25em;
+}
+
+/* ---------- 6. Variants ---------- */
+
+/* (a) No‑header variant – draw a top border on first body row */
+.table.no-header table tbody tr {
+    border-top: 1px solid var(--color-gray);
+}
+
+/* (b) Striped variant – zebra stripes on odd rows */
+.table.striped tbody tr:nth-child(odd) {
+    background-color: var(--light-color);
+}
+
+/* (c) Bordered variant – 1px border around every cell */
+.table.bordered table th,
+.table.bordered table td {
+    border: 1px solid var(--color-gray);
+    border-width: var(--border-size);
+}
+
+/* ---------- 2. Utility: Rounded version ---------- */
+
+/* Add the class `rounded` next to `.table`
+   Example:  <div class="table rounded"> ... */
+.table.rounded,
+.table.rounded table {
+    border-radius: var(--border-radius); /* 20 px by default */
+    overflow: hidden; /* prevent spill-out */
+}
+
+/* ---------- 3. Border size & colors ---------- */
+
+/* Color variants – borrow existing utility names.
+   Apply the utility class on the `.table` wrapper.  */
+.table.border-blue table th,
+.table.border-blue table td {
+    border-color: var(--color-blue);
+}
+
+.table.border-dark table th,
+.table.border-dark table td {
+    border-color: var(--color-dark);
+}
+
+.table.border-cyan table th,
+.table.border-cyan table td {
+    border-color: var(--color-aqamarine);
+}
+
+.table.border-white table th,
+.table.border-white table td {
+    border-color: var(--color-white);
+}
+
+/* ---------- 4. Background helpers ---------- */
+
+/* These mirror your section helpers so you can get
+   quick theme-coherent backgrounds on the table.     */
+.table.bg-gray-linear {
+    background: var(--color-bg-gray-linear);
+}
+
+.table.bg-dark {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.table.bg-white {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+@media (width <= 1024px) {
+    /* Body text already handled */
+    .table table {
+        font-size: var(--body-font-size-s);
+    }
+
+    .table h1,
+    .table .h1 {
+        font-size: var(--heading-font-size-xxl);
+    }
+    
+    .table h2,
+    .table .h2 {
+        font-size: var(--heading-font-size-xl);
+    }
+    
+    .table h3,
+    .table .h3 {
+        font-size: var(--heading-font-size-l);
+    }
+    
+    .table h4,
+    .table .h4 {
+        font-size: var(--heading-font-size-m);
+    }
+    
+    .table h5,
+    .table .h5 {
+        font-size: var(--heading-font-size-s);
+    }
+    
+    .table h6,
+    .table .h6 {
+        font-size: var(--heading-font-size-xs);
+    }
+}
