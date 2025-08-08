@@ -1,6 +1,4 @@
-import {
-  decorateIcons,
-} from '../../scripts/aem.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 let searchBlock;
@@ -162,10 +160,8 @@ function filterData(searchTerms, data) {
     }
   });
 
-  return [
-    ...foundInHeader.sort(compareFound),
-    ...foundInMeta.sort(compareFound),
-  ].map((item) => item.result);
+  return [...foundInHeader.sort(compareFound), ...foundInMeta.sort(compareFound)]
+    .map((item) => item.result);
 }
 
 function openSearchField() {
@@ -189,7 +185,10 @@ async function handleSearch(e, block, config) {
     clearSearch(block);
     return;
   }
-  const searchTerms = searchValue.toLowerCase().split(/\s+/).filter((term) => !!term);
+  const searchTerms = searchValue
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((term) => !!term);
 
   const data = await fetchData(config.source);
   const filteredData = filterData(searchTerms, data);
@@ -219,7 +218,11 @@ function searchInput(block, config) {
     openSearchField(e);
   });
 
-  input.addEventListener('keyup', (e) => { if (e.code === 'Escape') { clearSearch(block); } });
+  input.addEventListener('keyup', (e) => {
+    if (e.code === 'Escape') {
+      clearSearch(block);
+    }
+  });
 
   return input;
 }
@@ -233,10 +236,7 @@ function searchIcon() {
 function searchBox(block, config) {
   const box = document.createElement('div');
   box.classList.add('search-box');
-  box.append(
-    searchInput(block, config),
-    searchIcon(),
-  );
+  box.append(searchInput(block, config), searchIcon());
 
   box.addEventListener('click', (e) => {
     openSearchField(e);
@@ -276,6 +276,9 @@ document.addEventListener('keydown', (e) => {
     searchResultsElement.getElementsByTagName('li')[prevSearchResultIndex].classList.remove('selected');
   } else if (e.key === 'Enter' && searchResultIndex != null) {
     window.location.href = searchResultsElement.getElementsByTagName('li')[searchResultIndex]?.firstChild?.href;
+  } else if (e.key === 'Enter' && searchResultIndex == null) {
+    window.location.href = `/blog/search?q=${searchBoxElement.querySelector('input').value}&page=1&pageSize=9`;
+    // TODO: move to config
   }
 });
 
