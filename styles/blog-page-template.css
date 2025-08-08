@@ -84,3 +84,9 @@
     font-family: var(--primary-font-family);
     font-size: var(--body-font-size-xs);
 }
+
+.blog-page-template main code,
+.blog-page-template main pre {
+    word-break: break-word;
+    white-space: pre-wrap;
+}
