@@ -83,6 +83,9 @@
     padding: 0.2em 0.4em;
     font-family: var(--primary-font-family);
     font-size: var(--body-font-size-xs);
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
 }
 
 .blog-page-template main code,
@@ -90,3 +93,5 @@
     word-break: break-word;
     white-space: pre-wrap;
 }
+
+
