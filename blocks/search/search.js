@@ -73,6 +73,7 @@ function renderResult(result, searchTerms, titleTag) {
   const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = result.path;
+
   if (result.title) {
     const title = document.createElement(titleTag);
     title.className = 'search-result-title line-clamp-1';
