@@ -29,7 +29,7 @@ main:has(.blog-hero.parallax) {
 
 .blog-hero-container:has(.blog-hero.parallax) {
     position: sticky;
-    top: 0px;
+    top: 0;
     height: 100%;
     overflow: hidden;
     z-index: -1;
@@ -50,7 +50,7 @@ main:has(.blog-hero.parallax) {
     line-height: 1.6;
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
     background-size: cover;
-    margin: 40px 0px;
+    margin: 40px 0;
 }
 
 .blog-hero.mask-image::before {
