@@ -96,17 +96,23 @@ function renderList(container, items) {
 }
 
 /**
- * Extracts heading data from the DOM.
- * @param {ParentNode} scope
+ * @param {ParentNode}  scope
  * @param {Set<string>} ids
- * @param {string} [selector='h2, h3, h4, h5, h6']
- * @returns {{text: string, href: string, level: number}[]}
+ * @param {string}      [selector='h2, h3, h4, h5, h6']
+ * @param {string}      [excludeSelector='']
  */
-function extractHeadings(scope = document, ids = usedHeadingIds, selector = 'h2, h3, h4, h5, h6') {
+function extractHeadings(
+  scope = document,
+  ids = usedHeadingIds,
+  selector = 'h2, h3, h4, h5, h6',
+  excludeSelector = '',
+) {
   const headings = scope.querySelectorAll(selector);
   const items = [];
 
   headings.forEach((heading) => {
+    if (excludeSelector && heading.closest(excludeSelector)) return;
+
     const level = parseInt(heading.tagName[1], 10);
     const text = heading.textContent.trim();
     let { id } = heading;
@@ -208,7 +214,7 @@ export default function decorate(block) {
       }
 
       case 'all-headings': {
-        items.push(...extractHeadings(document, ids));
+        items.push(...extractHeadings(document, ids, undefined, '.blog-lets-talk'));
         break;
       }
 
