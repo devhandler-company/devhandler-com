@@ -23,6 +23,36 @@
     height: auto;
 }
 
+main:has(.blog-hero.parallax) {
+    position: relative;
+}
+
+.blog-hero-container:has(.blog-hero.parallax) {
+    position: sticky;
+    top: 0px;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.blog-hero.parallax img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+.parallax-content {
+    background-color: var(--color-black);
+    color: var(--primary-text-color);
+    font-family: var(--primary-font-family);
+    font-size: var(--body-font-size-m);
+    line-height: 1.6;
+    background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
+    background-size: cover;
+    margin: 40px 0px;
+}
+
 .blog-hero.mask-image::before {
     content: "";
     position: absolute;
@@ -144,7 +174,7 @@
     .blog-hero {
         min-height: 335px;
     }
-    
+
     .blog-hero.adaptive-height {
         min-height: auto;
     }

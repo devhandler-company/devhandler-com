@@ -43,50 +43,17 @@ export default async function decorate(block) {
   block.appendChild(heroContent);
 
   if (block.classList.contains('parallax')) {
-    const imgEl = picture.querySelector('img');
-    const url = imgEl?.currentSrc || imgEl?.src;
-    if (url) {
-      // block.style.backgroundImage = `url("${url}")`;
-      block.style.backgroundSize = 'cover';
-      block.style.backgroundPosition = 'top';
-      block.style.backgroundAttachment = 'fixed';
-      block.style.backgroundRepeat = 'no-repeat';
-      block.style.filter = 'contrast(1.05) brightness(1.03) saturate(1.1)';
+    const main = block.closest('main');
+    const heroCnt = block.closest('.blog-hero-container') || block;
 
-      const setAspectRatioOnResize = () => {
-        let w = imgEl.width;
-        let h = imgEl.height;
-        if ((!w || !h) && imgEl.hasAttribute('width') && imgEl.hasAttribute('height')) {
-          w = parseInt(w, 10);
-          h = parseInt(h, 10);
-        }
-        if (window.innerWidth > 1024) {
-          block.style.backgroundAttachment = 'fixed';
-        }
-        if (window.innerWidth <= 1024) {
-          block.style.backgroundAttachment = 'scroll';
-        }
-        if (w > 0 && h > 0 && CSS.supports('aspect-ratio', '1/1')) {
-          // block.style.aspectRatio = `${w} / ${h - 60}`;
-          // block.style.backgroundSize = `${w}px  ${h}px`;
-        }
-      };
+    const sections = [...main.querySelectorAll(':scope > .section')];
+    const startIdx = sections.findIndex((sec) => sec.contains(heroCnt));
 
-      const setAspectRatioOnLoad = () => {
-        // const w = parseInt(window.innerWidth, 10);
-        // const h = parseInt(window.innerHeight, 10);
-        if (window.innerWidth > 1024) {
-          block.style.backgroundAttachment = 'fixed';
-        }
-        if (window.innerWidth <= 1024) {
-          block.style.backgroundAttachment = 'scroll';
-        }
-        // block.style.aspectRatio = `${w} / ${h * 0.95}`;
-        // block.style.backgroundSize = `${w}px  ${h * 0.95}px`;
-      };
-
-      setAspectRatioOnLoad();
-      window.addEventListener('resize', setAspectRatioOnResize);
+    if (startIdx > -1 && startIdx < sections.length - 1) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'parallax-content';
+      sections.slice(startIdx + 1).forEach((sec) => wrapper.appendChild(sec));
+      heroCnt.insertAdjacentElement('afterend', wrapper);
     }
   }
 }
