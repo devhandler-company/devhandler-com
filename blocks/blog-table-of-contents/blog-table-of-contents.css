@@ -164,6 +164,7 @@
     justify-content: flex-start;
     gap: 18px;
     margin-top: 27px;
+    padding-left: 20px;
 }
 
 @media (width <= 991px) {
