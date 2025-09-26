@@ -27,16 +27,39 @@ main:has(.blog-hero.parallax) {
     position: relative;
 }
 
+.blog-hero-container:has(.blog-hero.adaptive-height),
+.blog-hero-container:has(.blog-hero.parallax) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .blog-hero-container:has(.blog-hero.parallax) {
     position: sticky;
     top: 0;
-    height: 100%;
     overflow: hidden;
     z-index: -1;
 }
 
-.blog-hero.parallax img {
+.blog-hero-wrapper:has(.blog-hero.adaptive-height),
+.blog-hero-wrapper:has(.blog-hero.parallax) {
+    display: block;
     width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.blog-hero.parallax img,
+.blog-hero.parallax picture,
+.blog-hero.parallax a,
+.blog-hero.adaptive-height img,
+.blog-hero.adaptive-height picture,
+.blog-hero.adaptive-height a {
+    width: 100%;
+    display: block;
     height: 100%;
     object-fit: cover;
     will-change: transform;
@@ -50,7 +73,17 @@ main:has(.blog-hero.parallax) {
     line-height: 1.6;
     background-image: url("https://media.devhandler.com/static/images/bg-desktop.webp");
     background-size: cover;
-    margin: 40px 0;
+    margin: 0 auto 40px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.parallax-content * {
+    box-sizing: border-box;
+}
+
+.parallax-content .section:first-of-type {
+    margin-top: 0;
 }
 
 .blog-hero.mask-image::before {
@@ -77,6 +110,32 @@ main:has(.blog-hero.parallax) {
     position: relative;
     width: 100%;
     max-width: 1200px;
+}
+
+.blog-hero.parallax .blog-hero-content,
+.blog-hero.adaptive-height .blog-hero-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    align-items: flex-start;
+    padding: 40px 32px;
+    min-height: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (width <= 1024px) {
+    .blog-hero.parallax .blog-hero-content,
+    .blog-hero.adaptive-height .blog-hero-content {
+        padding: 40px 24px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
 }
 
 .blog-hero:has(.search) {
@@ -161,6 +220,11 @@ main:has(.blog-hero.parallax) {
         inset-inline: 0;
     }
 
+    .blog-hero.adaptive-height .blog-hero-optional-container,
+    .blog-hero.parallax .blog-hero-optional-container {
+        position: relative;
+    }
+
     .blog-hero.content-left {
         text-align: left;
     }
@@ -186,6 +250,11 @@ main:has(.blog-hero.parallax) {
     .blog-hero h1 {
         font-size: 20px;
         -webkit-line-clamp: 15 !important;
+    }
+
+    .blog-hero.adaptive-height h1,
+    .blog-hero.parallax h1 {
+        margin: 0 auto;
     }
 
     .blog-hero .blog-hero-text-short {
