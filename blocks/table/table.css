@@ -1,5 +1,5 @@
 /* ======================================================
-   Table Component – Responsive, Theme‑Aware
+   Table Component – Responsive, Theme-Aware
    ====================================================== */
 
 /* ---------- 1. Design Tokens ---------- */
@@ -9,7 +9,7 @@
     --body-font-size-s: 14px;
     --body-font-size-xs: 14px;
 
-    /* Global corner‑radius token – change once, update everywhere */
+    /* Global corner-radius token – change once, update everywhere */
     --border-radius: 8px;
 }
 
@@ -144,7 +144,7 @@
 
 /* ---------- 6. Variants ---------- */
 
-/* (a) No‑header variant – draw a top border on first body row */
+/* (a) No-header variant – draw a top border on first body row */
 .table.no-header table tbody tr {
     border-top: 1px solid var(--color-gray);
 }
@@ -223,29 +223,131 @@
     .table .h1 {
         font-size: var(--heading-font-size-xxl);
     }
-    
+
     .table h2,
     .table .h2 {
         font-size: var(--heading-font-size-xl);
     }
-    
+
     .table h3,
     .table .h3 {
         font-size: var(--heading-font-size-l);
     }
-    
+
     .table h4,
     .table .h4 {
         font-size: var(--heading-font-size-m);
     }
-    
+
     .table h5,
     .table .h5 {
         font-size: var(--heading-font-size-s);
     }
-    
+
     .table h6,
     .table .h6 {
         font-size: var(--heading-font-size-xs);
     }
+}
+
+
+/* =========================================
+   Horizontal scroll UX — cross-browser
+   Apply to your existing .table.mobile-scroll
+   ========================================= */
+
+@media (width <= 991px) {
+    /* Scroll container (wrapper) */
+    .table.mobile-scroll {
+        overflow: auto hidden; /* shorthand for x/y */
+        -webkit-overflow-scrolling: touch; /* iOS momentum */
+        overscroll-behavior-x: contain; /* prevent parent bounce */
+        scroll-behavior: smooth; /* optional smooth panning */
+        position: relative;
+    }
+
+    /* Ensure there’s something to scroll */
+    .table.mobile-scroll table {
+        min-width: var(--mobile-table-min-width, 720px);
+        width: max(100%, var(--mobile-table-min-width, 720px));
+    }
+
+    /* --- Visual edge hint (fade) ---
+       Shows a subtle gradient at the right/left edge when scrollable */
+    .table.mobile-scroll::after,
+    .table.mobile-scroll::before {
+        content: "";
+        position: sticky;
+        top: 0;
+        bottom: 0;
+        width: 18px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .table.mobile-scroll::before {
+        left: 0;
+        background: linear-gradient(to right, rgb(0 0 0 / 12%), transparent);
+    }
+
+    .table.mobile-scroll::after {
+        float: right; /* ensures it stays on the far edge */
+        right: 0;
+        background: linear-gradient(to left, rgb(0 0 0 / 12%), transparent);
+    }
+
+    /* Reduce motion if user prefers */
+    @media (prefers-reduced-motion: reduce) {
+        .table.mobile-scroll {
+            scroll-behavior: auto;
+        }
+    }
+}
+
+
+/* =========================================
+   Custom scrollbar styling
+   - Chrome / Edge / Safari (WebKit)
+   - Firefox
+   ========================================= */
+
+/* WebKit scrollbars (horizontal only in our case) */
+.table.mobile-scroll::-webkit-scrollbar {
+    height: 10px; /* thickness */
+}
+
+.table.mobile-scroll::-webkit-scrollbar-track {
+    background: rgb(0 0 0 / 12%); /* light track */
+    border-radius: 999px;
+}
+
+.table.mobile-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-gray-blue, #89b7d0);
+    border-radius: 999px;
+    border: 2px solid transparent; /* gives some breathing room */
+    background-clip: padding-box;
+}
+
+.table.mobile-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-blue-lighter, #3585ff);
+}
+
+/* Firefox scrollbar (uses different properties) */
+.table.mobile-scroll {
+    scrollbar-width: thin; /* auto | thin | none */
+    scrollbar-color: var(--color-gray-blue, #89b7d0) rgb(0 0 0 / 12%);
+    scroll-snap-type: x proximity;
+}
+
+
+/* High-contrast / forced colors: make thumb visible */
+@media (forced-colors: active) {
+    .table.mobile-scroll {
+        scrollbar-color: Highlight Scrollbar;
+    }
+}
+
+.table.mobile-scroll table th,
+.table.mobile-scroll table td {
+    scroll-snap-align: start;
 }
