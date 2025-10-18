@@ -64,5 +64,13 @@ export default async function decorate(block) {
   });
 
   block.innerHTML = '';
+  // --- Mobile horizontal scroll (<991px) ---
+  const mq = window.matchMedia('(max-width: 991px)');
+  const toggleMobileScroll = () => {
+    if (mq.matches) block.classList.add('mobile-scroll');
+    else block.classList.remove('mobile-scroll');
+  };
+  toggleMobileScroll();
+  mq.addEventListener('change', toggleMobileScroll);
   block.append(table);
 }
