@@ -322,14 +322,18 @@ function createOptimizedPicture(
 }
 
 const loadTemplateStyles = (template) => {
-  if (template !== 'blog-page-template') {
-    return;
-  }
-  const linkElement = document.createElement('link');
-  linkElement.setAttribute('rel', 'stylesheet');
-  linkElement.setAttribute('type', 'text/css');
-  linkElement.setAttribute('href', '/styles/blog-page-template.css');
-  document.head.appendChild(linkElement);
+  // allow only known templates
+  if (template !== 'blog-page-template' && template !== 'case-page-template') return;
+
+  // avoid duplicates
+  if (document.querySelector(`link[data-template="${template}"]`)) return;
+
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = `/styles/${template}.css`;
+  link.setAttribute('data-template', template);
+  document.head.appendChild(link);
 };
 
 /**

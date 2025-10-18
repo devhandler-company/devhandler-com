@@ -1,0 +1,309 @@
+
+/* One-line control bar, center overlay, adaptive sizing. */
+
+.blog-page-template .video,
+.blog-page-template .video * {
+  box-sizing: border-box;
+}
+
+.video {
+  --video-aspect: 16 / 9;
+  --video-fit: cover;
+
+  /* chrome */
+  --video-radius: var(--radius-xl, 12px);
+  --video-shadow: var(--shadow-lg, 0 12px 36px rgb(0 0 0 / 28%));
+
+  /* controls theme */
+  --ctrl-bg: rgb(0 0 0 / 60%);
+  --ctrl-bg-strong: rgb(0 0 0 / 75%);
+  --ctrl-fg: #fff;
+  --ctrl-accent: var(--color-aqamarine, #69f5d1);
+
+  /* sizes (adaptive via clamp) */
+  --ctrl-h: clamp(40px, 4.5vw, 54px);
+  --btn-size: clamp(32px, 3.8vw, 42px);
+  --gap: clamp(8px, 1.5vw, 12px);
+  --track-h: 6px;
+  --thumb: 14px;
+  --font: clamp(12px, 1.2vw, 14px);
+
+  position: relative;
+  color: var(--primary-text-color, #eaeaea);
+  font-size: var(--font);
+  line-height: 1.4;
+}
+
+.video.full-width figure {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-rounded .video-media {
+  border-radius: var(--video-radius);
+  overflow: hidden;
+}
+
+.video-shadow .video-media {
+  box-shadow: var(--video-shadow);
+}
+
+.video-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--video-aspect);
+  background: var(--color-dark, #000);
+}
+
+/* Media fits */
+.video-player,
+.video-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: var(--video-fit);
+  display: block;
+}
+
+.fit-contain .video-player,
+.fit-contain .video-gif {
+  object-fit: contain;
+}
+
+.fit-cover .video-player,
+.fit-cover .video-gif {
+  object-fit: cover;
+}
+
+/* ---------- Center overlay button ---------- */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--ctrl-fg);
+  background: radial-gradient(circle at center, rgb(0 0 0 / 35%), transparent 60%);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  font-size: clamp(24px, 7vw, 44px);
+}
+
+.video.is-paused .video-overlay,
+.video.is-ended .video-overlay {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .video:hover .video-overlay {
+    opacity: 0.9;
+  }
+}
+
+/* ---------- One-line custom controls ---------- */
+.has-native-controls .video-controls { display: none; }
+
+.has-custom-controls .video-controls {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: var(--ctrl-h);
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: var(--gap);
+  padding: 0 clamp(8px, 1.2vw, 12px);
+  background: color-mix(in oklab, var(--ctrl-bg) 100%, transparent);
+  border-radius: calc(var(--ctrl-h) / 2);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+/* Buttons */
+.video-btn {
+  border: 0;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: 999px;
+  background: var(--ctrl-bg);
+  color: var(--ctrl-fg);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease;
+  font-size: clamp(14px, 2.4vw, 18px);
+}
+
+.video-btn:hover {
+  background: var(--ctrl-bg-strong);
+}
+
+.video-btn:active {
+  transform: scale(0.98);
+}
+
+.video-btn:focus-visible {
+  outline: 2px solid var(--ctrl-accent);
+  outline-offset: 2px;
+}
+
+/* Time readout */
+.video-time-current,
+.video-time-total,
+.video-time-sep {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.95;
+}
+
+/* Track (seek) grows to fill */
+.video-track {
+  position: relative;
+  height: var(--track-h);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 20%);
+  min-width: 80px;
+}
+
+.video-track-buffered,
+.video-track-progress {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  pointer-events: none;
+}
+
+.video-track-buffered {
+  background: rgb(255 255 255 / 35%);
+}
+
+.video-track-progress {
+  background: var(--ctrl-accent);
+}
+
+/* Range sits on top (transparent) */
+.video-seek {
+  position: absolute;
+  inset: -8px 0;
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* WebKit/Blink */
+.video-seek::-webkit-slider-thumb,
+.video-volume-range::-webkit-slider-thumb {
+  appearance: none;
+  width: var(--thumb);
+  height: var(--thumb);
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--ctrl-accent);
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 25%);
+}
+
+.video-seek::-webkit-slider-runnable-track,
+.video-volume-range::-webkit-slider-runnable-track {
+  height: var(--track-h);
+  background: transparent;
+}
+
+/* Firefox */
+.video-seek::-moz-range-thumb,
+.video-volume-range::-moz-range-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--ctrl-accent);
+}
+
+.video-seek::-moz-range-track,
+.video-volume-range::-moz-range-track {
+  height: var(--track-h);
+  background: transparent;
+}
+
+/* Volume */
+.video-volume-range {
+  width: clamp(70px, 12vw, 140px);
+  appearance: none;
+  background: linear-gradient(to right, var(--ctrl-accent), var(--ctrl-accent)) no-repeat;
+  background-size: 50% 2px;
+  background-position: left center;
+  height: var(--track-h);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.video-volume-icon {
+  color: #fff;
+}
+
+/* Caption */
+.video-caption {
+  margin-top: 0.6rem;
+  color: var(--primary-text-color);
+}
+
+/* Hover reveal on desktop; always visible on touch */
+@media (hover: hover) and (pointer: fine) {
+  .has-custom-controls .video-controls {
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+
+  .video:hover .video-controls,
+  .video:focus-within .video-controls {
+    opacity: 1;
+  }
+}
+
+/* mobile tweaks with modern range notation */
+@media (width <= 540px) {
+  .video {
+    --gap: 8px;
+  }
+
+  .video-time-sep,
+  .video-time-total {
+    display: none;
+  }
+
+  .video-volume-range {
+    width: clamp(50px, 22vw, 120px);
+  }
+}
+
+/* Non-interactive mode */
+.video.is-noninteractive .video-overlay,
+.video.is-noninteractive .video-controls {
+  display: none !important;
+}
+
+.video.is-noninteractive .video-media {
+  pointer-events: none;
+}
+
+/* Hide overlay explicitly when no-pause lock is on */
+.video.no-pause .video-overlay {
+  display: none !important;
+}
+
+/* Optional full-width helper */
+.video-full-width figure {
+  padding: 0;
+  margin: 0 auto !important;
+  width: 100%;
+  height: auto;
+  display: block !important;
+}
