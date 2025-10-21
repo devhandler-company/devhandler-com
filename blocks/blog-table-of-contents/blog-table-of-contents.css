@@ -175,3 +175,335 @@
         margin-left: 0.5rem;
     }
 }
+
+/* ========= TOC color variants for nested lists ========= */
+
+/* Apply these classes on any .toc-list (at any level) or directly on .toc-item */
+
+/* --- Item color sets --- */
+.blog-table-of-contents .toc-list.blue-item .toc-link,
+.blog-table-of-contents .toc-item.blue-item > .toc-link {
+    color: var(--color-blue);
+}
+
+.blog-table-of-contents .toc-list.blue-item .toc-link::before,
+.blog-table-of-contents .toc-item.blue-item > .toc-link::before {
+    background-color: var(--color-blue);
+}
+
+.blog-table-of-contents .toc-list.cyan-item .toc-link,
+.blog-table-of-contents .toc-item.cyan-item > .toc-link {
+    color: var(--color-aqamarine);
+}
+
+.blog-table-of-contents .toc-list.cyan-item .toc-link::before,
+.blog-table-of-contents .toc-item.cyan-item > .toc-link::before {
+    background-color: var(--color-aqamarine);
+}
+
+.blog-table-of-contents .toc-list.black-item .toc-link,
+.blog-table-of-contents .toc-item.black-item > .toc-link {
+    color: var(--color-black);
+}
+
+.blog-table-of-contents .toc-list.black-item .toc-link::before,
+.blog-table-of-contents .toc-item.black-item > .toc-link::before {
+    background-color: var(--color-black);
+}
+
+.blog-table-of-contents .toc-list.white-item .toc-link,
+.blog-table-of-contents .toc-item.white-item > .toc-link {
+    color: var(--background-color); /* assuming white */
+}
+
+.blog-table-of-contents .toc-list.white-item .toc-link::before,
+.blog-table-of-contents .toc-item.white-item > .toc-link::before {
+    background-color: var(--background-color);
+}
+
+.blog-table-of-contents .toc-list.black-subitem .toc-link,
+.blog-table-of-contents .toc-item.black-subitem > .toc-link {
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.blog-table-of-contents .toc-list.black-subitem .toc-link::before,
+.blog-table-of-contents .toc-item.black-subitem > .toc-link::before {
+    background-color: var(--color-black);
+}
+
+.blog-table-of-contents .toc-list.blue-subitem .toc-link,
+.blog-table-of-contents .toc-item.blue-subitem > .toc-link {
+    color: var(--color-blue);
+    font-weight: 500;
+}
+
+.blog-table-of-contents .toc-list.blue-subitem .toc-link::before,
+.blog-table-of-contents .toc-item.blue-subitem > .toc-link::before {
+    background-color: var(--color-blue);
+}
+
+.blog-table-of-contents .toc-list.cyan-subitem .toc-link,
+.blog-table-of-contents .toc-item.cyan-subitem > .toc-link {
+    color: var(--color-aqamarine);
+    font-weight: 500;
+}
+
+.blog-table-of-contents .toc-list.cyan-subitem .toc-link::before,
+.blog-table-of-contents .toc-item.cyan-subitem > .toc-link::before {
+    background-color: var(--color-aqamarine);
+}
+
+.blog-table-of-contents .toc-list.toc-level-4 .toc-link,
+.blog-table-of-contents .toc-list.toc-level-5 .toc-link,
+.blog-table-of-contents .toc-list.toc-level-6 .toc-link {
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
+.blog-table-of-contents.bg-blue .toc-list.white-item .toc-link,
+.blog-table-of-contents.bg-cyan .toc-list.white-item .toc-link,
+.blog-table-of-contents.bg-blue .toc-item.white-item > .toc-link,
+.blog-table-of-contents.bg-cyan .toc-item.white-item > .toc-link {
+    color: var(--background-color);
+}
+
+.blog-table-of-contents .toc-item .toc-link:hover,
+.blog-table-of-contents .toc-item .toc-link:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-item.toc-level-2 > .toc-link {
+    color: var(--color-blue);
+}
+
+.blog-table-of-contents-wrapper .blog-table-of-contents .toc-item.toc-level-2 > .toc-link::before {
+    background-color: var(--color-blue);
+}
+
+.blog-table-of-contents-wrapper
+    .blog-table-of-contents
+    :is(.toc-item.toc-level-3, .toc-item.toc-level-4, .toc-item.toc-level-5, .toc-item.toc-level-6)
+    > .toc-link {
+    color: var(--color-black);
+}
+
+.blog-table-of-contents-wrapper
+    .blog-table-of-contents
+    :is(.toc-item.toc-level-3, .toc-item.toc-level-4, .toc-item.toc-level-5, .toc-item.toc-level-6)
+    > .toc-link::before {
+    background-color: var(--color-black);
+}
+
+/* === TOC color system: palette + mapping (level-2 vs nested) === */
+
+/* Palette (use your theme vars when present, with fallbacks) */
+.blog-table-of-contents {
+    --toc-blue: var(--color-blue);
+    --toc-black: var(--color-black);
+    --toc-cyan: var(--color-aqamarine);
+    --toc-green: var(--color-green, #22c55e);
+    --toc-orange: var(--color-orange, #f97316);
+    --toc-purple: var(--color-purple, #7c3aed);
+    --toc-gray: var(--color-gray-700, #374151);
+    --toc-red: var(--color-red, #ef4444);
+    --toc-pink: var(--color-pink, #ec4899);
+    --toc-teal: var(--color-teal, #14b8a6);
+
+    /* Defaults: l2 = blue, nested = black */
+    --toc-l2-color: var(--toc-blue);
+    --toc-nested-color: var(--toc-black);
+}
+
+/* Apply variables to UI */
+.blog-table-of-contents .toc-item.toc-level-2 > .toc-link {
+    color: var(--toc-l2-color);
+}
+
+.blog-table-of-contents .toc-item.toc-level-2 > .toc-link::before {
+    background-color: var(--toc-l2-color);
+}
+
+.blog-table-of-contents
+    :is(.toc-item.toc-level-3, .toc-item.toc-level-4, .toc-item.toc-level-5, .toc-item.toc-level-6)
+    > .toc-link {
+    color: var(--toc-nested-color);
+}
+
+.blog-table-of-contents
+    :is(.toc-item.toc-level-3, .toc-item.toc-level-4, .toc-item.toc-level-5, .toc-item.toc-level-6)
+    > .toc-link::before {
+    background-color: var(--toc-nested-color);
+}
+
+.blog-table-of-contents.l2-blue {
+    --toc-l2-color: var(--toc-blue);
+}
+
+.blog-table-of-contents.l2-black {
+    --toc-l2-color: var(--toc-black);
+}
+
+.blog-table-of-contents.l2-cyan {
+    --toc-l2-color: var(--toc-cyan);
+}
+
+.blog-table-of-contents.l2-green {
+    --toc-l2-color: var(--toc-green);
+}
+
+.blog-table-of-contents.l2-orange {
+    --toc-l2-color: var(--toc-orange);
+}
+
+.blog-table-of-contents.l2-purple {
+    --toc-l2-color: var(--toc-purple);
+}
+
+.blog-table-of-contents.l2-gray {
+    --toc-l2-color: var(--toc-gray);
+}
+
+.blog-table-of-contents.l2-red {
+    --toc-l2-color: var(--toc-red);
+}
+
+.blog-table-of-contents.l2-pink {
+    --toc-l2-color: var(--toc-pink);
+}
+
+.blog-table-of-contents.l2-teal {
+    --toc-l2-color: var(--toc-teal);
+}
+
+
+.blog-table-of-contents.nested-blue {
+    --toc-nested-color: var(--toc-blue);
+}
+
+.blog-table-of-contents.nested-black {
+    --toc-nested-color: var(--toc-black);
+}
+
+.blog-table-of-contents.nested-cyan {
+    --toc-nested-color: var(--toc-cyan);
+}
+
+.blog-table-of-contents.nested-green {
+    --toc-nested-color: var(--toc-green);
+}
+
+.blog-table-of-contents.nested-orange {
+    --toc-nested-color: var(--toc-orange);
+}
+
+.blog-table-of-contents.nested-purple {
+    --toc-nested-color: var(--toc-purple);
+}
+
+.blog-table-of-contents.nested-gray {
+    --toc-nested-color: var(--toc-gray);
+}
+
+.blog-table-of-contents.nested-red {
+    --toc-nested-color: var(--toc-red);
+}
+
+.blog-table-of-contents.nested-pink {
+    --toc-nested-color: var(--toc-pink);
+}
+
+.blog-table-of-contents.nested-teal {
+    --toc-nested-color: var(--toc-teal);
+}
+
+
+.blog-table-of-contents.blue-item {
+    --toc-l2-color: var(--toc-blue);
+}
+
+.blog-table-of-contents.black-subitem {
+    --toc-nested-color: var(--toc-black);
+}
+
+
+.blog-table-of-contents[data-l2="blue"] {
+    --toc-l2-color: var(--toc-blue);
+}
+
+.blog-table-of-contents[data-l2="black"] {
+    --toc-l2-color: var(--toc-black);
+}
+
+.blog-table-of-contents[data-l2="cyan"] {
+    --toc-l2-color: var(--toc-cyan);
+}
+
+.blog-table-of-contents[data-l2="green"] {
+    --toc-l2-color: var(--toc-green);
+}
+
+.blog-table-of-contents[data-l2="orange"] {
+    --toc-l2-color: var(--toc-orange);
+}
+
+.blog-table-of-contents[data-l2="purple"] {
+    --toc-l2-color: var(--toc-purple);
+}
+
+.blog-table-of-contents[data-l2="gray"] {
+    --toc-l2-color: var(--toc-gray);
+}
+
+.blog-table-of-contents[data-l2="red"] {
+    --toc-l2-color: var(--toc-red);
+}
+
+.blog-table-of-contents[data-l2="pink"] {
+    --toc-l2-color: var(--toc-pink);
+}
+
+.blog-table-of-contents[data-l2="teal"] {
+    --toc-l2-color: var(--toc-teal);
+}
+
+.blog-table-of-contents[data-nested="blue"] {
+    --toc-nested-color: var(--toc-blue);
+}
+
+.blog-table-of-contents[data-nested="black"] {
+    --toc-nested-color: var(--toc-black);
+}
+
+.blog-table-of-contents[data-nested="cyan"] {
+    --toc-nested-color: var(--toc-cyan);
+}
+
+.blog-table-of-contents[data-nested="green"] {
+    --toc-nested-color: var(--toc-green);
+}
+
+.blog-table-of-contents[data-nested="orange"] {
+    --toc-nested-color: var(--toc-orange);
+}
+
+.blog-table-of-contents[data-nested="purple"] {
+    --toc-nested-color: var(--toc-purple);
+}
+
+.blog-table-of-contents[data-nested="gray"] {
+    --toc-nested-color: var(--toc-gray);
+}
+
+.blog-table-of-contents[data-nested="red"] {
+    --toc-nested-color: var(--toc-red);
+}
+
+.blog-table-of-contents[data-nested="pink"] {
+    --toc-nested-color: var(--toc-pink);
+}
+
+.blog-table-of-contents[data-nested="teal"] {
+    --toc-nested-color: var(--toc-teal);
+}
