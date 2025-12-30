@@ -2,6 +2,7 @@
     color: #000;
 
     --checkbox-side-size: 28px;
+    --checkbox-side-small-size: 18px;
 }
 
 .form input::placeholder {
@@ -10,6 +11,10 @@
     line-height: 26px;
     padding: 0;
     font-family: var(--primary-font-family);
+}
+
+.form.form-short input::placeholder {
+    color: var(--color-argent);
 }
 
 .form .field-wrapper {
@@ -32,6 +37,15 @@
     margin-top: 24px;
 }
 
+.form form > .field-wrapper + .field-wrapper.fieldset-wrapper {
+    margin-top: 64px;
+}
+
+.form.form-short form > .field-wrapper.text-wrapper,
+.form.form-short form > .field-wrapper.email-wrapper {
+    margin-top: 8px;
+}
+
 .form .steps .step {
     display: flex;
     flex-direction: column;
@@ -41,6 +55,16 @@
 .form form > .selection-wrapper + .selection-wrapper,
 .form form fieldset .selection-wrapper + .selection-wrapper {
     margin-top: 0.25em;
+}
+
+
+.form.form-short fieldset#form-submitrow {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+}
+
+.form.form-short fieldset#form-submitrow > * {
+    margin-top: 0;
 }
 
 @media (width >= 600px) {
@@ -56,9 +80,19 @@
     }
 }
 
+@media (width >=1201px) {
+    .form.form-short fieldset#form-submitrow {
+        grid-template-columns: 240px 240px;
+    }
+}
+
 @media (width >= 1025px) {
     .form fieldset {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    .form.form-short fieldset#form-submitrow a{
+        padding-left: 14px;
     }
 }
 
@@ -89,6 +123,16 @@
     color: #000;
 }
 
+.form.form-short .field-wrapper.text-wrapper input,
+.form.form-short .field-wrapper.email-wrapper input {
+    padding: 15px 20px;
+    background-color: var(--color-gainsboro-50);
+    border: 1px solid var(--color-gainsboro);
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .form textarea {
     resize: vertical;
 }
@@ -108,6 +152,11 @@
     padding-left: unset;
     padding-right: unset;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.form .text-26 .button{
+    font-size: 26px;
+    line-height: 26px;
 }
 
 .form .field-wrapper.selection-wrapper {
@@ -175,11 +224,21 @@
 
 .form .blue-button .button {
     border: var(--border-size) solid var(--color-blue);
-    background: linear-gradient(to right, var(--color-blue) 50%, rgb(0 0 0 / 0%) 50%);
+    background: linear-gradient(to right, var(--color-blue) 50%, var(--button-background-color) 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     background-origin: border-box;
     background-repeat: no-repeat;
+}
+
+.form .small-button .button {
+    --button-padding-top: 11px;
+    --button-padding-bottom: 11px;
+    --border-radius: 12px;
+}
+
+.form .small-button .button::after {
+    width: 26px;
 }
 
 .form .blue-button .button::after {
@@ -194,6 +253,10 @@
 
 .form .small-field label {
     font-size: 18px;
+}
+
+.form.form-short .button {
+    --button-background-color: #fff
 }
 
 .form input[type="checkbox"] {
@@ -213,6 +276,10 @@
     margin-right: 24px;
     vertical-align: middle;
     background-color: var(--color-white);
+}
+
+.form.form-short input[type="checkbox"] + label::before {
+    border-color: #D1D1D6;
 }
 
 .form input[type="checkbox"] + label:hover {
@@ -292,6 +359,11 @@
         line-height: normal;
     }
 
+    .form .small-button .button {
+        --button-padding-top: 9px;
+        --button-padding-bottom: 9px;
+    }
+
     .form label, .form fieldset > legend {
         font-size: var(--font-size-h1);
         font-weight: 500;
@@ -308,6 +380,27 @@
         font-size: 14px;
     }
 
+    .form.form-short .field-wrapper.text-wrapper input, 
+    .form.form-short .field-wrapper.email-wrapper input {
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .form.form-short .field-wrapper.text-wrapper input::placeholder,
+    .form.form-short .field-wrapper.email-wrapper input::placeholder {
+        font-size: 16px;
+    }
+
+    .form form > .field-wrapper + .field-wrapper.fieldset-wrapper {
+        margin-top: 32px;
+    }
+
+    .form form > .field-wrapper + .small-field.field-wrapper, .form form fieldset .field-wrapper + .small-field.field-wrapper {
+        margin-top: 15px;
+    }
+
     .form .small-field label {
         font-size: 12px;
     }
@@ -316,11 +409,26 @@
         gap: 8px;
     }
 
+    .form.form-short input[type="checkbox"] + label::before {
+        width: var(--checkbox-side-small-size);
+        height: var(--checkbox-side-small-size);
+        margin-right: 10px;
+    }
+
     .multistep-heading {
         font-size: var(--font-size-h1);
     }
 
     .form.multistep .steps-navigation {
         gap: 20px;
+    }
+
+    .form .small-button .button::after {
+        width: 18px;
+    }
+
+    .form .mobile-text-18 .button {
+        font-size: 18px;
+        line-height: 18px;
     }
 }

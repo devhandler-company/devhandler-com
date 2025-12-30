@@ -69,6 +69,10 @@
     gap: 16px;
 }
 
+.block-group.gap-32 {
+    gap: 32px;
+}
+
 .block-group.gap-60 {
     gap: 60px;
 }
@@ -108,6 +112,10 @@
 
     .block-group.mobile-gap-12 {
         gap: 12px;
+    }
+
+    .block-group.mobile-gap-24 {
+        gap: 24px;
     }
 
     .grid-mobile-reverse > *:first-child {

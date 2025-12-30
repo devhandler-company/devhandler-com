@@ -560,6 +560,9 @@ main > div.section.margin-top-152, .margin-top-152 {
     text-align: center;
 }
 
+.margin-top-auto {
+    margin-top: auto;
+}
 
 .stick-right, .stick-left {
     position: relative;   
