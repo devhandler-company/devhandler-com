@@ -44,8 +44,12 @@
     --color-blue: #0063F8;
     --color-blue-lighter: #3585ff;
     --color-gray: #bdbdbd;
+    --color-argent: #bfbfbf;
+    --color-gray-bright: #E9E9E9;
     --color-gray-darker: #606060;
     --color-gray-blue: #89B7D0;
+    --color-gainsboro-50: rgba(222 222 222 / 50%);
+    --color-gainsboro: rgb(222 222 222);
     --color-black: #222;
     --color-white: #fff;
     --color-white-10: rgba(255 255 255 / 10%);
@@ -249,6 +253,16 @@ p + h2 {
     margin-top: 16px;
 }
 
+.text-30 {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.text-64 {
+    font-size: 64px;
+    line-height: 64px;
+}
+
 /* Colors */
 .text-color-blue {
     color: var(--color-blue);
@@ -283,6 +297,10 @@ main div.section.background-white {
     color: black;
 }
 
+main .bg-white-after::after{
+    background-color: white;
+}
+
 main div.section.background-dark {
     background-color: var(--color-black);
     color: var(--color-white);
@@ -303,12 +321,31 @@ main div.section.background-gradient {
         line-height: 14px;
     }
 
+    .mobile-text-20 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .mobile-text-color-linear-to-bottom {
+        background-image: linear-gradient(to bottom, var(--color-blue), var(--color-aqamarine));
+        color: transparent;
+        background-clip: text;
+    }
+
     .mobile-bg-gray-linear {
         background: var(--color-bg-gray-linear);
     }
 
     .mobile-bg-white {
         background: var(--color-white);
+    }
+
+    main .mobile-bg-white-after::after {
+        background-color: var(--color-white);
+    }
+
+    main .mobile-bg-transparent-after::after {
+        background: transparent;
     }
 
     .mobile-text-center {
@@ -349,8 +386,16 @@ main div.section.background-gradient {
     text-align: center;
 }
 
+.margin-top-auto-last-child > div:last-child {
+    margin-top: auto;
+}
+
 .align-center {
     align-items: center;
+}
+
+.position-relative {
+    position: relative;
 }
 
 .plain-text h2, .plain-text h3,.plain-text h4,.plain-text h5,.plain-text h6 {
@@ -363,6 +408,10 @@ main div.section.background-gradient {
 
 .plain-text a {
     color: var(--color-blue-lighter);
+}
+
+.max-width-400 {
+    max-width: 400px;
 }
 
 @media (width >= 1025px) {
@@ -382,6 +431,12 @@ main div.section.background-gradient {
 
     .desktop-hidden {
         display: none !important;
+    }
+}
+
+@media (width <= 1024px) {
+    .mobile-max-width-full {
+        max-width: 100%;
     }
 }
 
@@ -570,6 +625,7 @@ main div.section.zindex-negative-1 {
     left: 0;
     top: var(--section-background-top);
     bottom: var(--section-background-bottom);
+    background-color: var(--section-background-color);
     background-position: var(--section-background-position);
     background-size: var(--section-background-size);
     background-repeat: no-repeat;

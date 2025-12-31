@@ -71,6 +71,12 @@ const processShowFromRight = () => {
   });
 };
 
+const getBackgroundImage = (dataset) => {
+  const backgroundList = dataset.split(',');
+  const backgroundListAligned = backgroundList.map((b) => (b.startsWith('http') ? `url(${b})` : b));
+  return backgroundListAligned.join(',');
+};
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -95,8 +101,8 @@ export function decorateMain(main) {
     const backgroundSize = section.dataset.backgroundSize || 'cover';
     const backgroundPosition = section.dataset.backgroundPosition || 'center';
     const { backgroundBottom } = section.dataset;
-    const backgroundImage = section.dataset.background ? `url(${section.dataset.background})` : 'none';
-    const mobileBackgroundImage = section.dataset.mobileBackground || section.dataset.background ? `url(${section.dataset.mobileBackground || section.dataset.background})` : 'none';
+    const backgroundImage = section.dataset.background ? getBackgroundImage(section.dataset.background) : 'none';
+    const mobileBackgroundImage = section.dataset.mobileBackground || section.dataset.background ? getBackgroundImage(section.dataset.mobileBackground || section.dataset.background) : 'none';
     assignCssVariable(section, '--section-background-image', backgroundImage);
     assignCssVariable(section, '--section-background-height', backgroundHeight);
     assignCssVariable(section, '--section-mobile-background-image', mobileBackgroundImage);

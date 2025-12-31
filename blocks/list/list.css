@@ -1,3 +1,5 @@
+@import url('./list-tile.css');
+
 .list {
     --list-text-color: var(--color-black);
     --list-dot-color: var(--color-aqamarine);

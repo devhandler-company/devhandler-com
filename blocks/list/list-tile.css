@@ -1,0 +1,26 @@
+@media (width > 1024px) {
+    .list.list-tile {
+        --list-text-color: var(--color-black);
+        --list-text-background-color: var(--color-gray-bright);
+    }
+
+    .list.list-tile ul {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 8px;
+        list-style-type: none;
+    }
+
+    .list.list-tile li {
+        width: fit-content;
+        padding: 9px 17px;
+        background-color: var(--list-text-background-color);
+        border-radius: 10px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .list.list-tile li::before {
+        content: none;
+    }
+}
