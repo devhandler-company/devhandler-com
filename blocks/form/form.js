@@ -6,11 +6,12 @@ async function createForm(formHref, block) {
   const resp = await fetch(pathname);
   const json = await resp.json();
   const isMultiStepForm = block.classList.contains('multistep');
+  const isShortForm = block.classList.contains('form-short');
 
   const form = document.createElement('form');
   form.dataset.action = json.data.filter((fd) => fd.Name === 'action')[0].Value;
 
-  const fields = await Promise.all(json.data.filter((fd) => fd.Name !== 'action').map((fd) => createField(fd, form)));
+  const fields = await Promise.all(json.data.filter((fd) => fd.Name !== 'action').map((fd) => createField(fd, form, isShortForm)));
   fields.forEach((field) => {
     if (field.classList.contains('heading-wrapper') && field && isMultiStepForm) {
       field.classList.add('multistep-heading');

@@ -166,7 +166,7 @@ const createTextArea = (fd) => {
   return { field, fieldWrapper };
 };
 
-const createInput = (fd) => {
+const createInput = (fd, form, isShortForm) => {
   const field = document.createElement('input');
   field.type = fd.Type;
   setCommonAttributes(field, fd);
@@ -177,7 +177,7 @@ const createInput = (fd) => {
   fieldWrapper.append(field);
   if (fd.Type === 'radio' || fd.Type === 'checkbox') {
     fieldWrapper.append(label);
-  } else {
+  } else if (field.type === 'text' && !isShortForm) {
     fieldWrapper.prepend(label);
   }
 
@@ -266,11 +266,11 @@ const FIELD_CREATOR_FUNCTIONS = {
   radio: createRadio,
 };
 
-export default async function createField(fd, form) {
+export default async function createField(fd, form, isShortForm) {
   fd.Id = fd.Id || generateFieldId(fd);
   const type = fd.Type.toLowerCase();
   const createFieldFunc = FIELD_CREATOR_FUNCTIONS[type] || createInput;
-  const fieldElements = await createFieldFunc(fd, form);
+  const fieldElements = await createFieldFunc(fd, form, isShortForm);
 
   return fieldElements.fieldWrapper;
 }
