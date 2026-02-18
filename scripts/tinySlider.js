@@ -1655,7 +1655,7 @@ const tns = (function () {
       const $ = getEvent(e);
       events.emit(isTouchEvent(e) ? 'touchStart' : 'dragStart', info(e));
 
-      if (!isTouchEvent(e) && ['img', 'a'].indexOf(getLowerCaseNodeName(getTarget(e))) >= 0) {
+      if (!isTouchEvent(e) && ['img', 'a', 'div', 'p', 'span', 'strong'].indexOf(getLowerCaseNodeName(getTarget(e))) >= 0) {
         preventDefaultBehavior(e);
       }
 
@@ -1746,6 +1746,16 @@ const tns = (function () {
                 removeEvents(target, { click: preventClick });
               },
             });
+            const closestA = target.closest('a');
+            if (closestA) {
+              addEvents(closestA, {
+                click: function preventClick(event) {
+                  console.log('preventClosestAClick');
+                  preventDefaultBehavior(event);
+                  removeEvents(closestA, { click: preventClick });
+                },
+              });
+            }
           }
 
           if (carousel) {
