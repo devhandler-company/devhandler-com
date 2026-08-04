@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEM SEO — First Page × DevHandler | Marketing & Engineering for Adobe Experience Manager</title>
+<meta name="description" content="Enterprise marketers and AEM engineers in one team. Free AEM SEO/GEO audit: First Page finds the visibility problems, DevHandler ships the fix.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== DevHandler brand system (from devhandler.com styles.css) ===== */
+  :root{
+    --color-aqamarine:#4CE1BA;
+    --color-blue:#0063F8;
+    --color-blue-lighter:#3585FF;
+    --color-black:#222;
+    --color-white:#fff;
+    --color-gray:#BDBDBD;
+    --color-gray-bright:#E9E9E9;
+    --brand-gradient:linear-gradient(90deg,#4DE4B9 51.15%,#0358D8 99.98%);
+    --text-gradient:linear-gradient(90deg,#4DE4B9,#0358D8);
+    --border-radius:20px;
+    --border-size:3px;
+    --max:1200px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind',sans-serif;background-color:var(--color-black);color:var(--color-white);line-height:1.6;
+    background-image:radial-gradient(900px 600px at 80% -5%, rgba(3,88,216,.22), transparent 60%),
+                     radial-gradient(700px 500px at 0% 100%, rgba(77,228,185,.10), transparent 60%);}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  a{color:var(--color-blue-lighter);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{line-height:1.15;font-weight:600}
+  section{padding:80px 0}
+  .grad-text{background-image:var(--text-gradient);color:transparent;background-clip:text;-webkit-background-clip:text}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(34,34,34,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brands{display:flex;align-items:baseline;gap:12px;font-weight:700;font-size:18px;letter-spacing:.4px;white-space:nowrap}
+  .brand-dh{color:var(--color-white);font-weight:600;font-size:15px;opacity:.9}
+  .brand-dh .brace{color:var(--color-aqamarine);font-weight:700}
+  .brand-x{color:var(--color-gray);font-weight:400}
+  .brand-fp{color:var(--color-white);font-weight:700;font-size:18px}
+  .nav-links{display:flex;gap:26px;font-size:15px}
+  .nav-links a{color:var(--color-gray-bright)}
+  .nav-links a:hover{color:var(--color-white);text-decoration:none}
+  .btn{display:inline-block;padding:14px 30px;border-radius:100px;font-weight:600;font-size:15px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none;text-align:center}
+  .btn:hover{text-decoration:none}
+  .btn-primary{background:var(--color-blue);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,99,248,.45)}
+  .btn-gradient{background:var(--brand-gradient);color:var(--color-black);font-weight:700}
+  .btn-gradient:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(76,225,186,.35)}
+  .btn-outline{border:2px solid rgba(255,255,255,.35);color:#fff;background:transparent}
+  .btn-outline:hover{border-color:var(--color-aqamarine)}
+  .nav .btn{padding:10px 22px}
+
+  /* Hero */
+  .hero{padding:96px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-block;border:1px solid var(--color-aqamarine);color:var(--color-aqamarine);font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:22px}
+  .hero h1{font-size:clamp(34px,4.4vw,52px);margin-bottom:20px;font-weight:600}
+  .hero p.lead{font-size:19px;color:var(--color-gray-bright);max-width:560px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-note{margin-top:18px;font-size:14px;color:var(--color-gray)}
+
+  .hero-card{border:var(--border-size) solid var(--color-aqamarine);border-radius:var(--border-radius);padding:32px;background:rgba(255,255,255,.04)}
+  .hero-card h3{font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--color-gray);margin-bottom:18px;font-weight:600}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:rgba(255,255,255,.05);border-radius:12px;padding:16px 18px}
+  .stat b{display:block;font-size:26px;color:var(--color-white);font-weight:700}
+  .stat b.grad{background-image:var(--text-gradient);color:transparent;background-clip:text;-webkit-background-clip:text}
+  .stat span{font-size:13px;color:var(--color-gray)}
+
+  /* Strip */
+  .strip{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);padding:24px 0;background:rgba(255,255,255,.03)}
+  .strip .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;color:var(--color-gray);font-size:14px}
+  .strip b{color:var(--color-gray-bright)}
+
+  /* Sections */
+  .kicker{color:var(--color-aqamarine);font-weight:600;font-size:14px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
+  .sec-title{font-size:clamp(28px,3.4vw,40px);margin-bottom:16px;max-width:800px}
+  .sec-sub{color:var(--color-gray-bright);font-size:17px;max-width:700px;margin-bottom:48px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--border-radius);padding:30px;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-4px);border-color:var(--color-aqamarine)}
+  .card .icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;background:var(--brand-gradient)}
+  .card h3{font-size:20px;margin-bottom:10px}
+  .card p{color:var(--color-gray-bright);font-size:15px}
+  .card ul{margin:14px 0 0 18px;color:var(--color-gray-bright);font-size:14.5px}
+  .card ul li{margin-bottom:6px}
+  .tag{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:100px}
+  .tag-dh{background:rgba(76,225,186,.15);color:var(--color-aqamarine)}
+  .tag-both{background:rgba(53,133,255,.18);color:var(--color-blue-lighter)}
+
+  /* Pain points */
+  .pains{background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+  .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pain{border:1px solid rgba(255,255,255,.12);border-radius:var(--border-radius);padding:28px;background:rgba(34,34,34,.6)}
+  .pain h3{font-size:19px;margin-bottom:10px}
+  .pain p{color:var(--color-gray-bright);font-size:15px}
+  .pain .sol{margin-top:14px;padding-top:14px;border-top:1px dashed rgba(76,225,186,.4);font-size:15px;color:var(--color-white)}
+  .pain .sol b{color:var(--color-aqamarine)}
+
+  /* Audit */
+  .audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px}
+  .audit-tier{border-radius:var(--border-radius);padding:30px}
+  .tier-quick{border:var(--border-size) solid var(--color-aqamarine);background:rgba(76,225,186,.06)}
+  .tier-deep{border:var(--border-size) solid var(--color-blue);background:rgba(0,99,248,.08)}
+  .audit-tier h3{font-size:21px;margin-bottom:6px}
+  .audit-tier .sub{font-size:14px;color:var(--color-gray);margin-bottom:16px}
+  .audit-tier ul{list-style:none;display:grid;gap:10px}
+  .audit-tier li{display:flex;gap:10px;font-size:15px;color:var(--color-gray-bright)}
+  .audit-tier .check{color:var(--color-aqamarine);font-weight:700}
+  .tier-deep .check{color:var(--color-blue-lighter)}
+  .audit-note{font-size:14px;color:var(--color-gray);max-width:760px}
+
+  /* No-code */
+  .nocode .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .nocode h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:18px}
+  .nocode p{color:var(--color-gray-bright);margin-bottom:16px}
+  .fixlist{list-style:none;display:grid;gap:14px}
+  .fixlist li{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--color-gray-bright)}
+  .fixlist .check{color:var(--color-aqamarine);font-weight:700;font-size:17px;line-height:1.4}
+  .fixlist b{color:var(--color-white)}
+
+  /* Cases */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .duo .card h3{display:flex;align-items:center;gap:10px}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .dot-dh{background:var(--color-aqamarine)} .dot-fp{background:var(--color-blue)}
+  .joint-case{margin-top:22px;border:2px dashed rgba(76,225,186,.5);border-radius:var(--border-radius);padding:28px;background:rgba(76,225,186,.04);font-size:15px;color:var(--color-gray-bright)}
+  .joint-case b{color:var(--color-white)}
+
+  /* Trust bar */
+  .trust{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .trust-slot{border:1px dashed rgba(255,255,255,.3);border-radius:12px;padding:22px;text-align:center;font-size:13px;color:var(--color-gray)}
+  .trust-slot b{display:block;color:var(--color-gray-bright);font-size:14px;margin-bottom:4px}
+
+  /* Videos */
+  .videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .video-card{border:1px solid rgba(255,255,255,.12);border-radius:var(--border-radius);overflow:hidden;background:rgba(255,255,255,.04)}
+  .video-thumb{aspect-ratio:16/9;background:linear-gradient(150deg,rgba(3,88,216,.35),rgba(77,228,185,.2));display:flex;align-items:center;justify-content:center;font-size:40px;position:relative}
+  .video-thumb iframe{width:100%;height:100%;border:0;display:block}
+  .video-card .vc-body{padding:18px 20px}
+  .video-card h4{font-size:16px;margin-bottom:6px}
+  .video-card p{font-size:13.5px;color:var(--color-gray)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--border-radius);padding:26px}
+  .step .num{font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:10px;background-image:var(--text-gradient);color:transparent;background-clip:text;-webkit-background-clip:text}
+  .step h4{font-size:17px;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--color-gray-bright)}
+
+  /* CTA */
+  .cta{text-align:center}
+  .cta .inner{border:var(--border-size) solid var(--color-aqamarine);border-radius:var(--border-radius);padding:64px 32px;background:rgba(255,255,255,.03)}
+  .cta h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:16px}
+  .cta p{color:var(--color-gray-bright);max-width:560px;margin:0 auto 34px;font-size:17px}
+  .cta-form{max-width:520px;margin:0 auto;display:grid;gap:14px;text-align:left}
+  .cta-form input,.cta-form textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit}
+  .cta-form input::placeholder,.cta-form textarea::placeholder{color:var(--color-gray)}
+  .cta-form .btn{width:100%}
+  .cta-note{font-size:13px;color:var(--color-gray);margin-top:14px}
+
+  footer{border-top:1px solid rgba(255,255,255,.1);padding:34px 0;font-size:14px;color:var(--color-gray)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  .draft{position:fixed;bottom:16px;right:16px;background:var(--color-blue);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;padding:8px 14px;border-radius:100px;z-index:99;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+
+  @media(max-width:900px){
+    .hero .wrap,.nocode .wrap{grid-template-columns:1fr}
+    .cards,.steps{grid-template-columns:1fr 1fr}
+    .duo,.pain-grid,.audit-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+  }
+  @media(max-width:600px){
+    .cards,.steps{grid-template-columns:1fr}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="draft">DRAFT v4 — for review, noindex</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brands">
+      <span class="brand-fp">FIRST PAGE</span>
+      <span class="brand-x">×</span>
+      <span class="brand-dh"><span class="brace">{</span>DEVHANDLER<span class="brace">}</span></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#audit">Free Audit</a>
+      <a href="#nocode">No-Code Fixes</a>
+      <a href="#cases">Results</a>
+      <a href="#process">How It Works</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Get a Free Audit</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For enterprise marketing teams on Adobe Experience Manager</span>
+      <h1>Enterprise marketers and AEM engineers. <span class="grad-text">One team.</span> No one else has this.</h1>
+      <p class="lead">SEO agencies can't touch the AEM stack. AEM shops don't sell marketing outcomes. We're both: First Page's award-winning SEO &amp; content team plus DevHandler's certified AEM engineers — so nothing gets lost in translation between marketing and development.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gradient" href="#contact">Get a Free AEM SEO/GEO Audit</a>
+        <a class="btn btn-outline" href="#audit">What's in the audit?</a>
+      </div>
+      <p class="hero-note">Free &amp; fast: First Page finds the visibility problems, DevHandler confirms what's fixable in your stack. No obligation.</p>
+    </div>
+    <div class="hero-card">
+      <h3>One partnership, full stack</h3>
+      <div class="stat-grid">
+        <div class="stat"><b class="grad">$3.8B+</b><span>client sales generated by the First Page network</span></div>
+        <div class="stat"><b class="grad">4.9★</b><span>500+ Google reviews across First Page globally</span></div>
+        <div class="stat"><b class="grad">14</b><span>digital awards won by First Page — and counting</span></div>
+        <div class="stat"><b class="grad">10+ yrs</b><span>of Adobe / AEM engineering at DevHandler</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span><b>First Page</b> — SEO &amp; GEO · AI Search Visibility · Copywriting · Paid Media · Vienna video studio</span>
+    <span><b>DevHandler</b> — AEM Development · Content Authoring · Cloud Migration · Adobe Experience Cloud</span>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-slot"><b>Client logos</b>[Placeholder — DevHandler client logos with permission + First Page brand logos]</div>
+    <div class="trust-slot"><b>Adobe certifications</b>[Placeholder — DevHandler Adobe certification badges]</div>
+    <div class="trust-slot"><b>Testimonials</b>[Placeholder — same testimonials as on the firstpage.at AEM page, for consistency]</div>
+  </div>
+</div>
+
+<section class="pains">
+  <div class="wrap">
+    <div class="kicker">Sound familiar?</div>
+    <h2 class="sec-title">Running marketing on AEM is harder than it should be</h2>
+    <div class="pain-grid">
+      <div class="pain">
+        <h3>"My team was thrown into AEM with no training"</h3>
+        <p>New marketers join from companies on other CMSs and suddenly face templates, experience fragments and workflows nobody explained. Simple publishing tasks take days.</p>
+        <div class="sol"><b>Our answer:</b> hands-on guidance and content authoring support from people who work in AEM every day — plus practical video tutorials and webinars.</div>
+      </div>
+      <div class="pain">
+        <h3>"Every fix means a ticket to developers — and something gets lost"</h3>
+        <p>Marketers and developers come from different worlds. Requirements get misread, releases slip, and a meta-title change waits months in a backlog.</p>
+        <div class="sol"><b>Our answer:</b> marketers and AEM developers in one team. No hand-offs, no translation errors — the person who finds the problem sits next to the person who fixes it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">What we do</div>
+    <h2 class="sec-title">Three services. One goal: an AEM site that <span class="grad-text">ranks, converts and just works.</span></h2>
+    <p class="sec-sub">Most agencies stop where the CMS begins. We don't. Marketing strategy and AEM implementation live under one roof — so nothing gets lost between "what should change" and "who will change it".</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>AEM Content Authoring</h3>
+        <p>Professionally written content, published properly in AEM — pages, components, experience fragments, multilingual variants.</p>
+        <ul>
+          <li>Copywriting &amp; content strategy by First Page</li>
+          <li>Structured authoring directly in your AEM instance</li>
+          <li>Multi-site &amp; multi-language rollouts (MSM, translation workflows)</li>
+          <li>Governance: templates, tagging, clean content architecture</li>
+        </ul>
+        <span class="tag tag-both">First Page + DevHandler</span>
+      </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>AEM SEO &amp; GEO Optimization</h3>
+        <p>SEO built for how AEM actually works — plus visibility in AI search, where your buyers increasingly look first.</p>
+        <ul>
+          <li>Technical SEO audit tailored to AEM &amp; Dispatcher</li>
+          <li>Core Web Vitals, sitemaps, redirects, canonical &amp; hreflang</li>
+          <li>GEO: visibility in ChatGPT, Gemini &amp; Perplexity</li>
+          <li>Content optimization implemented — not just recommended</li>
+        </ul>
+        <span class="tag tag-both">First Page + DevHandler</span>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>AEM Development</h3>
+        <p>Certified Adobe engineers for anything beyond authoring — from a single component to a full cloud migration.</p>
+        <ul>
+          <li>Custom components, templates &amp; integrations</li>
+          <li>AEM as a Cloud Service migrations</li>
+          <li>Run &amp; operate teams, audits, performance tuning</li>
+          <li>AEP, AJO, CJA, Adobe Commerce &amp; the wider Adobe stack</li>
+        </ul>
+        <span class="tag tag-dh">DevHandler</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audit">
+  <div class="wrap">
+    <div class="kicker">The entry point</div>
+    <h2 class="sec-title">Start with a <span class="grad-text">free AEM SEO/GEO audit</span></h2>
+    <p class="sec-sub">Low risk for you, and the best demonstration of how we work: First Page finds the visibility problems, DevHandler confirms what's fixable in the stack — and ships the fix.</p>
+    <div class="audit-grid">
+      <div class="audit-tier tier-quick">
+        <h3>Quick audit — free</h3>
+        <div class="sub">Based on publicly available data. Focused on your biggest opportunities.</div>
+        <ul>
+          <li><span class="check">✓</span>Search visibility &amp; ranking snapshot vs. competitors</li>
+          <li><span class="check">✓</span>Technical red flags: performance, indexing, structure</li>
+          <li><span class="check">✓</span>AI search (GEO) presence check</li>
+          <li><span class="check">✓</span>Top growth opportunities, prioritized</li>
+        </ul>
+      </div>
+      <div class="audit-tier tier-deep">
+        <h3>Deeper analysis — with access</h3>
+        <div class="sub">Grant read access and the strategy session gets far more specific.</div>
+        <ul>
+          <li><span class="check">✓</span>Google Analytics &amp; Search Console data review</li>
+          <li><span class="check">✓</span>AEM authoring setup &amp; content architecture review</li>
+          <li><span class="check">✓</span>Concrete fix list: what's authorable vs. what needs development</li>
+          <li><span class="check">✓</span>Joint strategy call with a First Page strategist and a DevHandler AEM engineer</li>
+        </ul>
+      </div>
+    </div>
+    <p class="audit-note">Everything is covered by an NDA on request. You decide how much access to grant — the more we see, the more specific we get.</p>
+  </div>
+</section>
+
+<section class="nocode" id="nocode">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Our unfair advantage</div>
+      <h2>No code access? <span class="grad-text">No problem.</span></h2>
+      <p>Waiting months for another vendor's release cycle just to fix a meta title? That's where most SEO projects stall — and where we're different.</p>
+      <p>DevHandler's engineers know AEM deeply enough to make precise, targeted fixes <b style="color:var(--color-white)">through the authoring layer alone</b> — no repository access, no deployments, no dependency on your incumbent development partner.</p>
+      <p style="font-size:14px;color:var(--color-gray)">And when deeper changes are needed, we scope them precisely — so your dev team (or ours) gets a ready-to-implement ticket, not a vague wish.</p>
+    </div>
+    <ul class="fixlist">
+      <li><span class="check">✓</span><div><b>Metadata &amp; SEO fields</b> — titles, descriptions, canonicals, robots rules fixed page by page</div></li>
+      <li><span class="check">✓</span><div><b>Redirects &amp; URL hygiene</b> — managed via AEM redirect maps, no dispatcher deployment needed</div></li>
+      <li><span class="check">✓</span><div><b>Content &amp; component fixes</b> — broken layouts, missing alt texts, heading structure, internal linking</div></li>
+      <li><span class="check">✓</span><div><b>Sitemap &amp; structure</b> — page properties, navigation, tagging and taxonomy cleanup</div></li>
+      <li><span class="check">✓</span><div><b>Proven in practice</b> — full AEM site audit delivered with strategic recommendations despite limited backend access</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="kicker">Results</div>
+    <h2 class="sec-title">Two track records. <span class="grad-text">One offer.</span></h2>
+    <p class="sec-sub">Hiring a marketing agency and a development agency separately means two contracts, two roadmaps and endless translation between them. We come as one team.</p>
+    <div class="duo">
+      <div class="card">
+        <h3><span class="dot dot-fp"></span>First Page — the marketing engine</h3>
+        <ul>
+          <li>Award-winning SEO &amp; copywriting, in-house video studio in Vienna</li>
+          <li>Traditional + AI SEO: Google, ChatGPT, Gemini, Perplexity</li>
+          <li>Part of the global First Page network — 14 digital awards, 500+ five-star reviews</li>
+          <li>Performance marketing: Google Ads, social, CRO, high-converting landing pages</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="dot dot-dh"></span>DevHandler — the Adobe engine</h3>
+        <ul>
+          <li>10+ years focused on Adobe Experience Cloud; AEM at the core</li>
+          <li>$300K annual savings on a Magento → AEM as a Cloud Service migration, zero data loss</li>
+          <li>20+ certified experts across automotive, e-commerce, pharma, government &amp; more</li>
+          <li>Transparent costs: every hour tracked and accounted for</li>
+        </ul>
+      </div>
+    </div>
+    <div class="joint-case">
+      <b>Joint case study — coming soon.</b> One page: what the SEO side found, what DevHandler shipped, and what changed for our shared enterprise client. <span style="color:var(--color-gray)">[Placeholder — publish after NDA is signed and client permission confirmed.]</span>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap">
+    <div class="kicker">Learn with us</div>
+    <h2 class="sec-title">AEM marketing, <span class="grad-text">explained on video</span></h2>
+    <p class="sec-sub">Practical videos from the First Page studio in Vienna, presented with DevHandler's AEM engineers — three series: Adobe stack explained, using Adobe right, and projects &amp; consulting. Plus a live webinar on Marketing × Development for AEM.</p>
+    <!--
+      HOW TO ADD A REAL VIDEO:
+      Once a video is published (YouTube/Vimeo), replace the placeholder .video-thumb div
+      in the matching card below with an iframe embed, e.g. for YouTube:
+      <div class="video-thumb">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video title"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      For Vimeo, use src="https://player.vimeo.com/video/VIDEO_ID".
+      To add more videos than the 3 slots below, duplicate a .video-card block.
+    -->
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-thumb">▶</div>
+        <div class="vc-body"><h4>Adobe-Stack erklärt</h4><p>[Placeholder — awareness series, embed after first shoot day]</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">▶</div>
+        <div class="vc-body"><h4>Adobe richtig nutzen</h4><p>[Placeholder — consideration series, embed after first shoot day]</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">▶</div>
+        <div class="vc-body"><h4>Projekte &amp; Beratung</h4><p>[Placeholder — decision series + webinar recording]</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2 class="sec-title">From first call to first results</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">STEP 01</div>
+        <h4>Intro call</h4>
+        <p>A short conversation to understand your setup and goals, and confirm the audit makes sense for you.</p>
+      </div>
+      <div class="step">
+        <div class="num">STEP 02</div>
+        <h4>Free audit</h4>
+        <p>We review your AEM site's SEO, GEO and technical health. You get a clear, prioritized findings report.</p>
+      </div>
+      <div class="step">
+        <div class="num">STEP 03</div>
+        <h4>Joint strategy call</h4>
+        <p>A First Page strategist and a DevHandler AEM engineer walk you through the findings and the roadmap.</p>
+      </div>
+      <div class="step">
+        <div class="num">STEP 04</div>
+        <h4>Execute &amp; measure</h4>
+        <p>First Page writes and optimizes; DevHandler authors, fixes and builds. Transparent dashboards track the results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="inner">
+      <h2>Ready to see what your AEM site <span class="grad-text">can really do?</span></h2>
+      <p>Get a free, no-obligation AEM SEO/GEO audit from the team that covers both sides — marketing and engineering. You'll hear from us within 24 hours.</p>
+      <form class="cta-form" onsubmit="event.preventDefault();alert('Draft form — hook up to your CRM / form endpoint.');">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Work email" required>
+        <input type="url" placeholder="Your website URL">
+        <textarea rows="3" placeholder="What would you like to improve?"></textarea>
+        <button class="btn btn-gradient" type="submit">Request My Free Audit</button>
+      </form>
+      <p class="cta-note">We'll gladly sign an NDA before looking at anything sensitive.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 First Page GmbH × DevHandler. All rights reserved.</span>
+    <span><a href="https://firstpage.at">firstpage.at</a> · <a href="https://www.devhandler.com">devhandler.com — our AEM partner</a> · Vienna, Austria</span>
+  </div>
+</footer>
+
+</body>
+</html>
