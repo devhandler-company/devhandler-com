@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://www.devhandler.com/sitemap.xml
+Sitemap: https://www.devhandler.com/sitemap-custom.xml
